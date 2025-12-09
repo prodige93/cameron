@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Réalisations - Toiture Pro | Galerie de Chantiers</title>
+    <meta name="description" content="Découvrez nos réalisations de couverture : rénovations, poses neuves, réparations. Galerie photos de nos chantiers réussis.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <span class="logo-icon">🏠</span>
+                        <span class="logo-text">Toiture Pro</span>
+                    </a>
+                </div>
+                <nav class="nav" id="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="realisations.html" class="active">Réalisations</a></li>
+                        <li><a href="a-propos.html">À propos</a></li>
+                        <li><a href="avis.html">Avis</a></li>
+                        <li><a href="contact.html" class="btn-nav">Devis gratuit</a></li>
+                    </ul>
+                </nav>
+                <div class="header-contact">
+                    <a href="tel:+33123456789" class="phone-link">01 23 45 67 89</a>
+                </div>
+                <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Nos réalisations</h1>
+            <p>Découvrez quelques-unes de nos réalisations de couverture</p>
+        </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="filters-section section">
+        <div class="container">
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">Tous les projets</button>
+                <button class="filter-btn" data-filter="renovation">Rénovation</button>
+                <button class="filter-btn" data-filter="pose">Pose neuve</button>
+                <button class="filter-btn" data-filter="reparation">Réparation</button>
+                <button class="filter-btn" data-filter="isolation">Isolation</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Realizations Gallery -->
+    <section class="realizations-gallery section">
+        <div class="container">
+            <div class="realizations-grid" id="realizationsGrid">
+                <!-- Rénovation -->
+                <div class="realization-item" data-category="renovation">
+                    <div class="realization-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <div class="realization-overlay">
+                            <h3>Rénovation complète - Maison individuelle</h3>
+                            <p>Paris 15ème</p>
+                        </div>
+                    </div>
+                    <div class="realization-info">
+                        <h3>Rénovation complète - Maison individuelle</h3>
+                        <p class="realization-location">📍 Paris 15ème</p>
+                        <p class="realization-desc">Rénovation complète d'une toiture de 180m² avec remplacement des tuiles terre cuite, isolation renforcée sous toiture et remplacement de toute la zinguerie. Travaux réalisés en 3 semaines.</p>
+                        <div class="realization-tags">
+                            <span class="tag">Tuiles terre cuite</span>
+                            <span class="tag">Isolation</span>
+                            <span class="tag">Zinguerie</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="realization-item" data-category="pose">
+                    <div class="realization-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <div class="realization-overlay">
+                            <h3>Pose toiture neuve - Résidence</h3>
+                            <p>Boulogne-Billancourt</p>
+                        </div>
+                    </div>
+                    <div class="realization-info">
+                        <h3>Pose toiture neuve - Résidence</h3>
+                        <p class="realization-location">📍 Boulogne-Billancourt</p>
+                        <p class="realization-desc">Installation complète d'une toiture en ardoises naturelles sur une résidence neuve. Pose de 250m² d'ardoises avec zinguerie en cuivre. Chantier de 4 semaines.</p>
+                        <div class="realization-tags">
+                            <span class="tag">Ardoises naturelles</span>
+                            <span class="tag">Zinguerie cuivre</span>
+                            <span class="tag">Pose neuve</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="realization-item" data-category="reparation">
+                    <div class="realization-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <div class="realization-overlay">
+                            <h3>Réparation post-tempête</h3>
+                        </div>
+                    </div>
+                    <div class="realization-info">
+                        <h3>Réparation post-tempête</h3>
+                        <p class="realization-location">📍 Nanterre</p>
+                        <p class="realization-desc">Intervention d'urgence après une tempête ayant endommagé une partie de la toiture. Remplacement de 80 tuiles, réparation de la zinguerie et sécurisation complète. Intervention sous 24h.</p>
+                        <div class="realization-tags">
+                            <span class="tag">Urgence</span>
+                            <span class="tag">Réparation</span>
+                            <span class="tag">Tuiles</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="realization-item" data-category="isolation">
+                    <div class="realization-image" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                        <div class="realization-overlay">
+                            <h3>Isolation sous toiture</h3>
+                            <p>Issy-les-Moulineaux</p>
+                        </div>
+                    </div>
+                    <div class="realization-info">
+                        <h3>Isolation sous toiture</h3>
+                        <p class="realization-location">📍 Issy-les-Moulineaux</p>
+                        <p class="realization-desc">Amélioration de l'isolation thermique d'une maison individuelle. Installation de laine de roche sous rampants (200m²), pose de pare-vapeur et optimisation de la ventilation. Conformité RE 2020.</p>
+                        <div class="realization-tags">
+                            <span class="tag">Isolation</span>
+                            <span class="tag">Performance énergétique</span>
+                            <span class="tag">RE 2020</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="realization-item" data-category="renovation">
+                    <div class="realization-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                        <div class="realization-overlay">
+                            <h3>Rénovation toiture zinc</h3>
+                            <p>Paris 16ème</p>
+                        </div>
+                    </div>
+                    <div class="realization-info">
+                        <h3>Rénovation toiture zinc</h3>
+                        <p class="realization-location">📍 Paris 16ème</p>
+                        <p class="realization-desc">Rénovation complète d'une toiture en zinc de 150m² sur un immeuble haussmannien. Remplacement du zinc, réfection des faîtages et noues. Travaux réalisés avec soin pour préserver le caractère architectural.</p>
+                        <div class="realization-tags">
+                            <span class="tag">Zinc</span>
+                            <span class="tag">Rénovation</span>
+                            <span class="tag">Patrimoine</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="realization-item" data-category="pose">
+                    <div class="realization-image" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">
+                        <div class="realization-overlay">
+                            <h3>Pose toiture shingle</h3>
+                            <p>Clichy</p>
+                        </div>
+                    </div>
+                    <div class="realization-info">
+                        <h3>Pose toiture shingle</h3>
+                        <p class="realization-location">📍 Clichy</p>
+                        <p class="realization-desc">Installation d'une toiture en bardeaux bitumineux (shingle) sur une maison individuelle. Pose de 120m² de shingle avec isolation intégrée. Solution économique et performante.</p>
+                        <div class="realization-tags">
+                            <span class="tag">Shingle</span>
+                            <span class="tag">Pose neuve</span>
+                            <span class="tag">Économique</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="realization-item" data-category="reparation">
+                    <div class="realization-image" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+                        <div class="realization-overlay">
+                            <h3>Réparation fuite</h3>
+                            <p>Levallois-Perret</p>
+                        </div>
+                    </div>
+                    <div class="realization-info">
+                        <h3>Réparation fuite et étanchéité</h3>
+                        <p class="realization-location">📍 Levallois-Perret</p>
+                        <p class="realization-desc">Diagnostic et réparation d'une fuite importante sur une toiture terrasse. Remplacement de l'étanchéité EPDM sur 80m², réparation des joints et mise en conformité. Intervention rapide.</p>
+                        <div class="realization-tags">
+                            <span class="tag">Étanchéité</span>
+                            <span class="tag">Réparation</span>
+                            <span class="tag">EPDM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="realization-item" data-category="renovation">
+                    <div class="realization-image" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);">
+                        <div class="realization-overlay">
+                            <h3>Rénovation complète avec isolation</h3>
+                            <p>Montrouge</p>
+                        </div>
+                    </div>
+                    <div class="realization-info">
+                        <h3>Rénovation complète avec isolation</h3>
+                        <p class="realization-location">📍 Montrouge</p>
+                        <p class="realization-desc">Rénovation totale d'une toiture de 200m² avec remplacement des tuiles, isolation renforcée par l'extérieur (sarking) et installation d'une ventilation optimisée. Projet éligible MaPrimeRénov'.</p>
+                        <div class="realization-tags">
+                            <span class="tag">Rénovation</span>
+                            <span class="tag">Isolation</span>
+                            <span class="tag">MaPrimeRénov'</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section section bg-light">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">2000+</div>
+                    <div class="stat-label">Chantiers réalisés</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">25</div>
+                    <div class="stat-label">Années d'expérience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Clients satisfaits</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24h</div>
+                    <div class="stat-label">Délai moyen intervention</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Votre projet de toiture nous intéresse</h2>
+                <p>Contactez-nous pour discuter de votre projet et obtenir un devis gratuit</p>
+                <a href="contact.html" class="btn btn-primary btn-large">Demander un devis gratuit</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Toiture Pro</h3>
+                    <p>Votre expert en couverture depuis 1999. Artisans passionnés au service de votre toiture.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="LinkedIn">💼</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="realisations.html">Réalisations</a></li>
+                        <li><a href="a-propos.html">À propos</a></li>
+                        <li><a href="avis.html">Avis clients</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html#pose">Pose de toiture</a></li>
+                        <li><a href="services.html#reparation">Réparation</a></li>
+                        <li><a href="services.html#renovation">Rénovation</a></li>
+                        <li><a href="services.html#gouttieres">Gouttières</a></li>
+                        <li><a href="services.html#demoussage">Démoussage</a></li>
+                        <li><a href="services.html#urgence">Urgences</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>📍 123 Rue de la Toiture<br>75015 Paris</li>
+                        <li>📞 <a href="tel:+33123456789">01 23 45 67 89</a></li>
+                        <li>✉️ <a href="mailto:contact@toiturepro.fr">contact@toiturepro.fr</a></li>
+                        <li>🕐 Lun-Ven: 8h-18h<br>Sam: 9h-12h</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Toiture Pro. Tous droits réservés.</p>
+                <div class="footer-links">
+                    <a href="#">Mentions légales</a>
+                    <a href="#">Politique de confidentialité</a>
+                    <a href="#">CGV</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
