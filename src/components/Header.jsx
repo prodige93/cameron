@@ -8,7 +8,13 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
+      const heroSection = document.querySelector('.hero')
+      if (heroSection) {
+        const heroBottom = heroSection.offsetTop + heroSection.offsetHeight
+        setIsScrolled(window.scrollY > heroBottom - 100)
+      } else {
+        setIsScrolled(window.scrollY > 50)
+      }
     }
 
     window.addEventListener('scroll', handleScroll)
@@ -27,67 +33,80 @@ const Header = () => {
     return location.pathname === path
   }
 
+  const handleNavClick = (e, path) => {
+    if (location.pathname === path) {
+      e.preventDefault()
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }
+
   return (
-    <header className={`header ${isScrolled ? 'scrolled' : ''}`} id="header">
-      <div className="container">
-        <div className="header-content">
-          <div className="logo">
-            <Link to="/">
-              <span className="logo-icon">🏠</span>
-              <span className="logo-text">Toiture Pro</span>
-            </Link>
+    <>
+      <header className={`header ${isScrolled ? 'scrolled' : ''}`} id="header">
+        <div className="container">
+          <div className="header-content">
+            <nav className={`nav ${isMenuOpen ? 'active' : ''}`} id="nav">
+              <ul className="nav-list">
+                <li className="nav-more">
+                  <span>Plus</span>
+                  <ul className="nav-dropdown">
+                    <li>
+                      <Link 
+                        to="/services"
+                        onClick={(e) => handleNavClick(e, '/services')}
+                      >
+                        Services
+                      </Link>
+                    </li>
+                    <li>
+                      <Link 
+                        to="/realisations"
+                        onClick={(e) => handleNavClick(e, '/realisations')}
+                      >
+                        Réalisations
+                      </Link>
+                    </li>
+                    <li>
+                      <Link 
+                        to="/avis"
+                        onClick={(e) => handleNavClick(e, '/avis')}
+                      >
+                        Avis
+                      </Link>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <Link 
+                    to="/" 
+                    className={isActive('/') ? 'active' : ''}
+                    onClick={(e) => handleNavClick(e, '/')}
+                  >
+                    Accueil
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    to="/contact" 
+                    className={isActive('/contact') ? 'active' : ''}
+                    onClick={(e) => handleNavClick(e, '/contact')}
+                  >
+                    Contact
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+            <button
+              className={`menu-toggle ${isMenuOpen ? 'active' : ''}`}
+              onClick={toggleMenu}
+              aria-label="Menu"
+            >
+              <span>Menu</span>
+            </button>
           </div>
-          <nav className={`nav ${isMenuOpen ? 'active' : ''}`} id="nav">
-            <ul className="nav-list">
-              <li>
-                <Link to="/" className={isActive('/') ? 'active' : ''}>
-                  Accueil
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" className={isActive('/services') ? 'active' : ''}>
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link to="/realisations" className={isActive('/realisations') ? 'active' : ''}>
-                  Réalisations
-                </Link>
-              </li>
-              <li>
-                <Link to="/a-propos" className={isActive('/a-propos') ? 'active' : ''}>
-                  À propos
-                </Link>
-              </li>
-              <li>
-                <Link to="/avis" className={isActive('/avis') ? 'active' : ''}>
-                  Avis
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className={`btn-nav ${isActive('/contact') ? 'active' : ''}`}>
-                  Devis gratuit
-                </Link>
-              </li>
-            </ul>
-          </nav>
-          <div className="header-contact">
-            <a href="tel:+33123456789" className="phone-link">
-              01 23 45 67 89
-            </a>
-          </div>
-          <button
-            className={`menu-toggle ${isMenuOpen ? 'active' : ''}`}
-            onClick={toggleMenu}
-            aria-label="Menu"
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
         </div>
-      </div>
-    </header>
+      </header>
+    </>
   )
 }
 
