@@ -1,11 +1,55 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import CTASection from '../components/CTASection'
+
+const RealizationImage = ({ image, gradient, title, location }) => {
+  const [imageError, setImageError] = useState(false)
+  const [imageLoaded, setImageLoaded] = useState(false)
+
+  useEffect(() => {
+    if (image) {
+      const img = new Image()
+      img.onload = () => setImageLoaded(true)
+      img.onerror = () => setImageError(true)
+      img.src = image
+    }
+  }, [image])
+  
+  const backgroundStyle = !image || imageError
+    ? { background: gradient || 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }
+    : { 
+        backgroundImage: `url(${image})`, 
+        backgroundSize: 'cover', 
+        backgroundPosition: 'center',
+        backgroundColor: '#e5e7eb'
+      }
+  
+  return (
+    <div
+      className={`realization-image ${image && !imageError ? 'realization-image-with-bg' : ''}`}
+      style={backgroundStyle}
+    >
+      <div className="realization-overlay">
+        <h3>{title}</h3>
+        {location && <p>{location}</p>}
+      </div>
+    </div>
+  )
+}
 
 const Realizations = () => {
   const [activeFilter, setActiveFilter] = useState('all')
 
   const realizations = [
+    {
+      category: 'renovation',
+      title: 'Remplacement couverture et pose bardage Cedral',
+      location: 'Sarthe',
+      description: 'Voici une réalisation de notre équipe\n\nNous vous présentons l\'une des réalisations de Jory Charpente Couverture : remplacement complet de la couverture en tuiles plates, accompagné de la pose d\'un bardage Cedral.\n\nCe chantier a permis de redonner à l\'habitation une toiture saine, durable et esthétique, tout en améliorant la protection et l\'aspect extérieur du bâtiment. La pose du bardage Cedral apporte une finition moderne, résistante aux intempéries et nécessitant peu d\'entretien.\n\nNotre équipe a assuré l\'ensemble des travaux avec rigueur et savoir-faire, dans le respect des normes et des délais, en utilisant des matériaux de qualité.\n\nJory Charpente Couverture, votre spécialiste en charpente, couverture et bardage au Mans et dans toute la Sarthe.',
+      tags: ['Tuiles plates', 'Bardage Cedral', 'Rénovation complète'],
+      image: '/images/bardage-cedral.jpg',
+      hasFullDescription: true
+    },
     {
       category: 'renovation',
       title: 'Rénovation complète - Maison individuelle',
@@ -114,19 +158,24 @@ const Realizations = () => {
           <div className="realizations-grid">
             {filteredRealizations.map((realization, index) => (
               <div key={index} className="realization-item" data-category={realization.category}>
-                <div
-                  className="realization-image"
-                  style={{ background: realization.gradient }}
-                >
-                  <div className="realization-overlay">
-                    <h3>{realization.title}</h3>
-                    <p>{realization.location}</p>
-                  </div>
-                </div>
+                <RealizationImage 
+                  image={realization.image}
+                  gradient={realization.gradient}
+                  title={realization.title}
+                  location={realization.location}
+                />
                 <div className="realization-info">
                   <h3>{realization.title}</h3>
                   <p className="realization-location">📍 {realization.location}</p>
-                  <p className="realization-desc">{realization.description}</p>
+                  {realization.hasFullDescription ? (
+                    <div className="realization-desc-full">
+                      {realization.description.split('\n\n').filter(p => p.trim()).map((paragraph, idx) => (
+                        <p key={idx} className="realization-paragraph">{paragraph.trim()}</p>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="realization-desc">{realization.description}</p>
+                  )}
                   <div className="realization-tags">
                     {realization.tags.map((tag, idx) => (
                       <span key={idx} className="tag">{tag}</span>

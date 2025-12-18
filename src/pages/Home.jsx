@@ -1,8 +1,45 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import ServiceCard from '../components/ServiceCard'
 import TestimonialCard from '../components/TestimonialCard'
 import CTASection from '../components/CTASection'
+
+const RealizationImageCard = ({ imageUrl, title, subtitle, fallbackGradient }) => {
+  const [imageLoaded, setImageLoaded] = useState(false)
+  const [imageError, setImageError] = useState(false)
+
+  useEffect(() => {
+    if (imageUrl) {
+      const img = new Image()
+      img.onload = () => setImageLoaded(true)
+      img.onerror = () => setImageError(true)
+      img.src = imageUrl
+    }
+  }, [imageUrl])
+
+  const backgroundStyle = imageError || !imageUrl
+    ? { background: fallbackGradient || 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }
+    : {
+        backgroundImage: `url(${imageUrl})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundColor: '#e5e7eb'
+      }
+
+  return (
+    <div className="realization-card">
+      <div 
+        className="realization-image realization-image-with-bg"
+        style={backgroundStyle}
+      >
+        <div className="realization-overlay">
+          <h3>{title}</h3>
+          <p>{subtitle}</p>
+        </div>
+      </div>
+    </div>
+  )
+}
 
 const Home = () => {
   const services = [
@@ -206,6 +243,11 @@ const Home = () => {
             <h2 className="section-title">EXEMPLE DE RÉALISATIONS</h2>
           </div>
           <div className="realizations-grid">
+            <RealizationImageCard
+              imageUrl="/images/bardage-cedral.jpg"
+              title="Remplacement couverture et pose bardage Cedral"
+              subtitle="Tuiles plates, bardage Cedral"
+            />
             <div className="realization-card">
               <div className="realization-image" style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }}>
                 <div className="realization-overlay">
@@ -227,14 +269,6 @@ const Home = () => {
                 <div className="realization-overlay">
                   <h3>Réparation post-tempête</h3>
                   <p>Intervention d'urgence, remplacement complet</p>
-                </div>
-              </div>
-            </div>
-            <div className="realization-card">
-              <div className="realization-image" style={{ background: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)' }}>
-                <div className="realization-overlay">
-                  <h3>Isolation sous toiture</h3>
-                  <p>Amélioration performance énergétique</p>
                 </div>
               </div>
             </div>

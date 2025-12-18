@@ -712,6 +712,50 @@ ul {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #e5e7eb;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.realization-image-with-bg {
+    min-height: 300px;
+    height: 300px;
+    width: 100%;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: scroll;
+    position: relative;
+}
+
+.realization-card .realization-image-with-bg {
+    min-height: 300px;
+    height: 300px;
+}
+
+@media (min-width: 768px) {
+    .realization-image-with-bg {
+        min-height: 350px;
+        height: 350px;
+    }
+    
+    .realization-card .realization-image-with-bg {
+        min-height: 350px;
+        height: 350px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .realization-image-with-bg {
+        min-height: 400px;
+        height: 400px;
+    }
+    
+    .realization-card .realization-image-with-bg {
+        min-height: 400px;
+        height: 400px;
+    }
 }
 
 .realization-overlay {
@@ -769,6 +813,21 @@ ul {
     color: var(--text-light);
     margin-bottom: var(--spacing-md);
     line-height: 1.6;
+}
+
+.realization-desc-full {
+    color: var(--text-light);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.7;
+}
+
+.realization-paragraph {
+    margin-bottom: var(--spacing-md);
+    line-height: 1.7;
+}
+
+.realization-paragraph:last-child {
+    margin-bottom: 0;
 }
 
 .realization-tags {
