@@ -37,11 +37,46 @@ const RealizationImage = ({ image, gradient, title, location }) => {
   )
 }
 
+const RealizationCard = ({ realization }) => {
+  return (
+    <div 
+      className="realization-item" 
+      data-category={realization.category}
+    >
+      <RealizationImage 
+        image={realization.image}
+        gradient={realization.gradient}
+        title={realization.title}
+        location={realization.location}
+      />
+      <div className="realization-info">
+        <h3>{realization.title}</h3>
+        <p className="realization-location">📍 {realization.location}</p>
+        {realization.hasFullDescription ? (
+          <div className="realization-desc-full">
+            {realization.description.split('\n\n').filter(p => p.trim()).map((paragraph, idx) => (
+              <p key={idx} className="realization-paragraph">{paragraph.trim()}</p>
+            ))}
+          </div>
+        ) : (
+          <p className="realization-desc">{realization.description}</p>
+        )}
+        <div className="realization-tags">
+          {realization.tags.map((tag, idx) => (
+            <span key={idx} className="tag">{tag}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
 const Realizations = () => {
   const [activeFilter, setActiveFilter] = useState('all')
 
   const realizations = [
     {
+      id: 'remplacement-couverture-bardage',
       category: 'renovation',
       title: 'Remplacement couverture et pose bardage Cedral',
       location: 'Sarthe',
@@ -51,14 +86,17 @@ const Realizations = () => {
       hasFullDescription: true
     },
     {
+      id: 'renovation-complete-maison',
       category: 'renovation',
       title: 'Rénovation complète - Maison individuelle',
       location: 'Paris 15ème',
       description: 'Rénovation complète d\'une toiture de 180m² avec remplacement des tuiles terre cuite, isolation renforcée sous toiture et remplacement de toute la zinguerie. Travaux réalisés en 3 semaines.',
       tags: ['Tuiles terre cuite', 'Isolation', 'Zinguerie'],
+      image: '/images/realisation-toiture-bardage.jpg',
       gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
     },
     {
+      id: 'pose-toiture-residence',
       category: 'pose',
       title: 'Pose toiture neuve - Résidence',
       location: 'Boulogne-Billancourt',
@@ -67,6 +105,7 @@ const Realizations = () => {
       gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'
     },
     {
+      id: 'reparation-post-tempete',
       category: 'reparation',
       title: 'Réparation post-tempête',
       location: 'Nanterre',
@@ -75,6 +114,7 @@ const Realizations = () => {
       gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)'
     },
     {
+      id: 'isolation-sous-toiture',
       category: 'isolation',
       title: 'Isolation sous toiture',
       location: 'Issy-les-Moulineaux',
@@ -83,6 +123,7 @@ const Realizations = () => {
       gradient: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)'
     },
     {
+      id: 'renovation-toiture-zinc',
       category: 'renovation',
       title: 'Rénovation toiture zinc',
       location: 'Paris 16ème',
@@ -91,6 +132,7 @@ const Realizations = () => {
       gradient: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)'
     },
     {
+      id: 'pose-toiture-shingle',
       category: 'pose',
       title: 'Pose toiture shingle',
       location: 'Clichy',
@@ -99,6 +141,7 @@ const Realizations = () => {
       gradient: 'linear-gradient(135deg, #30cfd0 0%, #330867 100%)'
     },
     {
+      id: 'reparation-fuite-etancheite',
       category: 'reparation',
       title: 'Réparation fuite et étanchéité',
       location: 'Levallois-Perret',
@@ -107,6 +150,7 @@ const Realizations = () => {
       gradient: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)'
     },
     {
+      id: 'renovation-complete-isolation',
       category: 'renovation',
       title: 'Rénovation complète avec isolation',
       location: 'Montrouge',
@@ -157,32 +201,10 @@ const Realizations = () => {
         <div className="container">
           <div className="realizations-grid">
             {filteredRealizations.map((realization, index) => (
-              <div key={index} className="realization-item" data-category={realization.category}>
-                <RealizationImage 
-                  image={realization.image}
-                  gradient={realization.gradient}
-                  title={realization.title}
-                  location={realization.location}
-                />
-                <div className="realization-info">
-                  <h3>{realization.title}</h3>
-                  <p className="realization-location">📍 {realization.location}</p>
-                  {realization.hasFullDescription ? (
-                    <div className="realization-desc-full">
-                      {realization.description.split('\n\n').filter(p => p.trim()).map((paragraph, idx) => (
-                        <p key={idx} className="realization-paragraph">{paragraph.trim()}</p>
-                      ))}
-                    </div>
-                  ) : (
-                    <p className="realization-desc">{realization.description}</p>
-                  )}
-                  <div className="realization-tags">
-                    {realization.tags.map((tag, idx) => (
-                      <span key={idx} className="tag">{tag}</span>
-                    ))}
-                  </div>
-                </div>
-              </div>
+              <RealizationCard 
+                key={realization.id || index} 
+                realization={realization}
+              />
             ))}
           </div>
         </div>

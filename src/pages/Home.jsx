@@ -248,30 +248,24 @@ const Home = () => {
               title="Remplacement couverture et pose bardage Cedral"
               subtitle="Tuiles plates, bardage Cedral"
             />
-            <div className="realization-card">
-              <div className="realization-image" style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }}>
-                <div className="realization-overlay">
-                  <h3>Rénovation complète - Maison individuelle</h3>
-                  <p>Tuiles terre cuite, isolation renforcée</p>
-                </div>
-              </div>
-            </div>
-            <div className="realization-card">
-              <div className="realization-image" style={{ background: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)' }}>
-                <div className="realization-overlay">
-                  <h3>Pose toiture neuve - Résidence</h3>
-                  <p>Ardoises naturelles, zinguerie cuivre</p>
-                </div>
-              </div>
-            </div>
-            <div className="realization-card">
-              <div className="realization-image" style={{ background: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)' }}>
-                <div className="realization-overlay">
-                  <h3>Réparation post-tempête</h3>
-                  <p>Intervention d'urgence, remplacement complet</p>
-                </div>
-              </div>
-            </div>
+            <RealizationImageCard
+              imageUrl="/images/realisation-toiture-bardage.jpg"
+              title="Rénovation complète - Maison individuelle"
+              subtitle="Tuiles terre cuite, isolation renforcée"
+              fallbackGradient="linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+            />
+            <RealizationImageCard
+              imageUrl={null}
+              title="Pose toiture neuve - Résidence"
+              subtitle="Ardoises naturelles, zinguerie cuivre"
+              fallbackGradient="linear-gradient(135deg, #f093fb 0%, #f5576c 100%)"
+            />
+            <RealizationImageCard
+              imageUrl={null}
+              title="Réparation post-tempête"
+              subtitle="Intervention d'urgence, remplacement complet"
+              fallbackGradient="linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)"
+            />
           </div>
           <div className="text-center">
             <Link to="/realisations" className="btn btn-primary">
