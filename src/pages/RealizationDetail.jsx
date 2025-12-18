@@ -12,14 +12,14 @@ const RealizationDetail = () => {
       image: '/images/bardage-cedral.jpg',
       title: 'Remplacement couverture et pose bardage Cedral',
       subtitle: 'Tuiles plates, bardage Cedral',
-      description: `Nous vous présentons l'une des réalisations de Jory Charpente Couverture :
+      description: `Nous vous présentons l'une des réalisations de JORY CHARPENTE COUVERTURE :
 remplacement complet de la couverture en tuiles plates, accompagné de la pose d'un bardage Cedral.
 
 Ce chantier a permis de redonner à l'habitation une toiture saine, durable et esthétique, tout en améliorant la protection et l'aspect extérieur du bâtiment. La pose du bardage Cedral apporte une finition moderne, résistante aux intempéries et nécessitant peu d'entretien.
 
 Notre équipe a assuré l'ensemble des travaux avec rigueur et savoir-faire, dans le respect des normes et des délais, en utilisant des matériaux de qualité.
 
-Jory Charpente Couverture,
+JORY CHARPENTE COUVERTURE,
 votre spécialiste en charpente, couverture et bardage au Mans et dans toute la Sarthe.`
     },
     'renovation-complete-maison': {

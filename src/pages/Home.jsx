@@ -132,13 +132,13 @@ const Home = () => {
           <div className="hero-content-wrapper">
             <div className="hero-text">
               <h1 className="hero-title">
-                Jory Charpente Couverture – Charpente, Couverture & Fenêtres de Toit
+                JORY CHARPENTE COUVERTURE – Charpente, Couverture & Fenêtres de Toit
               </h1>
               <p className="hero-subtitle">
-                Jory Charpente Couverture est une entreprise artisanale spécialisée dans les travaux de charpente, couverture et pose de fenêtres de toit. Nous intervenons pour des projets neufs et de rénovation, auprès des particuliers et professionnels.
+                JORY CHARPENTE COUVERTURE est une entreprise artisanale spécialisée dans les travaux de charpente, couverture et pose de fenêtres de toit. Nous intervenons pour des projets neufs et de rénovation, auprès des particuliers et professionnels.
               </p>
               <p className="hero-location">
-                Basés près du Mans, nous nous déplaçons dans toute la Sarthe.
+                Basés à Changé (72560), nous nous déplaçons dans toute la Sarthe.
               </p>
               <div className="hero-prestations">
                 <h3 className="prestations-title">Nos prestations :</h3>
@@ -153,7 +153,7 @@ const Home = () => {
               </div>
               <p className="hero-note">
                 Besoin d'un devis ou de conseils ?<br />
-                Faites confiance à Jory Charpente Couverture, votre artisan charpentier-couvreur au Mans et dans toute la Sarthe.
+                Faites confiance à JORY CHARPENTE COUVERTURE, votre artisan charpentier-couvreur au Mans et dans toute la Sarthe.
               </p>
             </div>
             

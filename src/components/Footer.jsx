@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container">
         <div className="footer-content">
           <div className="footer-column">
-            <h3>Jory Charpente Couverture</h3>
+            <h3>JORY CHARPENTE COUVERTURE</h3>
             <p>Entreprise artisanale spécialisée dans les travaux de charpente, couverture et pose de fenêtres de toit. Nous intervenons pour des projets neufs et de rénovation, auprès des particuliers et professionnels dans toute la Sarthe.</p>
           </div>
           <div className="footer-column">
@@ -34,12 +34,12 @@ const Footer = () => {
           <div className="footer-column">
             <h4>Contact</h4>
             <ul>
-              <li>📍 Le Mans, Sarthe (72)</li>
-              <li>📞 <a href="tel:+33622107812">06 22 10 78 12</a></li>
-              <li>✉️ <a href="mailto:contact@jory-charpente-couverture.fr">contact@jory-charpente-couverture.fr</a></li>
+              <li>📍 LE TILLEUL 72560 Changé, Sarthe</li>
+              <li>📞 <a href="tel:+33750398368">07 50 39 83 68</a></li>
+              <li>✉️ <a href="mailto:JORY.BATIMENT@GMAIL.COM">JORY.BATIMENT@GMAIL.COM</a></li>
               <li>🕐 Lun-Dim: 8h-20h (urgences)</li>
               <li>
-                <a href="https://wa.me/33622107812" target="_blank" rel="noopener noreferrer" className="whatsapp-link">
+                <a href="https://wa.me/33750398368" target="_blank" rel="noopener noreferrer" className="whatsapp-link">
                   💬 Contactez-nous sur WhatsApp
                 </a>
               </li>
@@ -47,7 +47,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="footer-bottom">
-          <p>&copy; 2024 Jory Charpente Couverture. Tous droits réservés.</p>
+          <p>&copy; 2024 JORY CHARPENTE COUVERTURE. Tous droits réservés.</p>
           <div className="footer-links">
             <a href="#">Mentions légales</a>
             <a href="#">Politique de confidentialité</a>

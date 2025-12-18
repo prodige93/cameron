@@ -226,7 +226,7 @@ const Contact = () => {
                   <div className="contact-icon">📍</div>
                   <div>
                     <h3>Adresse</h3>
-                    <p>123 Rue de la Toiture<br />75015 Paris</p>
+                    <p>LE TILLEUL<br />72560 Changé, Sarthe</p>
                   </div>
                 </div>
 
@@ -234,8 +234,8 @@ const Contact = () => {
                   <div className="contact-icon">📞</div>
                   <div>
                     <h3>Téléphone</h3>
-                    <p><a href="tel:+33123456789">01 23 45 67 89</a></p>
-                    <p className="contact-note">Urgences 24/7 : <a href="tel:+33123456789">01 23 45 67 89</a></p>
+                    <p><a href="tel:+33750398368">07 50 39 83 68</a></p>
+                    <p className="contact-note">Urgences 24/7 : <a href="tel:+33750398368">07 50 39 83 68</a></p>
                   </div>
                 </div>
 
@@ -243,7 +243,7 @@ const Contact = () => {
                   <div className="contact-icon">✉️</div>
                   <div>
                     <h3>Email</h3>
-                    <p><a href="mailto:contact@toiturepro.fr">contact@toiturepro.fr</a></p>
+                    <p><a href="mailto:JORY.BATIMENT@GMAIL.COM">JORY.BATIMENT@GMAIL.COM</a></p>
                   </div>
                 </div>
 
@@ -258,23 +258,22 @@ const Contact = () => {
 
               <div className="zone-intervention">
                 <h3>Zone d'intervention</h3>
-                <p>Nous intervenons dans toute l'Île-de-France :</p>
+                <p>Nous intervenons dans toute la Sarthe (72) :</p>
                 <ul className="zone-list">
-                  <li>Paris et tous ses arrondissements</li>
-                  <li>Hauts-de-Seine (92)</li>
-                  <li>Seine-Saint-Denis (93)</li>
-                  <li>Val-de-Marne (94)</li>
-                  <li>Val-d'Oise (95)</li>
-                  <li>Yvelines (78)</li>
-                  <li>Essonne (91)</li>
-                  <li>Seine-et-Marne (77)</li>
+                  <li>Le Mans et ses environs</li>
+                  <li>Changé</li>
+                  <li>Allonnes</li>
+                  <li>Sablé-sur-Sarthe</li>
+                  <li>La Flèche</li>
+                  <li>Mamers</li>
+                  <li>Et toute la Sarthe (72)</li>
                 </ul>
               </div>
 
               <div className="contact-cta">
                 <h3>Besoin d'une intervention urgente ?</h3>
                 <p>Appelez-nous directement pour une intervention rapide</p>
-                <a href="tel:+33123456789" className="btn btn-primary">📞 Appeler maintenant</a>
+                <a href="tel:+33750398368" className="btn btn-primary">📞 Appeler maintenant</a>
               </div>
             </div>
           </div>
@@ -285,7 +284,7 @@ const Contact = () => {
         <div className="container">
           <h2>Notre localisation</h2>
           <div className="map-placeholder">
-            <p>📍 123 Rue de la Toiture, 75015 Paris</p>
+            <p>📍 LE TILLEUL, 72560 Changé, Sarthe</p>
             <p className="map-note">Carte interactive (à intégrer avec Google Maps ou OpenStreetMap)</p>
           </div>
         </div>
