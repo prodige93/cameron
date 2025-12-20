@@ -168,6 +168,69 @@ const Reviews = () => {
     localStorage.setItem('reviews', JSON.stringify(testimonials))
   }, [testimonials])
 
+  // Calculer les statistiques à partir des avis réels
+  const calculateRatingStats = () => {
+    if (!testimonials || testimonials.length === 0) {
+      return {
+        averageRating: 0,
+        totalReviews: 0,
+        ratingDistribution: { 5: 0, 4: 0, 3: 0, 2: 0, 1: 0 },
+        percentages: { 5: 0, 4: 0, 3: 0, 2: 0, 1: 0 }
+      }
+    }
+
+    const ratingCounts = { 5: 0, 4: 0, 3: 0, 2: 0, 1: 0 }
+    let totalRating = 0
+
+    testimonials.forEach(testimonial => {
+      if (testimonial.stars) {
+        // Compter le nombre d'étoiles pleines (★)
+        const rating = (testimonial.stars.match(/★/g) || []).length
+        if (rating >= 1 && rating <= 5) {
+          ratingCounts[rating]++
+          totalRating += rating
+        }
+      }
+    })
+
+    const totalReviews = testimonials.length
+    const averageRating = totalReviews > 0 ? totalRating / totalReviews : 0
+    
+    // Calculer les pourcentages
+    const percentages = {
+      5: totalReviews > 0 ? Math.round((ratingCounts[5] / totalReviews) * 100 * 10) / 10 : 0,
+      4: totalReviews > 0 ? Math.round((ratingCounts[4] / totalReviews) * 100 * 10) / 10 : 0,
+      3: totalReviews > 0 ? Math.round((ratingCounts[3] / totalReviews) * 100 * 10) / 10 : 0,
+      2: totalReviews > 0 ? Math.round((ratingCounts[2] / totalReviews) * 100 * 10) / 10 : 0,
+      1: totalReviews > 0 ? Math.round((ratingCounts[1] / totalReviews) * 100 * 10) / 10 : 0
+    }
+
+    return {
+      averageRating: Math.round(averageRating * 10) / 10,
+      totalReviews,
+      ratingDistribution: ratingCounts,
+      percentages
+    }
+  }
+
+  // Générer les étoiles visuelles à partir de la note moyenne
+  const getStarsDisplay = (rating) => {
+    const roundedRating = Math.round(rating * 2) / 2 // Arrondir à 0.5 près
+    const fullStars = Math.floor(roundedRating)
+    const hasHalfStar = roundedRating % 1 === 0.5
+    
+    let stars = '★'.repeat(fullStars)
+    if (hasHalfStar && fullStars < 5) {
+      stars += '☆'
+    }
+    const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0)
+    stars += '☆'.repeat(Math.max(0, emptyStars))
+    
+    return stars
+  }
+
+  const ratingStats = calculateRatingStats()
+
   // État pour le formulaire d'ajout d'avis
   const [showForm, setShowForm] = useState(false)
   const [formData, setFormData] = useState({
@@ -281,45 +344,45 @@ const Reviews = () => {
         <div className="container">
           <div className="rating-overview">
             <div className="rating-main">
-              <div className="rating-score">4.9</div>
-              <div className="rating-stars-large">★★★★★</div>
-              <div className="rating-count">Basé sur 247 avis clients</div>
+              <div className="rating-score">{ratingStats.averageRating.toFixed(1)}</div>
+              <div className="rating-stars-large">{getStarsDisplay(ratingStats.averageRating)}</div>
+              <div className="rating-count">Basé sur {ratingStats.totalReviews} avis {ratingStats.totalReviews > 1 ? 'clients' : 'client'}</div>
             </div>
             <div className="rating-breakdown">
               <div className="rating-bar-item">
                 <span>5 étoiles</span>
                 <div className="rating-bar">
-                  <div className="rating-bar-fill" style={{ width: '94%' }}></div>
+                  <div className="rating-bar-fill" style={{ width: `${ratingStats.percentages[5]}%` }}></div>
                 </div>
-                <span>94%</span>
+                <span>{ratingStats.percentages[5]}%</span>
               </div>
               <div className="rating-bar-item">
                 <span>4 étoiles</span>
                 <div className="rating-bar">
-                  <div className="rating-bar-fill" style={{ width: '4%' }}></div>
+                  <div className="rating-bar-fill" style={{ width: `${ratingStats.percentages[4]}%` }}></div>
                 </div>
-                <span>4%</span>
+                <span>{ratingStats.percentages[4]}%</span>
               </div>
               <div className="rating-bar-item">
                 <span>3 étoiles</span>
                 <div className="rating-bar">
-                  <div className="rating-bar-fill" style={{ width: '1%' }}></div>
+                  <div className="rating-bar-fill" style={{ width: `${ratingStats.percentages[3]}%` }}></div>
                 </div>
-                <span>1%</span>
+                <span>{ratingStats.percentages[3]}%</span>
               </div>
               <div className="rating-bar-item">
                 <span>2 étoiles</span>
                 <div className="rating-bar">
-                  <div className="rating-bar-fill" style={{ width: '0.5%' }}></div>
+                  <div className="rating-bar-fill" style={{ width: `${ratingStats.percentages[2]}%` }}></div>
                 </div>
-                <span>0.5%</span>
+                <span>{ratingStats.percentages[2]}%</span>
               </div>
               <div className="rating-bar-item">
                 <span>1 étoile</span>
                 <div className="rating-bar">
-                  <div className="rating-bar-fill" style={{ width: '0.5%' }}></div>
+                  <div className="rating-bar-fill" style={{ width: `${ratingStats.percentages[1]}%` }}></div>
                 </div>
-                <span>0.5%</span>
+                <span>{ratingStats.percentages[1]}%</span>
               </div>
             </div>
           </div>

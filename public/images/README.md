@@ -21,3 +21,4 @@ Le chemin complet sera : `/images/bardage-cedral.jpg`
 Si l'image n'est pas trouvée, un gradient de couleur sera affiché automatiquement comme fallback.
 
 
+

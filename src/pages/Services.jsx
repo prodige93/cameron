@@ -95,7 +95,7 @@ const Services = () => {
         'Esthétique professionnelle',
         'Fabrication sur mesure adaptée'
       ],
-      gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+      image: '/images/WhatsApp Image 2025-12-20 at 17.54.42.jpeg',
       reverse: true
     },
     {
