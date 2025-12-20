@@ -33,6 +33,9 @@ const Footer = () => {
           </div>
           <div className="footer-column">
             <h4>Contact</h4>
+            <div className="footer-logo-wrapper">
+              <img src="/images/LOGO.png" alt="JORY CHARPENTE COUVERTURE" className="footer-logo" />
+            </div>
             <ul>
               <li>LE TILLEUL 72560 Changé, Sarthe</li>
               <li><a href="tel:+33750398368">07 50 39 83 68</a></li>

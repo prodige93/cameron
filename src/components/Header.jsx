@@ -47,6 +47,9 @@ const Header = () => {
       <header className={`header ${isScrolled || isRealizationsPage ? 'scrolled' : ''} ${isRealizationsPage ? 'realizations-page' : ''}`} id="header">
         <div className="container">
           <div className="header-content">
+            <Link to="/" className="header-logo">
+              <img src="/images/LOGO.png" alt="JORY CHARPENTE COUVERTURE" className="logo-image" />
+            </Link>
             <nav className={`nav ${isMenuOpen ? 'active' : ''}`} id="nav">
               <ul className="nav-list">
                 <li className="nav-more">
