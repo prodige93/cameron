@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { validateEmail, validatePhone, validateName, validateText, checkRateLimit, cleanFormData } from '../utils/security'
+import { sendContactEmail } from '../utils/emailService'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -110,23 +111,31 @@ const Contact = () => {
       return
     }
 
-    // Simulate API call (en production, envoyer les données nettoyées au serveur)
+    // Envoyer l'email avec toutes les informations via EmailJS/Maildrop
     try {
-      await new Promise(resolve => setTimeout(resolve, 1500))
-      // Ne jamais logger les données sensibles en production
-      console.log('Form submitted successfully')
-      setSubmitStatus({ type: 'success', message: 'Merci pour votre demande ! Nous vous recontacterons sous 24h.' })
-      setFormData({
-        name: '',
-        phone: '',
-        email: '',
-        address: '',
-        service: '',
-        urgency: 'normal',
-        message: '',
-        consent: false
-      })
+      const emailResult = await sendContactEmail(cleanedData)
+      
+      if (emailResult.success) {
+        setSubmitStatus({ type: 'success', message: 'Merci pour votre demande ! Nous vous recontacterons sous 24h.' })
+        // Réinitialiser le formulaire après succès
+        setFormData({
+          name: '',
+          phone: '',
+          email: '',
+          address: '',
+          service: '',
+          urgency: 'normal',
+          message: '',
+          consent: false
+        })
+      } else {
+        setSubmitStatus({ 
+          type: 'error', 
+          message: emailResult.message || 'Une erreur est survenue lors de l\'envoi. Veuillez réessayer.' 
+        })
+      }
     } catch (error) {
+      console.error('Erreur lors de l\'envoi:', error)
       setSubmitStatus({ type: 'error', message: 'Une erreur est survenue. Veuillez réessayer.' })
     } finally {
       setIsSubmitting(false)

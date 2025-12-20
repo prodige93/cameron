@@ -1,7 +1,57 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { validateEmail, checkRateLimit } from '../utils/security'
+import { sendNewsletterSubscription } from '../utils/emailService'
 
 const Footer = () => {
+  const [newsletterEmail, setNewsletterEmail] = useState('')
+  const [isSubscribing, setIsSubscribing] = useState(false)
+  const [subscriptionStatus, setSubscriptionStatus] = useState(null)
+
+  const handleNewsletterSubmit = async (e) => {
+    e.preventDefault()
+    setIsSubscribing(true)
+    setSubscriptionStatus(null)
+
+    // Rate limiting check
+    const rateLimit = checkRateLimit('newsletter', 3, 60000)
+    if (!rateLimit.allowed) {
+      const secondsLeft = Math.ceil((rateLimit.resetTime - Date.now()) / 1000)
+      setSubscriptionStatus({ 
+        type: 'error', 
+        message: `Trop de tentatives. Veuillez réessayer dans ${secondsLeft} seconde(s).` 
+      })
+      setIsSubscribing(false)
+      return
+    }
+
+    // Validation de l'email
+    if (!newsletterEmail || !validateEmail(newsletterEmail)) {
+      setSubscriptionStatus({ type: 'error', message: 'Veuillez entrer une adresse email valide.' })
+      setIsSubscribing(false)
+      return
+    }
+
+    try {
+      const result = await sendNewsletterSubscription(newsletterEmail.trim())
+      
+      if (result.success) {
+        setSubscriptionStatus({ type: 'success', message: 'Merci pour votre abonnement !' })
+        setNewsletterEmail('')
+      } else {
+        setSubscriptionStatus({ 
+          type: 'error', 
+          message: result.message || 'Une erreur est survenue. Veuillez réessayer.' 
+        })
+      }
+    } catch (error) {
+      console.error('Erreur lors de l\'abonnement:', error)
+      setSubscriptionStatus({ type: 'error', message: 'Une erreur est survenue. Veuillez réessayer.' })
+    } finally {
+      setIsSubscribing(false)
+    }
+  }
+
   return (
     <footer className="footer">
       <div className="container">
@@ -47,6 +97,34 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
+          </div>
+          <div className="footer-column">
+            <h4>Newsletter</h4>
+            <p>Restez informé de nos actualités et offres spéciales</p>
+            <form className="newsletter-form" onSubmit={handleNewsletterSubmit}>
+              <div className="newsletter-input-wrapper">
+                <input
+                  type="email"
+                  placeholder="Votre adresse email"
+                  value={newsletterEmail}
+                  onChange={(e) => setNewsletterEmail(e.target.value)}
+                  required
+                  disabled={isSubscribing}
+                />
+                <button 
+                  type="submit" 
+                  className="btn btn-primary"
+                  disabled={isSubscribing}
+                >
+                  {isSubscribing ? '...' : 'S\'abonner'}
+                </button>
+              </div>
+              {subscriptionStatus && (
+                <div className={`newsletter-message ${subscriptionStatus.type}`}>
+                  {subscriptionStatus.message}
+                </div>
+              )}
+            </form>
           </div>
         </div>
         <div className="footer-bottom">
