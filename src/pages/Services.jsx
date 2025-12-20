@@ -117,7 +117,7 @@ const Services = () => {
         'Valorisation de votre bien immobilier',
         'Éligible aux aides et subventions'
       ],
-      gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)'
+      image: '/images/WhatsApp Image 2025-12-17 at 19.06.41 (1).jpeg'
     },
     {
       id: 'gouttieres',
