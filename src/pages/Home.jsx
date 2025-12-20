@@ -249,10 +249,9 @@ const Home = () => {
           </div>
           <div className="realizations-grid">
             <RealizationImageCard
-              imageUrl={null}
+              imageUrl="/images/realisation-toiture-vegetale.jpeg"
               title=""
               subtitle=""
-              fallbackGradient="linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
             />
             <RealizationImageCard
               imageUrl="/images/realisation-toiture-bardage.jpg"
