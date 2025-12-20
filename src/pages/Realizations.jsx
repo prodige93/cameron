@@ -50,7 +50,6 @@ const RealizationCard = ({ realization }) => {
 }
 
 const Realizations = () => {
-  const [activeFilter, setActiveFilter] = useState('all')
   const [satisfactionRate, setSatisfactionRate] = useState(98)
 
   // Fonction pour calculer le pourcentage de satisfaction réel à partir des avis
@@ -216,17 +215,6 @@ const Realizations = () => {
     }
   ]
 
-  const filters = [
-    { id: 'all', label: 'Tous les projets' },
-    { id: 'renovation', label: 'Rénovation' },
-    { id: 'pose', label: 'Pose neuve' },
-    { id: 'reparation', label: 'Réparation' },
-    { id: 'isolation', label: 'Isolation' }
-  ]
-
-  const filteredRealizations = activeFilter === 'all'
-    ? realizations
-    : realizations.filter(r => r.category === activeFilter)
 
   return (
     <div style={{ background: 'white', minHeight: '100vh' }}>
@@ -237,26 +225,10 @@ const Realizations = () => {
         </div>
       </section>
 
-      <section className="filters-section section" style={{ background: 'white' }}>
-        <div className="container">
-          <div className="filters">
-            {filters.map(filter => (
-              <button
-                key={filter.id}
-                className={`filter-btn ${activeFilter === filter.id ? 'active' : ''}`}
-                onClick={() => setActiveFilter(filter.id)}
-              >
-                {filter.label}
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="realizations-gallery section" style={{ background: 'white' }}>
         <div className="container">
           <div className="realizations-grid">
-            {filteredRealizations.map((realization, index) => (
+            {realizations.map((realization, index) => (
               <RealizationCard 
                 key={realization.id || index} 
                 realization={realization}
