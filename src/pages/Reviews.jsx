@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import CTASection from '../components/CTASection'
+import { validateName, validateText, checkRateLimit, cleanFormData } from '../utils/security'
 
 const Reviews = () => {
   // Fonction pour générer les initiales
@@ -181,9 +182,21 @@ const Reviews = () => {
   // Gestion du changement dans le formulaire
   const handleChange = (e) => {
     const { name, value } = e.target
+    // Limiter la longueur des inputs
+    let sanitizedValue = value
+    const maxLengths = {
+      name: 50,
+      location: 50,
+      text: 2000,
+      service: 100
+    }
+    if (maxLengths[name]) {
+      sanitizedValue = value.slice(0, maxLengths[name])
+    }
+    
     setFormData(prev => ({
       ...prev,
-      [name]: value
+      [name]: sanitizedValue
     }))
   }
 
@@ -191,26 +204,47 @@ const Reviews = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     
+    // Rate limiting
+    const rateLimit = checkRateLimit('review_form', 3, 300000) // 3 avis max par 5 minutes
+    if (!rateLimit.allowed) {
+      const minutesLeft = Math.ceil((rateLimit.resetTime - Date.now()) / 60000)
+      setSubmitStatus({ 
+        type: 'error', 
+        message: `Trop d'avis soumis. Veuillez réessayer dans ${minutesLeft} minute(s).` 
+      })
+      return
+    }
+    
+    // Nettoyer les données
+    const cleanedData = cleanFormData(formData)
+    
     // Validation
-    if (!formData.name.trim() || !formData.text.trim() || !formData.service.trim()) {
+    if (!cleanedData.name || !cleanedData.text || !cleanedData.service) {
       setSubmitStatus({ type: 'error', message: 'Veuillez remplir tous les champs obligatoires.' })
       return
     }
 
-    if (formData.text.trim().length < 20) {
-      setSubmitStatus({ type: 'error', message: 'Votre avis doit contenir au moins 20 caractères.' })
+    // Validation sécurisée
+    if (!validateName(cleanedData.name)) {
+      setSubmitStatus({ type: 'error', message: 'Le nom doit contenir entre 2 et 50 caractères et ne peut contenir que des lettres, espaces, tirets et apostrophes.' })
       return
     }
 
-    // Créer le nouvel avis
+    const textValidation = validateText(cleanedData.text, 20, 2000)
+    if (!textValidation.valid) {
+      setSubmitStatus({ type: 'error', message: textValidation.error })
+      return
+    }
+
+    // Créer le nouvel avis avec données nettoyées
     const newReview = {
-      initials: getInitials(formData.name),
-      name: formData.name.trim(),
-      location: formData.location.trim() || 'Le Mans',
+      initials: getInitials(cleanedData.name),
+      name: cleanedData.name,
+      location: cleanedData.location || 'Le Mans',
       stars: '★'.repeat(formData.rating) + '☆'.repeat(5 - formData.rating),
-      text: formData.text.trim(),
+      text: cleanedData.text,
       date: getCurrentDate(),
-      service: formData.service.trim()
+      service: cleanedData.service
     }
 
     // Ajouter l'avis à la liste (au début)

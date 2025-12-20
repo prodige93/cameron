@@ -47,7 +47,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="footer-bottom">
-          <p>&copy; 2024 JORY CHARPENTE COUVERTURE. Tous droits réservés.</p>
+          <p>&copy; {new Date().getFullYear()} JORY CHARPENTE COUVERTURE. Tous droits réservés.</p>
           <div className="footer-links">
             <a href="#">Mentions légales</a>
             <a href="#">Politique de confidentialité</a>

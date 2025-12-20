@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { validateEmail, validatePhone, validateName, validateText, checkRateLimit, cleanFormData } from '../utils/security'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -15,11 +16,38 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState(null)
 
+  // Rate limiting
+  useEffect(() => {
+    const rateLimit = checkRateLimit('contact_form', 5, 60000)
+    if (!rateLimit.allowed) {
+      const minutesLeft = Math.ceil((rateLimit.resetTime - Date.now()) / 60000)
+      setSubmitStatus({ 
+        type: 'error', 
+        message: `Trop de tentatives. Veuillez réessayer dans ${minutesLeft} minute(s).` 
+      })
+    }
+  }, [])
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target
+    // Limiter la longueur des inputs pour éviter les attaques
+    let sanitizedValue = value
+    if (type === 'text' || type === 'email' || type === 'tel') {
+      const maxLengths = {
+        name: 50,
+        phone: 20,
+        email: 254,
+        address: 200,
+        message: 5000
+      }
+      if (maxLengths[name]) {
+        sanitizedValue = value.slice(0, maxLengths[name])
+      }
+    }
+    
     setFormData(prev => ({
       ...prev,
-      [name]: type === 'checkbox' ? checked : value
+      [name]: type === 'checkbox' ? checked : sanitizedValue
     }))
   }
 
@@ -28,31 +56,65 @@ const Contact = () => {
     setIsSubmitting(true)
     setSubmitStatus(null)
 
-    // Validation
-    if (!formData.name || !formData.phone || !formData.email || !formData.service || !formData.message) {
+    // Rate limiting check
+    const rateLimit = checkRateLimit('contact_form', 5, 60000)
+    if (!rateLimit.allowed) {
+      const minutesLeft = Math.ceil((rateLimit.resetTime - Date.now()) / 60000)
+      setSubmitStatus({ 
+        type: 'error', 
+        message: `Trop de tentatives. Veuillez réessayer dans ${minutesLeft} minute(s).` 
+      })
+      setIsSubmitting(false)
+      return
+    }
+
+    // Nettoyer les données
+    const cleanedData = cleanFormData(formData)
+
+    // Validation des champs obligatoires
+    if (!cleanedData.name || !cleanedData.phone || !cleanedData.email || !cleanedData.service || !cleanedData.message) {
       setSubmitStatus({ type: 'error', message: 'Veuillez remplir tous les champs obligatoires.' })
       setIsSubmitting(false)
       return
     }
 
-    if (!formData.consent) {
+    if (!cleanedData.consent) {
       setSubmitStatus({ type: 'error', message: 'Veuillez accepter l\'utilisation de vos données.' })
       setIsSubmitting(false)
       return
     }
 
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    if (!emailRegex.test(formData.email)) {
+    // Validation sécurisée
+    if (!validateName(cleanedData.name)) {
+      setSubmitStatus({ type: 'error', message: 'Le nom doit contenir entre 2 et 50 caractères et ne peut contenir que des lettres, espaces, tirets et apostrophes.' })
+      setIsSubmitting(false)
+      return
+    }
+
+    if (!validateEmail(cleanedData.email)) {
       setSubmitStatus({ type: 'error', message: 'Veuillez entrer une adresse email valide.' })
       setIsSubmitting(false)
       return
     }
 
-    // Simulate API call
+    if (!validatePhone(cleanedData.phone)) {
+      setSubmitStatus({ type: 'error', message: 'Veuillez entrer un numéro de téléphone français valide (10 chiffres).' })
+      setIsSubmitting(false)
+      return
+    }
+
+    const textValidation = validateText(cleanedData.message, 20, 5000)
+    if (!textValidation.valid) {
+      setSubmitStatus({ type: 'error', message: textValidation.error })
+      setIsSubmitting(false)
+      return
+    }
+
+    // Simulate API call (en production, envoyer les données nettoyées au serveur)
     try {
       await new Promise(resolve => setTimeout(resolve, 1500))
-      console.log('Form data:', formData)
+      // Ne jamais logger les données sensibles en production
+      console.log('Form submitted successfully')
       setSubmitStatus({ type: 'success', message: 'Merci pour votre demande ! Nous vous recontacterons sous 24h.' })
       setFormData({
         name: '',
@@ -276,16 +338,6 @@ const Contact = () => {
                 <a href="tel:+33750398368" className="btn btn-primary">📞 Appeler maintenant</a>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="map-section">
-        <div className="container">
-          <h2>Notre localisation</h2>
-          <div className="map-placeholder">
-            <p>📍 LE TILLEUL, 72560 Changé, Sarthe</p>
-            <p className="map-note">Carte interactive (à intégrer avec Google Maps ou OpenStreetMap)</p>
           </div>
         </div>
       </section>
