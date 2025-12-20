@@ -295,7 +295,7 @@ const Contact = () => {
                   <div>
                     <h3>Téléphone</h3>
                     <p><a href="tel:+33750398368">07 50 39 83 68</a></p>
-                    <p className="contact-note">Urgences 24/7 : <a href="tel:+33750398368">07 50 39 83 68</a></p>
+                    <p className="contact-note">Urgences 24h/24 7j/7 : <a href="tel:+33750398368">07 50 39 83 68</a></p>
                   </div>
                 </div>
 

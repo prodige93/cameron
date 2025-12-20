@@ -106,25 +106,6 @@ const Home = () => {
     }
   ]
 
-  const [callbackForm, setCallbackForm] = useState({
-    name: '',
-    email: '',
-    message: ''
-  })
-
-  const handleCallbackSubmit = (e) => {
-    e.preventDefault()
-    console.log('Callback form:', callbackForm)
-    alert('Merci pour votre demande de devis ! Nous vous contacterons bientôt.')
-    setCallbackForm({ name: '', email: '', message: '' })
-  }
-
-  const handleCallbackChange = (e) => {
-    setCallbackForm({
-      ...callbackForm,
-      [e.target.name]: e.target.value
-    })
-  }
 
   return (
     <>
@@ -162,41 +143,20 @@ const Home = () => {
               </p>
             </div>
             
-            <div className="hero-callback-form">
-              <h2>Demande de devis</h2>
-              <form onSubmit={handleCallbackSubmit} className="callback-form">
-                <div className="form-group">
-                  <input
-                    type="text"
-                    name="name"
-                    value={callbackForm.name}
-                    onChange={handleCallbackChange}
-                    placeholder="Votre nom et prénom"
-                    required
-                  />
-                </div>
-                <div className="form-group">
-                  <input
-                    type="email"
-                    name="email"
-                    value={callbackForm.email}
-                    onChange={handleCallbackChange}
-                    placeholder="Adresse e-mail"
-                    required
-                  />
-                </div>
-                <div className="form-group">
-                  <textarea
-                    name="message"
-                    value={callbackForm.message}
-                    onChange={handleCallbackChange}
-                    rows="4"
-                    placeholder="Message"
-                    required
-                  ></textarea>
-                </div>
-                <button type="submit" className="btn-callback-submit">SOUMETTRE</button>
-              </form>
+            <div className="hero-callback-wrapper">
+              <div className="hero-callback-form">
+                <p className="service-24-7-text">Tous services 24h/24 7j/7</p>
+              </div>
+              
+              <div className="hero-callback-form">
+                <h2>Demande de devis</h2>
+                <p className="hero-callback-text">
+                  Besoin d'un devis gratuit ? Contactez-nous dès maintenant !
+                </p>
+                <Link to="/contact" className="btn btn-primary btn-large">
+                  Demander un devis
+                </Link>
+              </div>
             </div>
           </div>
         </div>

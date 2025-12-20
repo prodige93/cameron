@@ -618,20 +618,63 @@ ul {
     line-height: 1.6;
 }
 
+.hero-callback-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
 .hero-callback-form {
-    background-color: white;
+    background-color: rgba(255, 111, 0, 0.25); /* Orange transparent */
+    border: 2px solid rgba(255, 111, 0, 0.5);
     padding: var(--spacing-xl);
     border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 20px rgba(255, 111, 0, 0.2);
     max-width: 100%;
+    backdrop-filter: blur(5px);
+}
+
+.hero-callback-form .service-24-7-text {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ff6f00;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .hero-callback-form h2 {
     font-size: 1.5rem;
-    margin-bottom: var(--spacing-lg);
-    color: var(--text-dark);
+    margin-bottom: var(--spacing-md);
+    color: #ff6f00;
     text-align: center;
-    font-weight: 600;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hero-callback-text {
+    text-align: center;
+    color: #ff6f00;
+    margin-bottom: var(--spacing-lg);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+.hero-callback-form .btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    background-color: #ff6f00;
+    border-color: #ff6f00;
+}
+
+.hero-callback-form .btn:hover {
+    background-color: #e65a00;
+    border-color: #e65a00;
 }
 
 .callback-form {
@@ -751,8 +794,16 @@ ul {
         font-size: 1rem;
     }
     
+    .hero-callback-wrapper {
+        gap: var(--spacing-sm);
+    }
+    
     .hero-callback-form {
         padding: var(--spacing-lg);
+    }
+    
+    .hero-callback-form .service-24-7-text {
+        font-size: 1.1rem;
     }
 }
 
@@ -2027,6 +2078,45 @@ ul {
 
 .services-list li {
     font-size: 1.1rem;
+}
+
+/* Service 24/7 Box */
+.service-24-7-box {
+    padding: var(--spacing-lg) 0;
+    background-color: transparent;
+}
+
+.service-24-7-content {
+    background-color: rgba(255, 111, 0, 0.3); /* Orange transparent plus visible */
+    border: 3px solid rgba(255, 111, 0, 0.6);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg) var(--spacing-xl);
+    text-align: center;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 12px rgba(255, 111, 0, 0.2);
+    max-width: 600px;
+    margin: 0 auto;
+    display: block; /* S'assurer que c'est visible */
+}
+
+.service-24-7-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ff6f00;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 1px 2px rgba(255, 111, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .service-24-7-text {
+        font-size: 1.1rem;
+    }
+    
+    .service-24-7-content {
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
 }
 
 .cta-devis {

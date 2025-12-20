@@ -158,7 +158,7 @@ const Services = () => {
     },
     {
       id: 'urgence',
-      badge: 'Urgence 24/7',
+      badge: 'Urgence 24h/24 7j/7',
       title: 'Travaux d\'urgence',
       intro: 'Intervention rapide 24h/24 et 7j/7 pour tous vos problèmes de toiture urgents. Fuites, dégâts de tempête, toitures endommagées : nous intervenons rapidement.',
       features: [
