@@ -249,15 +249,21 @@ const Home = () => {
           </div>
           <div className="realizations-grid">
             <RealizationImageCard
-              imageUrl="/images/realisation-toiture-construction.jpeg"
+              imageUrl={null}
               title=""
               subtitle=""
+              fallbackGradient="linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
             />
             <RealizationImageCard
               imageUrl="/images/realisation-toiture-bardage.jpg"
               title="Rénovation complète - Maison individuelle"
               subtitle="Tuiles terre cuite, isolation renforcée"
               fallbackGradient="linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+            />
+            <RealizationImageCard
+              imageUrl="/images/realisation-toiture-construction.jpeg"
+              title=""
+              subtitle=""
             />
             <RealizationImageCard
               imageUrl="/images/bardage-cedral.jpg"
