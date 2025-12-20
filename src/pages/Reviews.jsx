@@ -268,12 +268,6 @@ const Reviews = () => {
     }, 5000)
   }
 
-  const externalReviews = [
-    { logo: '⭐', name: 'Google', rating: '4.9/5', stars: '★★★★★', count: '247 avis clients' },
-    { logo: '📞', name: 'Pages Jaunes', rating: '4.8/5', stars: '★★★★★', count: '189 avis clients' },
-    { logo: '💼', name: 'Qualitravaux', rating: '4.9/5', stars: '★★★★★', count: '156 avis clients' }
-  ]
-
   return (
     <>
       <section className="page-header">
@@ -519,27 +513,6 @@ const Reviews = () => {
                   <span className="testimonial-date">{testimonial.date}</span>
                   <span className="testimonial-service">{testimonial.service}</span>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="external-reviews section">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="section-title">Nos avis sur les plateformes</h2>
-            <p className="section-subtitle">Consultez également nos avis sur Google et Pages Jaunes</p>
-          </div>
-          <div className="external-reviews-grid">
-            {externalReviews.map((review, index) => (
-              <div key={index} className="external-review-card">
-                <div className="external-review-logo">{review.logo}</div>
-                <h3>{review.name}</h3>
-                <div className="external-review-rating">{review.rating}</div>
-                <div className="external-review-stars">{review.stars}</div>
-                <p>{review.count}</p>
-                <a href="#" className="btn btn-outline">Voir sur {review.name}</a>
               </div>
             ))}
           </div>
