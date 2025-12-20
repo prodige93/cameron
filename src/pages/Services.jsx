@@ -66,7 +66,7 @@ const Services = () => {
         'Ventilation optimale',
         'Étanchéité garantie'
       ],
-      gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      image: '/images/WhatsApp Image 2025-12-17 at 19.07.20.jpeg',
       reverse: true
     },
     {
