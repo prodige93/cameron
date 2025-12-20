@@ -619,11 +619,12 @@ ul {
 }
 
 .hero-callback-form {
-    background-color: white;
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(255, 107, 53, 0.15) 100%);
     padding: var(--spacing-xl);
     border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 20px rgba(255, 107, 53, 0.2);
     max-width: 100%;
+    border: 1px solid rgba(255, 107, 53, 0.3);
 }
 
 .hero-callback-form h2 {
