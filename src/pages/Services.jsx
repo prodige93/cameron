@@ -70,23 +70,30 @@ const Services = () => {
       reverse: true
     },
     {
-      id: 'reparation',
-      badge: 'Intervention rapide',
-      title: 'Réparation de toiture',
-      intro: 'Intervention rapide et efficace pour réparer tous types de dégâts sur votre toiture. Nous identifions précisément les problèmes et proposons des solutions durables.',
+      id: 'zinguerie',
+      badge: 'Zinguerie',
+      title: 'Zinguerie',
+      intro: 'Fabrication et pose de tous éléments de zinguerie sur mesure. Finitions parfaites pour une toiture complète et esthétique.',
       features: [
-        'Réparation de fuites et infiltrations',
-        'Remplacement de tuiles ou ardoises cassées',
-        'Réparation de zinguerie endommagée',
-        'Colmatage de fissures et joints',
-        'Réparation de faîtages et noues',
-        'Consolidation de charpente'
+        'Faîtages et arêtiers',
+        'Noues et solins',
+        'Chatières et sorties de toit',
+        'Bandes de rive et égouts',
+        'Évacuations et descentes',
+        'Fabrication sur mesure en atelier'
+      ],
+      process: [
+        { step: 'Diagnostic et relevé', desc: 'Analyse de votre toiture et mesure précise des éléments à fabriquer' },
+        { step: 'Fabrication sur mesure', desc: 'Réalisation des pièces en atelier selon vos spécifications' },
+        { step: 'Choix du matériau', desc: 'Conseil en matériau : zinc, aluminium, cuivre ou acier' },
+        { step: 'Pose professionnelle', desc: 'Installation par nos artisans qualifiés avec garantie d\'étanchéité' },
+        { step: 'Finitions et protection', desc: 'Traitement anti-corrosion et finitions esthétiques parfaites' }
       ],
       benefits: [
-        'Diagnostic précis avec caméra thermique',
-        'Intervention sous 48h pour les urgences',
-        'Garantie sur toutes nos réparations',
-        'Devis gratuit et transparent'
+        'Étanchéité parfaite garantie',
+        'Durabilité et longévité',
+        'Esthétique professionnelle',
+        'Fabrication sur mesure adaptée'
       ],
       gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
       reverse: true
@@ -191,22 +198,6 @@ const Services = () => {
         'Garantie décennale étanchéité'
       ],
       gradient: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)'
-    },
-    {
-      id: 'zinguerie',
-      badge: 'Zinguerie',
-      title: 'Zinguerie',
-      intro: 'Fabrication et pose de tous éléments de zinguerie sur mesure. Finitions parfaites pour une toiture complète et esthétique.',
-      features: [
-        'Faîtages et arêtiers',
-        'Noues et solins',
-        'Chatières et sorties de toit',
-        'Bandes de rive et égouts',
-        'Évacuations et descentes',
-        'Fabrication sur mesure en atelier'
-      ],
-      gradient: 'linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)',
-      reverse: true
     },
     {
       id: 'urgence',
