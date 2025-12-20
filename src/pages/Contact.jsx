@@ -334,7 +334,7 @@ const Contact = () => {
 
               <div className="contact-cta">
                 <h3>Besoin d'une intervention urgente ?</h3>
-                <p>Appelez-nous directement pour une intervention rapide</p>
+                <p style={{ color: 'white' }}>Appelez-nous directement pour une intervention rapide</p>
                 <a href="tel:+33750398368" className="btn btn-primary">📞 Appeler maintenant</a>
               </div>
             </div>
