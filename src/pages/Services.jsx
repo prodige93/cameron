@@ -153,7 +153,7 @@ const Services = () => {
         'Esthétique : toiture comme neuve',
         'Augmentation de la durée de vie'
       ],
-      gradient: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)'
+      image: '/images/WhatsApp Image 2025-12-17 at 19.07.40.jpeg'
     },
     {
       id: 'isolation',
@@ -309,7 +309,7 @@ const Services = () => {
                     <div
                       className="service-image-placeholder"
                       style={{
-                        backgroundImage: `url(${service.image})`,
+                        backgroundImage: `url("${encodeURI(service.image)}")`,
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
                         backgroundRepeat: 'no-repeat'
