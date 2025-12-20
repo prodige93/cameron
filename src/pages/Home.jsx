@@ -105,7 +105,7 @@ const Home = () => {
   const handleCallbackSubmit = (e) => {
     e.preventDefault()
     console.log('Callback form:', callbackForm)
-    alert('Merci pour votre demande de rappel ! Nous vous contacterons bientôt.')
+    alert('Merci pour votre demande de devis ! Nous vous contacterons bientôt.')
     setCallbackForm({ name: '', email: '', message: '' })
   }
 
@@ -153,7 +153,7 @@ const Home = () => {
             </div>
             
             <div className="hero-callback-form">
-              <h2>Demande de rappel</h2>
+              <h2>Demande de devis</h2>
               <form onSubmit={handleCallbackSubmit} className="callback-form">
                 <div className="form-group">
                   <input
