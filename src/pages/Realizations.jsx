@@ -29,10 +29,6 @@ const RealizationImage = ({ image, gradient, title, location }) => {
       className={`realization-image ${image && !imageError ? 'realization-image-with-bg' : ''}`}
       style={backgroundStyle}
     >
-      <div className="realization-overlay">
-        <h3>{title}</h3>
-        {location && <p>{location}</p>}
-      </div>
     </div>
   )
 }
@@ -49,24 +45,6 @@ const RealizationCard = ({ realization }) => {
         title={realization.title}
         location={realization.location}
       />
-      <div className="realization-info">
-        <h3>{realization.title}</h3>
-        <p className="realization-location">📍 {realization.location}</p>
-        {realization.hasFullDescription ? (
-          <div className="realization-desc-full">
-            {realization.description.split('\n\n').filter(p => p.trim()).map((paragraph, idx) => (
-              <p key={idx} className="realization-paragraph">{paragraph.trim()}</p>
-            ))}
-          </div>
-        ) : (
-          <p className="realization-desc">{realization.description}</p>
-        )}
-        <div className="realization-tags">
-          {realization.tags.map((tag, idx) => (
-            <span key={idx} className="tag">{tag}</span>
-          ))}
-        </div>
-      </div>
     </div>
   )
 }
