@@ -187,7 +187,7 @@ const Reviews = () => {
     const maxLengths = {
       name: 50,
       location: 50,
-      text: 2000,
+      text: 10000,
       service: 100
     }
     if (maxLengths[name]) {
@@ -230,7 +230,7 @@ const Reviews = () => {
       return
     }
 
-    const textValidation = validateText(cleanedData.text, 20, 2000)
+    const textValidation = validateText(cleanedData.text, 20, 10000)
     if (!textValidation.valid) {
       setSubmitStatus({ type: 'error', message: textValidation.error })
       return
@@ -333,7 +333,12 @@ const Reviews = () => {
             <button 
               onClick={() => setShowForm(!showForm)} 
               className="btn btn-primary"
-              style={{ marginTop: '1rem' }}
+              style={{ 
+                marginTop: '1rem',
+                backgroundColor: 'transparent',
+                border: '2px solid var(--primary-color)',
+                color: 'var(--primary-color)'
+              }}
             >
               {showForm ? 'Annuler' : '➕ Ajouter un avis'}
             </button>
@@ -480,14 +485,19 @@ const Reviews = () => {
                     placeholder="Partagez votre expérience (minimum 20 caractères)..."
                   />
                   <small style={{ color: '#757575', marginTop: '0.25rem', display: 'block' }}>
-                    {formData.text.length}/20 caractères minimum
+                    {formData.text.length}/10000 caractères (minimum 20)
                   </small>
                 </div>
 
                 <button 
                   type="submit" 
                   className="btn btn-primary"
-                  style={{ width: '100%' }}
+                  style={{ 
+                    width: '100%',
+                    backgroundColor: 'transparent',
+                    border: '2px solid var(--primary-color)',
+                    color: 'var(--primary-color)'
+                  }}
                 >
                   Publier mon avis
                 </button>
