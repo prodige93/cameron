@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import CTASection from '../components/CTASection'
 
@@ -49,178 +49,7 @@ const RealizationCard = ({ realization }) => {
   )
 }
 
-const AnimatedNumber = ({ value, suffix = '', duration = 2000 }) => {
-  const numericValue = typeof value === 'string' ? parseFloat(value.replace(/[^0-9.]/g, '')) : value
-  const finalValue = isNaN(numericValue) ? value : numericValue
-  
-  // Vérifier si l'animation a déjà été vue dans cette session
-  const sessionKey = `animated_${value}_${suffix}`
-  const hasAnimatedInSession = sessionStorage.getItem(sessionKey) === 'true'
-  
-  const [count, setCount] = useState(hasAnimatedInSession ? finalValue : 0)
-  const ref = useRef(null)
-  const animationFrameRef = useRef(null)
-
-  useEffect(() => {
-    // Si déjà animé dans cette session, ne rien faire
-    if (hasAnimatedInSession) {
-      return
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          // Marquer comme animé dans cette session
-          sessionStorage.setItem(sessionKey, 'true')
-
-          if (isNaN(numericValue)) {
-            setCount(value)
-            return
-          }
-
-          // Réinitialiser le compteur
-          setCount(0)
-
-          const startTime = Date.now()
-          const startValue = 0
-          const endValue = numericValue
-
-          const animate = () => {
-            const now = Date.now()
-            const elapsed = now - startTime
-            const progress = Math.min(elapsed / duration, 1)
-            
-            // Easing function (ease-out)
-            const easeOut = 1 - Math.pow(1 - progress, 3)
-            const currentValue = Math.floor(startValue + (endValue - startValue) * easeOut)
-            
-            setCount(currentValue)
-
-            if (progress < 1) {
-              animationFrameRef.current = requestAnimationFrame(animate)
-            } else {
-              setCount(endValue)
-              animationFrameRef.current = null
-            }
-          }
-
-          animationFrameRef.current = requestAnimationFrame(animate)
-          
-          // Ne plus observer après la première animation
-          if (ref.current) {
-            observer.unobserve(ref.current)
-          }
-        }
-      },
-      { threshold: 0.5 }
-    )
-
-    if (ref.current) {
-      observer.observe(ref.current)
-    }
-
-    return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current)
-      }
-      if (animationFrameRef.current) {
-        cancelAnimationFrame(animationFrameRef.current)
-      }
-    }
-  }, [value, duration, suffix, sessionKey, numericValue, hasAnimatedInSession])
-
-  const displayValue = typeof value === 'string' && value.includes('+') 
-    ? `${count}+` 
-    : typeof value === 'string' && value.includes('%')
-    ? `${count}%`
-    : typeof value === 'string' && value.includes('h')
-    ? `${count}h`
-    : count
-
-  return <div ref={ref}>{displayValue}{suffix}</div>
-}
-
 const Realizations = () => {
-  const [satisfactionRate, setSatisfactionRate] = useState(98)
-
-  // Fonction pour calculer le pourcentage de satisfaction réel à partir des avis
-  useEffect(() => {
-    const calculateSatisfactionRate = () => {
-      try {
-        const savedReviews = localStorage.getItem('reviews')
-        if (!savedReviews) {
-          // Si pas d'avis sauvegardés, utiliser les avis initiaux
-          const initialReviews = [
-            { stars: '★★★★★' },
-            { stars: '★★★★★' },
-            { stars: '★★★★★' },
-            { stars: '★★★★★' },
-            { stars: '★★★★★' },
-            { stars: '★★★★★' },
-            { stars: '★★★★★' },
-            { stars: '★★★★★' },
-            { stars: '★★★★★' },
-            { stars: '★★★★★' },
-            { stars: '★★★★★' },
-            { stars: '★★★★★' },
-            { stars: '★★★★★' },
-            { stars: '★★★★★' },
-            { stars: '★★★★★' }
-          ]
-          const reviews = initialReviews
-          const totalReviews = reviews.length
-          const satisfiedReviews = reviews.filter(review => {
-            const rating = (review.stars.match(/★/g) || []).length
-            return rating >= 4 // 4 ou 5 étoiles = satisfait
-          }).length
-          return Math.round((satisfiedReviews / totalReviews) * 100)
-        }
-
-        const reviews = JSON.parse(savedReviews)
-        if (!Array.isArray(reviews) || reviews.length === 0) {
-          return 98 // Valeur par défaut
-        }
-
-        const totalReviews = reviews.length
-        const satisfiedReviews = reviews.filter(review => {
-          if (!review.stars) return false
-          const rating = (review.stars.match(/★/g) || []).length
-          return rating >= 4 // 4 ou 5 étoiles = satisfait
-        }).length
-
-        const rate = totalReviews > 0 ? Math.round((satisfiedReviews / totalReviews) * 100) : 98
-        return rate
-      } catch (error) {
-        console.error('Erreur lors du calcul du taux de satisfaction:', error)
-        return 98 // Valeur par défaut en cas d'erreur
-      }
-    }
-
-    const rate = calculateSatisfactionRate()
-    setSatisfactionRate(rate)
-
-    // Écouter les changements dans le localStorage pour mettre à jour en temps réel
-    const handleStorageChange = (e) => {
-      if (e.key === 'reviews') {
-        const rate = calculateSatisfactionRate()
-        setSatisfactionRate(rate)
-      }
-    }
-
-    // Écouter les événements de stockage (pour les changements depuis d'autres onglets)
-    window.addEventListener('storage', handleStorageChange)
-
-    // Vérifier périodiquement les changements (pour les changements dans le même onglet)
-    const interval = setInterval(() => {
-      const rate = calculateSatisfactionRate()
-      setSatisfactionRate(rate)
-    }, 2000) // Vérifier toutes les 2 secondes
-
-    return () => {
-      window.removeEventListener('storage', handleStorageChange)
-      clearInterval(interval)
-    }
-  }, [])
 
   const realizations = [
     {
@@ -333,27 +162,19 @@ const Realizations = () => {
         <div className="container">
           <div className="stats-grid">
             <div className="stat-item">
-              <div className="stat-number">
-                <AnimatedNumber value={2000} suffix="+" />
-              </div>
+              <div className="stat-number">2000</div>
               <div className="stat-label">Chantiers réalisés</div>
             </div>
             <div className="stat-item">
-              <div className="stat-number">
-                <AnimatedNumber value={25} />
-              </div>
+              <div className="stat-number">25</div>
               <div className="stat-label">Années d'expérience</div>
             </div>
             <div className="stat-item">
-              <div className="stat-number">
-                <AnimatedNumber value={satisfactionRate} suffix="%" />
-              </div>
+              <div className="stat-number">98%</div>
               <div className="stat-label">Clients satisfaits</div>
             </div>
             <div className="stat-item">
-              <div className="stat-number">
-                <AnimatedNumber value={24} suffix="h" />
-              </div>
+              <div className="stat-number">24h</div>
               <div className="stat-label">Délai moyen intervention</div>
             </div>
           </div>

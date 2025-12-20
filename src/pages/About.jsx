@@ -27,7 +27,7 @@ const About = () => {
 
   const numbers = [
     { value: '25', label: 'Années d\'expérience' },
-    { value: '2000+', label: 'Chantiers réalisés' },
+    { value: '2000', label: 'Chantiers réalisés' },
     { value: '98%', label: 'Clients satisfaits' },
     { value: '12', label: 'Artisans qualifiés' },
     { value: '24h', label: 'Délai moyen intervention' },
