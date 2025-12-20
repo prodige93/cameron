@@ -285,7 +285,7 @@ const Home = () => {
       <section className="testimonials section bg-light">
         <div className="container">
           <div className="section-header">
-            <h2 className="section-title">Avis Google</h2>
+            <h2 className="section-title">Avis clients</h2>
           </div>
           <div className="testimonials-grid">
             {testimonials.map((testimonial, index) => (
