@@ -161,68 +161,58 @@ const Realizations = () => {
       image: '/images/realisation-toiture-construction.jpeg'
     },
     {
-      id: 'remplacement-couverture-bardage',
+      id: 'realisation-toiture-4',
       category: 'renovation',
-      title: 'Remplacement couverture et pose bardage Cedral',
+      title: 'Réalisation toiture',
       location: 'Sarthe',
-      description: 'Voici une réalisation de notre équipe\n\nNous vous présentons l\'une des réalisations de JORY CHARPENTE COUVERTURE : remplacement complet de la couverture en tuiles plates, accompagné de la pose d\'un bardage Cedral.\n\nCe chantier a permis de redonner à l\'habitation une toiture saine, durable et esthétique, tout en améliorant la protection et l\'aspect extérieur du bâtiment. La pose du bardage Cedral apporte une finition moderne, résistante aux intempéries et nécessitant peu d\'entretien.\n\nNotre équipe a assuré l\'ensemble des travaux avec rigueur et savoir-faire, dans le respect des normes et des délais, en utilisant des matériaux de qualité.\n\nJORY CHARPENTE COUVERTURE, votre spécialiste en charpente, couverture et bardage au Mans et dans toute la Sarthe.',
-      tags: ['Tuiles plates', 'Bardage Cedral', 'Rénovation complète'],
-      gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-      hasFullDescription: true
+      description: 'Travaux de couverture et de toiture réalisés avec soin et professionnalisme.',
+      tags: ['Couverture', 'Toiture'],
+      image: '/images/realisation-toiture-4.jpeg'
     },
     {
-      id: 'pose-toiture-residence',
-      category: 'pose',
-      title: 'Pose toiture neuve - Résidence',
-      location: 'Boulogne-Billancourt',
-      description: 'Installation complète d\'une toiture en ardoises naturelles sur une résidence neuve. Pose de 250m² d\'ardoises avec zinguerie en cuivre. Chantier de 4 semaines.',
-      tags: ['Ardoises naturelles', 'Zinguerie cuivre', 'Pose neuve'],
-      gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'
-    },
-    {
-      id: 'reparation-post-tempete',
-      category: 'reparation',
-      title: 'Réparation post-tempête',
-      location: 'Nanterre',
-      description: 'Intervention d\'urgence après une tempête ayant endommagé une partie de la toiture. Remplacement de 80 tuiles, réparation de la zinguerie et sécurisation complète. Intervention sous 24h.',
-      tags: ['Urgence', 'Réparation', 'Tuiles'],
-      gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)'
-    },
-    {
-      id: 'isolation-sous-toiture',
-      category: 'isolation',
-      title: 'Isolation sous toiture',
-      location: 'Issy-les-Moulineaux',
-      description: 'Amélioration de l\'isolation thermique d\'une maison individuelle. Installation de laine de roche sous rampants (200m²), pose de pare-vapeur et optimisation de la ventilation. Conformité RE 2020.',
-      tags: ['Isolation', 'Performance énergétique', 'RE 2020'],
-      gradient: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)'
-    },
-    {
-      id: 'renovation-toiture-zinc',
+      id: 'realisation-toiture-5',
       category: 'renovation',
-      title: 'Rénovation toiture zinc',
-      location: 'Paris 16ème',
-      description: 'Rénovation complète d\'une toiture en zinc de 150m² sur un immeuble haussmannien. Remplacement du zinc, réfection des faîtages et noues. Travaux réalisés avec soin pour préserver le caractère architectural.',
-      tags: ['Zinc', 'Rénovation', 'Patrimoine'],
-      gradient: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)'
+      title: 'Réalisation toiture',
+      location: 'Sarthe',
+      description: 'Travaux de couverture et de toiture réalisés avec soin et professionnalisme.',
+      tags: ['Couverture', 'Toiture'],
+      image: '/images/realisation-toiture-5.jpeg'
     },
     {
-      id: 'pose-toiture-shingle',
-      category: 'pose',
-      title: 'Pose toiture shingle',
-      location: 'Clichy',
-      description: 'Installation d\'une toiture en bardeaux bitumineux (shingle) sur une maison individuelle. Pose de 120m² de shingle avec isolation intégrée. Solution économique et performante.',
-      tags: ['Shingle', 'Pose neuve', 'Économique'],
-      gradient: 'linear-gradient(135deg, #30cfd0 0%, #330867 100%)'
+      id: 'realisation-toiture-6',
+      category: 'renovation',
+      title: 'Réalisation toiture',
+      location: 'Sarthe',
+      description: 'Travaux de couverture et de toiture réalisés avec soin et professionnalisme.',
+      tags: ['Couverture', 'Toiture'],
+      image: '/images/realisation-toiture-6.jpeg'
     },
     {
-      id: 'reparation-fuite-etancheite',
-      category: 'reparation',
-      title: 'Réparation fuite et étanchéité',
-      location: 'Levallois-Perret',
-      description: 'Diagnostic et réparation d\'une fuite importante sur une toiture terrasse. Remplacement de l\'étanchéité EPDM sur 80m², réparation des joints et mise en conformité. Intervention rapide.',
-      tags: ['Étanchéité', 'Réparation', 'EPDM'],
-      gradient: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)'
+      id: 'realisation-toiture-7',
+      category: 'renovation',
+      title: 'Réalisation toiture',
+      location: 'Sarthe',
+      description: 'Travaux de couverture et de toiture réalisés avec soin et professionnalisme.',
+      tags: ['Couverture', 'Toiture'],
+      image: '/images/realisation-toiture-7.jpeg'
+    },
+    {
+      id: 'realisation-toiture-8',
+      category: 'renovation',
+      title: 'Réalisation toiture',
+      location: 'Sarthe',
+      description: 'Travaux de couverture et de toiture réalisés avec soin et professionnalisme.',
+      tags: ['Couverture', 'Toiture'],
+      image: '/images/realisation-toiture-8.jpeg'
+    },
+    {
+      id: 'realisation-toiture-9',
+      category: 'renovation',
+      title: 'Réalisation toiture',
+      location: 'Sarthe',
+      description: 'Travaux de couverture et de toiture réalisés avec soin et professionnalisme.',
+      tags: ['Couverture', 'Toiture'],
+      image: '/images/realisation-toiture-9.jpeg'
     },
     {
       id: 'renovation-complete-isolation',
