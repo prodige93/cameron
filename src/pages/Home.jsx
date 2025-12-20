@@ -80,19 +80,19 @@ const Home = () => {
       stars: '★★★★★',
       text: 'Intervention rapide et professionnelle après une fuite. L\'équipe a été très réactive et le travail est impeccable. Je recommande sans hésitation !',
       author: 'Marie D.',
-      location: 'Paris 15ème'
+      location: 'Le Mans'
     },
     {
       stars: '★★★★★',
       text: 'Rénovation complète de notre toiture. Devis détaillé, respect des délais et résultat magnifique. Une équipe sérieuse et compétente.',
       author: 'Pierre L.',
-      location: 'Boulogne-Billancourt'
+      location: 'Allonnes'
     },
     {
       stars: '★★★★★',
       text: 'Excellent rapport qualité-prix. Les artisans sont soigneux, propres et respectueux. Notre toiture est comme neuve !',
       author: 'Sophie M.',
-      location: 'Nanterre'
+      location: 'Coulaines'
     }
   ]
 
@@ -298,13 +298,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="contact-cta section">
-        <div className="container">
-          <h2 className="section-title">Besoin de nous contacter ?</h2>
-          <p>contactez nous sur whatsapp en cliquant ici</p>
-        </div>
-      </section>
     </>
   )
 }

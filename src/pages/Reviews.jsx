@@ -6,7 +6,7 @@ const Reviews = () => {
     {
       initials: 'MD',
       name: 'Marie D.',
-      location: 'Paris 15ème',
+      location: 'Le Mans',
       stars: '★★★★★',
       text: 'Intervention rapide et professionnelle après une fuite importante. L\'équipe a été très réactive, est venue sous 24h et a résolu le problème efficacement. Le travail est impeccable, propre et soigné. Je recommande sans hésitation !',
       date: '15 mars 2024',
@@ -15,7 +15,7 @@ const Reviews = () => {
     {
       initials: 'PL',
       name: 'Pierre L.',
-      location: 'Boulogne-Billancourt',
+      location: 'Allonnes',
       stars: '★★★★★',
       text: 'Rénovation complète de notre toiture de 180m². Devis détaillé et transparent, respect des délais annoncés, et résultat magnifique. L\'équipe est sérieuse, compétente et très professionnelle. La toiture est comme neuve et l\'isolation fonctionne parfaitement. Merci !',
       date: '8 février 2024',
@@ -24,7 +24,7 @@ const Reviews = () => {
     {
       initials: 'SM',
       name: 'Sophie M.',
-      location: 'Nanterre',
+      location: 'Coulaines',
       stars: '★★★★★',
       text: 'Excellent rapport qualité-prix. Les artisans sont soigneux, propres et respectueux. Notre toiture est comme neuve ! Le démoussage et le traitement ont redonné un aspect neuf à notre maison. Service client au top.',
       date: '22 janvier 2024',
@@ -33,7 +33,7 @@ const Reviews = () => {
     {
       initials: 'JL',
       name: 'Jean L.',
-      location: 'Issy-les-Moulineaux',
+      location: 'La Chapelle-Saint-Aubin',
       stars: '★★★★★',
       text: 'Pose d\'une toiture neuve en ardoises. Travail d\'exception, finitions parfaites. L\'équipe a su nous conseiller sur le choix des matériaux et le résultat dépasse nos attentes. Professionnalisme et savoir-faire remarquables.',
       date: '10 décembre 2023',
@@ -42,7 +42,7 @@ const Reviews = () => {
     {
       initials: 'CM',
       name: 'Catherine M.',
-      location: 'Levallois-Perret',
+      location: 'Arnage',
       stars: '★★★★★',
       text: 'Intervention d\'urgence après une tempête. Réponse immédiate, intervention sous 24h et sécurisation rapide. L\'équipe a su gérer la situation avec professionnalisme. Très satisfaite de la réactivité et de la qualité du travail.',
       date: '5 novembre 2023',
@@ -51,7 +51,7 @@ const Reviews = () => {
     {
       initials: 'FD',
       name: 'François D.',
-      location: 'Montrouge',
+      location: 'Mulsanne',
       stars: '★★★★★',
       text: 'Isolation sous toiture réalisée avec brio. L\'équipe a su nous conseiller sur les meilleures solutions énergétiques. Résultat : facture de chauffage réduite de 30% ! Travail soigné, respect des normes, équipe à l\'écoute.',
       date: '18 octobre 2023',
@@ -60,7 +60,7 @@ const Reviews = () => {
     {
       initials: 'AB',
       name: 'Anne B.',
-      location: 'Clichy',
+      location: 'Yvré-l\'Évêque',
       stars: '★★★★★',
       text: 'Pose de gouttières en zinc sur mesure. Fabrication en atelier, pose parfaite. L\'esthéique est au rendez-vous et l\'évacuation des eaux fonctionne parfaitement. Artisans compétents et attentionnés.',
       date: '2 septembre 2023',
@@ -69,7 +69,7 @@ const Reviews = () => {
     {
       initials: 'PB',
       name: 'Paul B.',
-      location: 'Paris 16ème',
+      location: 'Sargé-lès-Le-Mans',
       stars: '★★★★★',
       text: 'Rénovation d\'une toiture en zinc sur immeuble haussmannien. Travail de qualité, respect du patrimoine architectural. L\'équipe a su préserver le caractère historique tout en modernisant l\'étanchéité. Excellent travail !',
       date: '25 août 2023',
@@ -78,7 +78,7 @@ const Reviews = () => {
     {
       initials: 'LC',
       name: 'Laure C.',
-      location: 'Paris 14ème',
+      location: 'Ruaudin',
       stars: '★★★★★',
       text: 'Service client exceptionnel, de la prise de contact à la fin des travaux. Devis clair, suivi régulier, équipe ponctuelle et propre. La toiture est parfaite et nous sommes ravis du résultat. À recommander sans hésitation !',
       date: '12 juillet 2023',
