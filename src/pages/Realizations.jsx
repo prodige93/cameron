@@ -134,24 +134,41 @@ const Realizations = () => {
 
   const realizations = [
     {
+      id: 'realisation-toiture-2',
+      category: 'renovation',
+      title: 'Réalisation toiture',
+      location: 'Sarthe',
+      description: 'Travaux de couverture et de toiture réalisés avec soin et professionnalisme.',
+      tags: ['Couverture', 'Toiture'],
+      image: '/images/realisation-toiture-2.jpeg'
+    },
+    {
+      id: 'renovation-complete-maison',
+      category: 'renovation',
+      title: 'Rénovation complète - Maison individuelle',
+      location: 'Sarthe',
+      description: 'Rénovation complète d\'une toiture avec remplacement des tuiles terre cuite, isolation renforcée sous toiture et remplacement de toute la zinguerie. Travaux réalisés en 3 semaines.',
+      tags: ['Tuiles terre cuite', 'Isolation', 'Zinguerie'],
+      image: '/images/realisation-toiture-bardage.jpg'
+    },
+    {
+      id: 'toiture-construction',
+      category: 'renovation',
+      title: 'Travaux de toiture en cours',
+      location: 'Sarthe',
+      description: 'Réalisation de travaux de toiture avec pose de charpente et couverture.',
+      tags: ['Charpente', 'Couverture', 'Rénovation'],
+      image: '/images/realisation-toiture-construction.jpeg'
+    },
+    {
       id: 'remplacement-couverture-bardage',
       category: 'renovation',
       title: 'Remplacement couverture et pose bardage Cedral',
       location: 'Sarthe',
       description: 'Voici une réalisation de notre équipe\n\nNous vous présentons l\'une des réalisations de JORY CHARPENTE COUVERTURE : remplacement complet de la couverture en tuiles plates, accompagné de la pose d\'un bardage Cedral.\n\nCe chantier a permis de redonner à l\'habitation une toiture saine, durable et esthétique, tout en améliorant la protection et l\'aspect extérieur du bâtiment. La pose du bardage Cedral apporte une finition moderne, résistante aux intempéries et nécessitant peu d\'entretien.\n\nNotre équipe a assuré l\'ensemble des travaux avec rigueur et savoir-faire, dans le respect des normes et des délais, en utilisant des matériaux de qualité.\n\nJORY CHARPENTE COUVERTURE, votre spécialiste en charpente, couverture et bardage au Mans et dans toute la Sarthe.',
       tags: ['Tuiles plates', 'Bardage Cedral', 'Rénovation complète'],
-      image: '/images/bardage-cedral.jpg',
+      gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
       hasFullDescription: true
-    },
-    {
-      id: 'renovation-complete-maison',
-      category: 'renovation',
-      title: 'Rénovation complète - Maison individuelle',
-      location: 'Paris 15ème',
-      description: 'Rénovation complète d\'une toiture de 180m² avec remplacement des tuiles terre cuite, isolation renforcée sous toiture et remplacement de toute la zinguerie. Travaux réalisés en 3 semaines.',
-      tags: ['Tuiles terre cuite', 'Isolation', 'Zinguerie'],
-      image: '/images/realisation-toiture-bardage.jpg',
-      gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
     },
     {
       id: 'pose-toiture-residence',

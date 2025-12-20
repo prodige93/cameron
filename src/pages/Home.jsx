@@ -12,15 +12,29 @@ const RealizationImageCard = ({ imageUrl, title, subtitle, fallbackGradient }) =
     if (imageUrl) {
       const img = new Image()
       img.onload = () => setImageLoaded(true)
-      img.onerror = () => setImageError(true)
-      img.src = imageUrl
+      img.onerror = () => {
+        setImageError(true)
+        console.error('Erreur de chargement de l\'image:', imageUrl)
+      }
+      // Encoder l'URL correctement pour les espaces et caractères spéciaux
+      const encodedUrl = imageUrl.includes(' ') ? encodeURI(imageUrl) : imageUrl
+      img.src = encodedUrl
     }
   }, [imageUrl])
 
+  // Encoder l'URL pour l'utiliser dans le CSS
+  const getEncodedUrl = (url) => {
+    if (!url) return null
+    // Encoder chaque partie du chemin séparément
+    const parts = url.split('/')
+    return parts.map(part => part.includes(' ') ? encodeURIComponent(part) : part).join('/')
+  }
+
+  const encodedImageUrl = getEncodedUrl(imageUrl)
   const backgroundStyle = imageError || !imageUrl
     ? { background: fallbackGradient || 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }
     : {
-        backgroundImage: `url(${imageUrl})`,
+        backgroundImage: `url("${encodedImageUrl}")`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundColor: '#e5e7eb'
@@ -235,15 +249,20 @@ const Home = () => {
           </div>
           <div className="realizations-grid">
             <RealizationImageCard
-              imageUrl="/images/bardage-cedral.jpg"
-              title="Remplacement couverture et pose bardage Cedral"
-              subtitle="Tuiles plates, bardage Cedral"
+              imageUrl="/images/realisation-toiture-construction.jpeg"
+              title=""
+              subtitle=""
             />
             <RealizationImageCard
               imageUrl="/images/realisation-toiture-bardage.jpg"
               title="Rénovation complète - Maison individuelle"
               subtitle="Tuiles terre cuite, isolation renforcée"
               fallbackGradient="linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+            />
+            <RealizationImageCard
+              imageUrl="/images/bardage-cedral.jpg"
+              title="Remplacement couverture et pose bardage Cedral"
+              subtitle="Tuiles plates, bardage Cedral"
             />
             <RealizationImageCard
               imageUrl={null}
