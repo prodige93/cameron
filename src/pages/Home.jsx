@@ -257,32 +257,14 @@ const Home = () => {
               imageUrl="/images/realisation-toiture-bardage.jpg"
               title="Rénovation complète - Maison individuelle"
               subtitle="Tuiles terre cuite, isolation renforcée"
-              fallbackGradient="linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
             />
             <RealizationImageCard
               imageUrl="/images/realisation-toiture-construction.jpeg"
               title=""
               subtitle=""
             />
-            <RealizationImageCard
-              imageUrl="/images/bardage-cedral.jpg"
-              title="Remplacement couverture et pose bardage Cedral"
-              subtitle="Tuiles plates, bardage Cedral"
-            />
-            <RealizationImageCard
-              imageUrl={null}
-              title="Pose toiture neuve - Résidence"
-              subtitle="Ardoises naturelles, zinguerie cuivre"
-              fallbackGradient="linear-gradient(135deg, #f093fb 0%, #f5576c 100%)"
-            />
-            <RealizationImageCard
-              imageUrl={null}
-              title="Réparation post-tempête"
-              subtitle="Intervention d'urgence, remplacement complet"
-              fallbackGradient="linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)"
-            />
           </div>
-          <div className="text-center">
+          <div className="text-center" style={{ marginTop: '3rem' }}>
             <Link to="/realisations" className="btn btn-primary">
               Voir toutes nos réalisations
             </Link>

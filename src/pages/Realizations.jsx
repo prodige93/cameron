@@ -213,15 +213,6 @@ const Realizations = () => {
       description: 'Travaux de couverture et de toiture réalisés avec soin et professionnalisme.',
       tags: ['Couverture', 'Toiture'],
       image: '/images/realisation-toiture-9.jpeg'
-    },
-    {
-      id: 'renovation-complete-isolation',
-      category: 'renovation',
-      title: 'Rénovation complète avec isolation',
-      location: 'Montrouge',
-      description: 'Rénovation totale d\'une toiture de 200m² avec remplacement des tuiles, isolation renforcée par l\'extérieur (sarking) et installation d\'une ventilation optimisée. Projet éligible MaPrimeRénov\'.',
-      tags: ['Rénovation', 'Isolation', 'MaPrimeRénov\''],
-      gradient: 'linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)'
     }
   ]
 
