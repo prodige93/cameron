@@ -235,7 +235,7 @@ const Home = () => {
             </div>
             <div className="feature-simple">
               <h3>Service personnalisé</h3>
-              <p>"Notre entreprise s'engage à offrir un service personnalisé pour répondre aux besoins uniques de chaque client."</p>
+              <p>Notre entreprise s'engage à offrir un service personnalisé pour répondre aux besoins uniques de chaque client.</p>
             </div>
           </div>
         </div>
