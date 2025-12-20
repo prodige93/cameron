@@ -140,7 +140,7 @@ const Realizations = () => {
       location: 'Sarthe',
       description: 'Travaux de couverture et de toiture réalisés avec soin et professionnalisme.',
       tags: ['Couverture', 'Toiture'],
-      image: '/images/realisation-toiture-2.jpeg'
+      gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
     },
     {
       id: 'renovation-complete-maison',
