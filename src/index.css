@@ -868,6 +868,10 @@ ul {
     direction: ltr;
 }
 
+.service-detail-content.no-image {
+    grid-template-columns: 1fr;
+}
+
 .service-badge {
     display: inline-block;
     background-color: var(--primary-color);
@@ -915,6 +919,19 @@ ul {
     padding: var(--spacing-xs) 0;
     color: var(--text-light);
     line-height: 1.8;
+}
+
+.service-features-benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-2xl);
+    margin-bottom: var(--spacing-lg);
+}
+
+@media (max-width: 768px) {
+    .service-features-benefits-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .service-process ol {

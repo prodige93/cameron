@@ -220,9 +220,7 @@ const Contact = () => {
                     <option value="pose">Pose de toiture</option>
                     <option value="reparation">Réparation de toiture</option>
                     <option value="renovation">Rénovation complète</option>
-                    <option value="gouttieres">Pose/réparation de gouttières</option>
                     <option value="demoussage">Démoussage et traitement</option>
-                    <option value="isolation">Isolation sous toiture</option>
                     <option value="etancheite">Étanchéité</option>
                     <option value="zinguerie">Zinguerie</option>
                     <option value="urgence">Travaux d'urgence</option>

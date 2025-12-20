@@ -120,28 +120,6 @@ const Services = () => {
       image: '/images/WhatsApp Image 2025-12-17 at 19.06.41 (1).jpeg'
     },
     {
-      id: 'gouttieres',
-      badge: 'Évacuation des eaux',
-      title: 'Pose et réparation de gouttières',
-      intro: 'Installation et réparation de systèmes d\'évacuation des eaux pluviales sur mesure. Protection optimale de votre façade et de vos fondations.',
-      features: [
-        'Pose de gouttières PVC, zinc, aluminium',
-        'Installation de descentes et raccordements',
-        'Réparation et remplacement de gouttières',
-        'Nettoyage et débouchage',
-        'Installation de récupérateurs d\'eau',
-        'Protection contre les feuilles (grilles, crapaudines)'
-      ],
-      benefits: [
-        'PVC : Économique et résistant',
-        'Aluminium : Léger et durable',
-        'Zinc : Esthétique et longévité',
-        'Cuivre : Premium et intemporel'
-      ],
-      gradient: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)',
-      reverse: true
-    },
-    {
       id: 'demoussage',
       badge: 'Entretien',
       title: 'Entretien & Démoussage',
@@ -160,28 +138,7 @@ const Services = () => {
         'Esthétique : toiture comme neuve',
         'Augmentation de la durée de vie'
       ],
-      image: '/images/WhatsApp Image 2025-12-17 at 19.07.40.jpeg'
-    },
-    {
-      id: 'isolation',
-      badge: 'Performance énergétique',
-      title: 'Isolation sous toiture',
-      intro: 'Amélioration de l\'isolation thermique et phonique de votre habitation. Confort optimal et économies d\'énergie garanties.',
-      features: [
-        'Isolation par l\'intérieur (sous rampants)',
-        'Isolation par l\'extérieur (sarking)',
-        'Isolation avec laine de verre, laine de roche',
-        'Isolation écologique (ouate de cellulose, chanvre)',
-        'Pare-vapeur et ventilation optimisée',
-        'Conformité RT 2012 / RE 2020'
-      ],
-      benefits: [
-        'Réduction facture énergétique jusqu\'à 30%',
-        'Confort été comme hiver',
-        'Éligible MaPrimeRénov\' et aides',
-        'Diagnostic énergétique inclus'
-      ],
-      gradient: 'linear-gradient(135deg, #30cfd0 0%, #330867 100%)',
+      image: '/images/WhatsApp Image 2025-12-17 at 19.07.40.jpeg',
       reverse: true
     },
     {
@@ -218,8 +175,8 @@ const Services = () => {
         'Sécurisation immédiate',
         'Devis rapide et transparent'
       ],
-      gradient: 'linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%)',
-      urgent: true
+      urgent: true,
+      noImage: true
     }
   ]
 
@@ -240,7 +197,7 @@ const Services = () => {
               id={service.id}
               className={`service-detail ${index % 2 === 1 ? 'bg-light' : ''}`}
             >
-              <div className={`service-detail-content ${service.reverse ? 'reverse' : ''}`}>
+              <div className={`service-detail-content ${service.reverse ? 'reverse' : ''} ${service.noImage ? 'no-image' : ''}`}>
                 <div className="service-detail-text">
                   <span className={`service-badge ${service.urgent ? 'urgent' : ''}`}>
                     {service.badge}
@@ -248,39 +205,62 @@ const Services = () => {
                   <h2>{service.title}</h2>
                   <p className="service-intro">{service.intro}</p>
                   
-                  {service.features && (
-                    <div className="service-features">
-                      <h3>Ce que nous proposons :</h3>
-                      <ul>
-                        {service.features.map((feature, idx) => (
-                          <li key={idx}>✓ {feature}</li>
-                        ))}
-                      </ul>
+                  {service.id === 'urgence' && service.features && service.benefits ? (
+                    <div className="service-features-benefits-grid">
+                      <div className="service-features">
+                        <h3>Ce que nous proposons :</h3>
+                        <ul>
+                          {service.features.map((feature, idx) => (
+                            <li key={idx}>✓ {feature}</li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div className="service-benefits">
+                        <h3>Notre engagement urgence :</h3>
+                        <ul>
+                          {service.benefits.map((benefit, idx) => (
+                            <li key={idx}>{benefit}</li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
-                  )}
+                  ) : (
+                    <>
+                      {service.features && (
+                        <div className="service-features">
+                          <h3>Ce que nous proposons :</h3>
+                          <ul>
+                            {service.features.map((feature, idx) => (
+                              <li key={idx}>✓ {feature}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
 
-                  {service.process && (
-                    <div className="service-process">
-                      <h3>Notre processus :</h3>
-                      <ol>
-                        {service.process.map((item, idx) => (
-                          <li key={idx}>
-                            <strong>{item.step}</strong> : {item.desc}
-                          </li>
-                        ))}
-                      </ol>
-                    </div>
-                  )}
+                      {service.process && (
+                        <div className="service-process">
+                          <h3>Notre processus :</h3>
+                          <ol>
+                            {service.process.map((item, idx) => (
+                              <li key={idx}>
+                                <strong>{item.step}</strong> : {item.desc}
+                              </li>
+                            ))}
+                          </ol>
+                        </div>
+                      )}
 
-                  {service.benefits && (
-                    <div className="service-benefits">
-                      <h3>{service.id === 'reparation' ? 'Pourquoi nous choisir :' : service.id === 'gouttieres' ? 'Matériaux disponibles :' : service.id === 'demoussage' ? 'Pourquoi démousser ?' : service.id === 'urgence' ? 'Notre engagement urgence :' : 'Bénéfices :'}</h3>
-                      <ul>
-                        {service.benefits.map((benefit, idx) => (
-                          <li key={idx}>{benefit}</li>
-                        ))}
-                      </ul>
-                    </div>
+                      {service.benefits && (
+                        <div className="service-benefits">
+                          <h3>{service.id === 'reparation' ? 'Pourquoi nous choisir :' : service.id === 'demoussage' ? 'Pourquoi démousser ?' : 'Bénéfices :'}</h3>
+                          <ul>
+                            {service.benefits.map((benefit, idx) => (
+                              <li key={idx}>{benefit}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                    </>
                   )}
 
                   <div className="service-cta">
@@ -295,27 +275,29 @@ const Services = () => {
                     )}
                   </div>
                 </div>
-                <div className="service-detail-image">
-                  {service.image ? (
-                    <div
-                      className="service-image-placeholder"
-                      style={{
-                        backgroundImage: `url("${encodeURI(service.image)}")`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                        backgroundRepeat: 'no-repeat'
-                      }}
-                    >
-                    </div>
-                  ) : (
-                    <div
-                      className={`service-image-placeholder ${service.urgent ? 'urgent' : ''}`}
-                      style={{ background: service.gradient }}
-                    >
-                      <span>{service.title}</span>
-                    </div>
-                  )}
-                </div>
+                {!service.noImage && (
+                  <div className="service-detail-image">
+                    {service.image ? (
+                      <div
+                        className="service-image-placeholder"
+                        style={{
+                          backgroundImage: `url("${encodeURI(service.image)}")`,
+                          backgroundSize: 'cover',
+                          backgroundPosition: 'center',
+                          backgroundRepeat: 'no-repeat'
+                        }}
+                      >
+                      </div>
+                    ) : service.gradient ? (
+                      <div
+                        className={`service-image-placeholder ${service.urgent ? 'urgent' : ''}`}
+                        style={{ background: service.gradient }}
+                      >
+                        <span>{service.title}</span>
+                      </div>
+                    ) : null}
+                  </div>
+                )}
               </div>
             </div>
           ))}
