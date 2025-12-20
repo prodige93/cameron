@@ -45,7 +45,7 @@ const Services = () => {
         { step: 'Pose professionnelle', desc: 'Installation par nos artisans qualifiés' },
         { step: 'Garantie décennale', desc: 'Protection complète de votre investissement' }
       ],
-      gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+      image: '/images/realisation-charpente-construction.jpeg'
     },
     {
       id: 'fenetres',
@@ -305,12 +305,25 @@ const Services = () => {
                   </div>
                 </div>
                 <div className="service-detail-image">
-                  <div
-                    className={`service-image-placeholder ${service.urgent ? 'urgent' : ''}`}
-                    style={{ background: service.gradient }}
-                  >
-                    <span>{service.title}</span>
-                  </div>
+                  {service.image ? (
+                    <div
+                      className="service-image-placeholder"
+                      style={{
+                        backgroundImage: `url(${service.image})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        backgroundRepeat: 'no-repeat'
+                      }}
+                    >
+                    </div>
+                  ) : (
+                    <div
+                      className={`service-image-placeholder ${service.urgent ? 'urgent' : ''}`}
+                      style={{ background: service.gradient }}
+                    >
+                      <span>{service.title}</span>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
