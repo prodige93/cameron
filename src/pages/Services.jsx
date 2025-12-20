@@ -28,7 +28,7 @@ const Services = () => {
     {
       id: 'pose',
       badge: 'Service principal',
-      title: 'Pose de toiture',
+      title: 'Charpente',
       intro: 'Installation complète de toitures neuves avec expertise et savoir-faire artisanal. Nous maîtrisons tous les matériaux de couverture pour répondre à vos besoins esthétiques et budgétaires.',
       features: [
         'Pose de tuiles (terre cuite, béton, ardoise)',
@@ -46,6 +46,28 @@ const Services = () => {
         { step: 'Garantie décennale', desc: 'Protection complète de votre investissement' }
       ],
       gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+    },
+    {
+      id: 'fenetres',
+      badge: 'Fenêtres de toit',
+      title: 'Fenêtres de toit',
+      intro: 'Pose, remplacement et création de fenêtres de toit (Velux). Apport de lumière naturelle et amélioration du confort de votre habitation.',
+      features: [
+        'Pose de fenêtres de toit Velux',
+        'Remplacement de fenêtres existantes',
+        'Création d\'ouvertures sur mesure',
+        'Installation de stores et volets',
+        'Étanchéité parfaite garantie',
+        'Ventilation optimisée'
+      ],
+      benefits: [
+        'Apport de lumière naturelle',
+        'Amélioration du confort',
+        'Ventilation optimale',
+        'Étanchéité garantie'
+      ],
+      gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      reverse: true
     },
     {
       id: 'reparation',
@@ -72,7 +94,7 @@ const Services = () => {
     {
       id: 'renovation',
       badge: 'Rénovation complète',
-      title: 'Rénovation complète de toiture',
+      title: 'Couverture',
       intro: 'Rénovation totale de votre toiture avec amélioration de l\'isolation et des performances énergétiques. Un investissement durable pour votre confort et vos économies.',
       features: [
         'Démolition et remplacement complet de la couverture',
@@ -115,7 +137,7 @@ const Services = () => {
     {
       id: 'demoussage',
       badge: 'Entretien',
-      title: 'Démoussage et traitement de toiture',
+      title: 'Entretien & Démoussage',
       intro: 'Nettoyage professionnel de votre toiture avec traitement anti-mousse et anti-lichen. Protégez et prolongez la durée de vie de votre couverture.',
       features: [
         'Nettoyage haute pression douce (sans abîmer)',
@@ -158,7 +180,7 @@ const Services = () => {
     {
       id: 'etancheite',
       badge: 'Étanchéité',
-      title: 'Étanchéité de toiture',
+      title: 'Étanchéité & Isolation',
       intro: 'Mise en conformité et amélioration de l\'étanchéité de votre toiture. Protection totale contre les infiltrations d\'eau.',
       features: [
         'Étanchéité toiture terrasse (EPDM, bitume)',
@@ -173,7 +195,7 @@ const Services = () => {
     {
       id: 'zinguerie',
       badge: 'Zinguerie',
-      title: 'Zinguerie et finitions',
+      title: 'Zinguerie',
       intro: 'Fabrication et pose de tous éléments de zinguerie sur mesure. Finitions parfaites pour une toiture complète et esthétique.',
       features: [
         'Faîtages et arêtiers',

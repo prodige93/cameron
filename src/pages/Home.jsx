@@ -66,7 +66,7 @@ const Home = () => {
     {
       title: 'Fenêtres de toit',
       description: 'Pose, remplacement et création de fenêtres de toit (Velux). Apport de lumière naturelle et amélioration du confort.',
-      link: '/services#pose'
+      link: '/services#fenetres'
     },
     {
       title: 'Zinguerie',
