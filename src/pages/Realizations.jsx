@@ -73,6 +73,86 @@ const RealizationCard = ({ realization }) => {
 
 const Realizations = () => {
   const [activeFilter, setActiveFilter] = useState('all')
+  const [satisfactionRate, setSatisfactionRate] = useState(98)
+
+  // Fonction pour calculer le pourcentage de satisfaction réel à partir des avis
+  useEffect(() => {
+    const calculateSatisfactionRate = () => {
+      try {
+        const savedReviews = localStorage.getItem('reviews')
+        if (!savedReviews) {
+          // Si pas d'avis sauvegardés, utiliser les avis initiaux
+          const initialReviews = [
+            { stars: '★★★★★' },
+            { stars: '★★★★★' },
+            { stars: '★★★★★' },
+            { stars: '★★★★★' },
+            { stars: '★★★★★' },
+            { stars: '★★★★★' },
+            { stars: '★★★★★' },
+            { stars: '★★★★★' },
+            { stars: '★★★★★' },
+            { stars: '★★★★★' },
+            { stars: '★★★★★' },
+            { stars: '★★★★★' },
+            { stars: '★★★★★' },
+            { stars: '★★★★★' },
+            { stars: '★★★★★' }
+          ]
+          const reviews = initialReviews
+          const totalReviews = reviews.length
+          const satisfiedReviews = reviews.filter(review => {
+            const rating = (review.stars.match(/★/g) || []).length
+            return rating >= 4 // 4 ou 5 étoiles = satisfait
+          }).length
+          return Math.round((satisfiedReviews / totalReviews) * 100)
+        }
+
+        const reviews = JSON.parse(savedReviews)
+        if (!Array.isArray(reviews) || reviews.length === 0) {
+          return 98 // Valeur par défaut
+        }
+
+        const totalReviews = reviews.length
+        const satisfiedReviews = reviews.filter(review => {
+          if (!review.stars) return false
+          const rating = (review.stars.match(/★/g) || []).length
+          return rating >= 4 // 4 ou 5 étoiles = satisfait
+        }).length
+
+        const rate = totalReviews > 0 ? Math.round((satisfiedReviews / totalReviews) * 100) : 98
+        return rate
+      } catch (error) {
+        console.error('Erreur lors du calcul du taux de satisfaction:', error)
+        return 98 // Valeur par défaut en cas d'erreur
+      }
+    }
+
+    const rate = calculateSatisfactionRate()
+    setSatisfactionRate(rate)
+
+    // Écouter les changements dans le localStorage pour mettre à jour en temps réel
+    const handleStorageChange = (e) => {
+      if (e.key === 'reviews') {
+        const rate = calculateSatisfactionRate()
+        setSatisfactionRate(rate)
+      }
+    }
+
+    // Écouter les événements de stockage (pour les changements depuis d'autres onglets)
+    window.addEventListener('storage', handleStorageChange)
+
+    // Vérifier périodiquement les changements (pour les changements dans le même onglet)
+    const interval = setInterval(() => {
+      const rate = calculateSatisfactionRate()
+      setSatisfactionRate(rate)
+    }, 2000) // Vérifier toutes les 2 secondes
+
+    return () => {
+      window.removeEventListener('storage', handleStorageChange)
+      clearInterval(interval)
+    }
+  }, [])
 
   const realizations = [
     {
@@ -222,7 +302,7 @@ const Realizations = () => {
               <div className="stat-label">Années d'expérience</div>
             </div>
             <div className="stat-item">
-              <div className="stat-number">98%</div>
+              <div className="stat-number">{satisfactionRate}%</div>
               <div className="stat-label">Clients satisfaits</div>
             </div>
             <div className="stat-item">
