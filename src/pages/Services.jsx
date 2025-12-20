@@ -1,8 +1,29 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import CTASection from '../components/CTASection'
 
 const Services = () => {
+  const location = useLocation()
+
+  useEffect(() => {
+    // Scroller vers l'ancre si présente dans l'URL
+    if (location.hash) {
+      const hash = location.hash.substring(1) // Enlever le #
+      setTimeout(() => {
+        const element = document.getElementById(hash)
+        if (element) {
+          const headerOffset = 80 // Hauteur du header
+          const elementPosition = element.getBoundingClientRect().top
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          })
+        }
+      }, 100)
+    }
+  }, [location])
   const services = [
     {
       id: 'pose',

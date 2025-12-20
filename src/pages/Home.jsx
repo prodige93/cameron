@@ -56,17 +56,17 @@ const Home = () => {
     {
       title: 'Charpente',
       description: 'Charpente traditionnelle et industrielle. Réalisation sur mesure pour projets neufs et rénovation, avec respect des normes en vigueur.',
-      link: '/services#charpente'
+      link: '/services#pose'
     },
     {
       title: 'Couverture',
       description: 'Pose et rénovation de toitures en tuiles, ardoises, zinc et autres matériaux. Expertise pour tous types de projets.',
-      link: '/services#couverture'
+      link: '/services#renovation'
     },
     {
       title: 'Fenêtres de toit',
       description: 'Pose, remplacement et création de fenêtres de toit (Velux). Apport de lumière naturelle et amélioration du confort.',
-      link: '/services#fenetres'
+      link: '/services#pose'
     },
     {
       title: 'Zinguerie',
@@ -81,7 +81,7 @@ const Home = () => {
     {
       title: 'Entretien & Démoussage',
       description: 'Entretien régulier et démoussage de toiture. Nettoyage professionnel avec traitement anti-mousse et anti-lichen.',
-      link: '/services#entretien'
+      link: '/services#demoussage'
     }
   ]
 
