@@ -1,0 +1,17 @@
+# Configuration Render pour Toiture Pro
+# Option 1: Static Site (RECOMMANDÉ - plus efficace et moins cher)
+# Dans le dashboard Render, créez un "Static Site" avec :
+# - Build Command: npm run build
+# - Publish Directory: dist
+
+# Option 2: Web Service (si vous avez besoin d'un serveur Node.js)
+services:
+  - type: web
+    name: toiture-pro
+    env: node
+    buildCommand: npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 22.16.0
+
