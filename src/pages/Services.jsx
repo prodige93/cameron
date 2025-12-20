@@ -154,7 +154,7 @@ const Services = () => {
         'Diagnostic d\'étanchéité complet',
         'Garantie décennale étanchéité'
       ],
-      gradient: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)'
+      image: '/images/WhatsApp Image 2025-12-17 at 19.07.57.jpeg'
     },
     {
       id: 'urgence',

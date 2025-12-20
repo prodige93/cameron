@@ -346,6 +346,10 @@ const Reviews = () => {
 
   const ratingStats = calculateRatingStats()
 
+  // État pour la pagination des avis
+  const [displayedReviews, setDisplayedReviews] = useState(20) // Afficher 20 avis par défaut
+  const reviewsPerPage = 20 // Nombre d'avis à charger à chaque clic
+
   // État pour le formulaire d'ajout d'avis
   const [showForm, setShowForm] = useState(false)
   const [formData, setFormData] = useState({
@@ -684,7 +688,7 @@ const Reviews = () => {
           )}
 
           <div className="testimonials-list">
-            {testimonials.map((testimonial, index) => (
+            {testimonials.slice(0, displayedReviews).map((testimonial, index) => (
               <div key={index} className="testimonial-full">
                 <div className="testimonial-header">
                   <div className="testimonial-author-info">
@@ -704,6 +708,60 @@ const Reviews = () => {
               </div>
             ))}
           </div>
+
+          {/* Boutons de pagination */}
+          {testimonials.length > displayedReviews && (
+            <div style={{ 
+              display: 'flex', 
+              gap: '1rem', 
+              justifyContent: 'center', 
+              marginTop: '2rem',
+              flexWrap: 'wrap'
+            }}>
+              <button
+                onClick={() => setDisplayedReviews(prev => prev + reviewsPerPage)}
+                style={{
+                  padding: '0.75rem 2rem',
+                  backgroundColor: 'var(--primary-color)',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '0.5rem',
+                  fontSize: '1rem',
+                  fontWeight: '600',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s ease'
+                }}
+                onMouseOver={(e) => e.target.style.backgroundColor = 'var(--primary-color-dark)'}
+                onMouseOut={(e) => e.target.style.backgroundColor = 'var(--primary-color)'}
+              >
+                Afficher plus ({testimonials.length - displayedReviews} restants)
+              </button>
+              <button
+                onClick={() => setDisplayedReviews(testimonials.length)}
+                style={{
+                  padding: '0.75rem 2rem',
+                  backgroundColor: 'transparent',
+                  color: 'var(--primary-color)',
+                  border: '2px solid var(--primary-color)',
+                  borderRadius: '0.5rem',
+                  fontSize: '1rem',
+                  fontWeight: '600',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s ease'
+                }}
+                onMouseOver={(e) => {
+                  e.target.style.backgroundColor = 'var(--primary-color)'
+                  e.target.style.color = 'white'
+                }}
+                onMouseOut={(e) => {
+                  e.target.style.backgroundColor = 'transparent'
+                  e.target.style.color = 'var(--primary-color)'
+                }}
+              >
+                Afficher tous les avis
+              </button>
+            </div>
+          )}
         </div>
       </section>
 
