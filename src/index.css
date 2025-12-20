@@ -10,9 +10,9 @@
 
 :root {
     /* Colors - Thème blanc */
-    --primary-color: #d32f2f;
-    --primary-dark: #b71c1c;
-    --primary-light: #f44336;
+    --primary-color: #1976d2;
+    --primary-dark: #1565c0;
+    --primary-light: #42a5f5;
     --secondary-color: #ff6f00;
     --accent-color: #1976d2;
     --text-dark: #1a1a1a;
@@ -22,8 +22,8 @@
     --bg-white: #ffffff;
     --border-color: #e0e0e0;
     --success-color: #388e3c;
-    --danger-color: #d32f2f;
-    --emergency-bg: #d32f2f;
+    --danger-color: #1976d2;
+    --emergency-bg: #1976d2;
     
     /* Typography */
     --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -1705,6 +1705,14 @@ ul {
     opacity: 0.9;
 }
 
+.contact-cta .btn-primary,
+.contact-cta a.btn-primary {
+    color: #ffffff !important;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+}
+
 .map-section {
     padding: var(--spacing-2xl) 0;
     background-color: var(--bg-light);
@@ -2018,6 +2026,14 @@ ul {
     color: var(--primary-color);
     font-weight: 600;
     text-decoration: underline;
+}
+
+.contact-cta .btn-primary,
+.contact-cta a.btn-primary {
+    color: #ffffff !important;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
 }
 
 /* ============================================

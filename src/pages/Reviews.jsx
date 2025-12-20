@@ -1,8 +1,26 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import CTASection from '../components/CTASection'
 
 const Reviews = () => {
-  const testimonials = [
+  // Fonction pour générer les initiales
+  const getInitials = (name) => {
+    const parts = name.trim().split(' ')
+    if (parts.length >= 2) {
+      return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase()
+    }
+    return name.substring(0, 2).toUpperCase()
+  }
+
+  // Fonction pour obtenir la date actuelle formatée
+  const getCurrentDate = () => {
+    const now = new Date()
+    const months = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 
+                    'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre']
+    return `${now.getDate()} ${months[now.getMonth()]} ${now.getFullYear()}`
+  }
+
+  // Avis initiaux
+  const initialTestimonials = [
     {
       initials: 'MD',
       name: 'Marie D.',
@@ -83,8 +101,138 @@ const Reviews = () => {
       text: 'Service client exceptionnel, de la prise de contact à la fin des travaux. Devis clair, suivi régulier, équipe ponctuelle et propre. La toiture est parfaite et nous sommes ravis du résultat. À recommander sans hésitation !',
       date: '12 juillet 2023',
       service: 'Rénovation complète'
+    },
+    {
+      initials: 'TM',
+      name: 'Thomas M.',
+      location: 'Le Mans',
+      stars: '★★★★★',
+      text: 'Pose de fenêtres de toit Velux. Installation parfaite, étanchéité impeccable. L\'équipe a su s\'adapter aux contraintes de notre charpente. Résultat magnifique et apport de lumière optimal. Très satisfait !',
+      date: '3 juin 2024',
+      service: 'Pose de fenêtres de toit'
+    },
+    {
+      initials: 'EB',
+      name: 'Élise B.',
+      location: 'Changé',
+      stars: '★★★★★',
+      text: 'Zinguerie complète refaite. Gouttières, noues et chêneaux en zinc. Fabrication sur mesure, pose soignée. L\'esthétique est parfaite et l\'évacuation des eaux fonctionne à merveille. Artisans de qualité !',
+      date: '18 mai 2024',
+      service: 'Zinguerie'
+    },
+    {
+      initials: 'JM',
+      name: 'Julien M.',
+      location: 'Allonnes',
+      stars: '★★★★★',
+      text: 'Charpente traditionnelle pour extension. Travail d\'artisan remarquable, respect des techniques anciennes. Le charpentier a su allier tradition et modernité. Résultat exceptionnel, nous sommes ravis !',
+      date: '28 avril 2024',
+      service: 'Charpente traditionnelle'
+    },
+    {
+      initials: 'SB',
+      name: 'Sandrine B.',
+      location: 'Coulaines',
+      stars: '★★★★★',
+      text: 'Réparation de toiture après intempéries. Intervention rapide, diagnostic précis. Les réparations sont solides et durables. Équipe professionnelle et à l\'écoute. Je recommande vivement !',
+      date: '15 avril 2024',
+      service: 'Réparation de toiture'
+    },
+    {
+      initials: 'DL',
+      name: 'David L.',
+      location: 'Le Mans',
+      stars: '★★★★★',
+      text: 'Isolation et étanchéité de toiture terrasse. Travail soigné, matériaux de qualité. L\'isolation est efficace et l\'étanchéité parfaite. Confort amélioré et économies d\'énergie au rendez-vous !',
+      date: '5 mars 2024',
+      service: 'Isolation et étanchéité'
     }
   ]
+
+  // État pour les avis (avec localStorage pour la persistance)
+  const [testimonials, setTestimonials] = useState(() => {
+    const saved = localStorage.getItem('reviews')
+    if (saved) {
+      try {
+        return JSON.parse(saved)
+      } catch {
+        return initialTestimonials
+      }
+    }
+    return initialTestimonials
+  })
+
+  // Sauvegarder dans localStorage à chaque changement
+  useEffect(() => {
+    localStorage.setItem('reviews', JSON.stringify(testimonials))
+  }, [testimonials])
+
+  // État pour le formulaire d'ajout d'avis
+  const [showForm, setShowForm] = useState(false)
+  const [formData, setFormData] = useState({
+    name: '',
+    location: 'Le Mans',
+    rating: 5,
+    text: '',
+    service: ''
+  })
+  const [submitStatus, setSubmitStatus] = useState({ type: '', message: '' })
+
+  // Gestion du changement dans le formulaire
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }))
+  }
+
+  // Gestion de la soumission du formulaire
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    
+    // Validation
+    if (!formData.name.trim() || !formData.text.trim() || !formData.service.trim()) {
+      setSubmitStatus({ type: 'error', message: 'Veuillez remplir tous les champs obligatoires.' })
+      return
+    }
+
+    if (formData.text.trim().length < 20) {
+      setSubmitStatus({ type: 'error', message: 'Votre avis doit contenir au moins 20 caractères.' })
+      return
+    }
+
+    // Créer le nouvel avis
+    const newReview = {
+      initials: getInitials(formData.name),
+      name: formData.name.trim(),
+      location: formData.location.trim() || 'Le Mans',
+      stars: '★'.repeat(formData.rating) + '☆'.repeat(5 - formData.rating),
+      text: formData.text.trim(),
+      date: getCurrentDate(),
+      service: formData.service.trim()
+    }
+
+    // Ajouter l'avis à la liste (au début)
+    setTestimonials(prev => [newReview, ...prev])
+    
+    // Réinitialiser le formulaire
+    setFormData({
+      name: '',
+      location: 'Le Mans',
+      rating: 5,
+      text: '',
+      service: ''
+    })
+    
+    setSubmitStatus({ type: 'success', message: 'Merci pour votre avis ! Il a été ajouté avec succès.' })
+    setShowForm(false)
+    
+    // Réinitialiser le message après 5 secondes
+    setTimeout(() => {
+      setSubmitStatus({ type: '', message: '' })
+    }, 5000)
+  }
 
   const externalReviews = [
     { logo: '⭐', name: 'Google', rating: '4.9/5', stars: '★★★★★', count: '247 avis clients' },
@@ -152,6 +300,173 @@ const Reviews = () => {
 
       <section className="testimonials-page section bg-light">
         <div className="container">
+          <div className="section-header" style={{ marginBottom: '2rem' }}>
+            <h2 className="section-title">Tous nos avis clients</h2>
+            <button 
+              onClick={() => setShowForm(!showForm)} 
+              className="btn btn-primary"
+              style={{ marginTop: '1rem' }}
+            >
+              {showForm ? 'Annuler' : '➕ Ajouter un avis'}
+            </button>
+          </div>
+
+          {submitStatus.message && (
+            <div 
+              className={`submit-status ${submitStatus.type}`}
+              style={{
+                padding: '1rem',
+                marginBottom: '2rem',
+                borderRadius: '0.5rem',
+                backgroundColor: submitStatus.type === 'success' ? '#d4edda' : '#f8d7da',
+                color: submitStatus.type === 'success' ? '#155724' : '#721c24',
+                border: `1px solid ${submitStatus.type === 'success' ? '#c3e6cb' : '#f5c6cb'}`
+              }}
+            >
+              {submitStatus.message}
+            </div>
+          )}
+
+          {showForm && (
+            <div className="add-review-form" style={{
+              backgroundColor: '#fff',
+              padding: '2rem',
+              borderRadius: '0.75rem',
+              marginBottom: '2rem',
+              boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
+            }}>
+              <h3 style={{ marginBottom: '1.5rem', color: '#1a1a1a' }}>Partagez votre expérience</h3>
+              <form onSubmit={handleSubmit}>
+                <div style={{ marginBottom: '1.5rem' }}>
+                  <label htmlFor="name" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '500' }}>
+                    Nom et prénom *
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    style={{
+                      width: '100%',
+                      padding: '0.75rem',
+                      border: '1px solid #e0e0e0',
+                      borderRadius: '0.5rem',
+                      fontSize: '1rem'
+                    }}
+                    placeholder="Votre nom"
+                  />
+                </div>
+
+                <div style={{ marginBottom: '1.5rem' }}>
+                  <label htmlFor="location" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '500' }}>
+                    Localisation
+                  </label>
+                  <input
+                    type="text"
+                    id="location"
+                    name="location"
+                    value={formData.location}
+                    onChange={handleChange}
+                    style={{
+                      width: '100%',
+                      padding: '0.75rem',
+                      border: '1px solid #e0e0e0',
+                      borderRadius: '0.5rem',
+                      fontSize: '1rem'
+                    }}
+                    placeholder="Ville (ex: Le Mans)"
+                  />
+                </div>
+
+                <div style={{ marginBottom: '1.5rem' }}>
+                  <label htmlFor="rating" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '500' }}>
+                    Note *
+                  </label>
+                  <select
+                    id="rating"
+                    name="rating"
+                    value={formData.rating}
+                    onChange={handleChange}
+                    required
+                    style={{
+                      width: '100%',
+                      padding: '0.75rem',
+                      border: '1px solid #e0e0e0',
+                      borderRadius: '0.5rem',
+                      fontSize: '1rem'
+                    }}
+                  >
+                    <option value={5}>5 étoiles - Excellent</option>
+                    <option value={4}>4 étoiles - Très bien</option>
+                    <option value={3}>3 étoiles - Bien</option>
+                    <option value={2}>2 étoiles - Moyen</option>
+                    <option value={1}>1 étoile - Insuffisant</option>
+                  </select>
+                </div>
+
+                <div style={{ marginBottom: '1.5rem' }}>
+                  <label htmlFor="service" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '500' }}>
+                    Service concerné *
+                  </label>
+                  <input
+                    type="text"
+                    id="service"
+                    name="service"
+                    value={formData.service}
+                    onChange={handleChange}
+                    required
+                    style={{
+                      width: '100%',
+                      padding: '0.75rem',
+                      border: '1px solid #e0e0e0',
+                      borderRadius: '0.5rem',
+                      fontSize: '1rem'
+                    }}
+                    placeholder="Ex: Rénovation complète, Pose de toiture..."
+                  />
+                </div>
+
+                <div style={{ marginBottom: '1.5rem' }}>
+                  <label htmlFor="text" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '500' }}>
+                    Votre avis *
+                  </label>
+                  <textarea
+                    id="text"
+                    name="text"
+                    value={formData.text}
+                    onChange={handleChange}
+                    required
+                    rows="5"
+                    minLength="20"
+                    style={{
+                      width: '100%',
+                      padding: '0.75rem',
+                      border: '1px solid #e0e0e0',
+                      borderRadius: '0.5rem',
+                      fontSize: '1rem',
+                      fontFamily: 'inherit',
+                      resize: 'vertical'
+                    }}
+                    placeholder="Partagez votre expérience (minimum 20 caractères)..."
+                  />
+                  <small style={{ color: '#757575', marginTop: '0.25rem', display: 'block' }}>
+                    {formData.text.length}/20 caractères minimum
+                  </small>
+                </div>
+
+                <button 
+                  type="submit" 
+                  className="btn btn-primary"
+                  style={{ width: '100%' }}
+                >
+                  Publier mon avis
+                </button>
+              </form>
+            </div>
+          )}
+
           <div className="testimonials-list">
             {testimonials.map((testimonial, index) => (
               <div key={index} className="testimonial-full">
