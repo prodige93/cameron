@@ -32,10 +32,6 @@ const RealizationImageCard = ({ imageUrl, title, subtitle, fallbackGradient }) =
         className="realization-image realization-image-with-bg"
         style={backgroundStyle}
       >
-        <div className="realization-overlay">
-          <h3>{title}</h3>
-          <p>{subtitle}</p>
-        </div>
       </div>
     </div>
   )
