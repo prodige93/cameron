@@ -638,10 +638,28 @@ ul {
     font-size: 1.3rem;
     font-weight: 700;
     color: #ff6f00;
-    margin: 0;
+    margin: 0 0 var(--spacing-sm) 0;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;
+}
+
+.service-24-7-phone {
+    text-align: center;
+    margin: 0;
+}
+
+.service-24-7-phone a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ff6f00;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.service-24-7-phone a:hover {
+    color: #e65a00;
+    text-decoration: underline;
 }
 
 .hero-callback-form h2 {
@@ -656,7 +674,7 @@ ul {
 
 .hero-callback-text {
     text-align: center;
-    color: #ff6f00;
+    color: white;
     margin-bottom: var(--spacing-lg);
     font-size: 1.1rem;
     line-height: 1.6;

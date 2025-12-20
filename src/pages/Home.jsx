@@ -145,7 +145,10 @@ const Home = () => {
             
             <div className="hero-callback-wrapper">
               <div className="hero-callback-form">
-                <p className="service-24-7-text">Tous services 24h/24 7j/7</p>
+                <p className="service-24-7-text">Travaux d'urgence 24h/24 7j/7</p>
+                <p className="service-24-7-phone">
+                  <a href="tel:+33750398368">07 50 39 83 68</a>
+                </p>
               </div>
               
               <div className="hero-callback-form">

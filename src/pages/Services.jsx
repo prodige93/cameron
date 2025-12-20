@@ -266,7 +266,7 @@ const Services = () => {
                   <div className="service-cta">
                     {service.urgent ? (
                       <a href="tel:+33750398368" className="btn btn-primary btn-urgent">
-                        📞 Appeler maintenant : 07 50 39 83 68
+                        Appeler maintenant : 07 50 39 83 68
                       </a>
                     ) : (
                       <Link to="/contact" className="btn btn-primary">
