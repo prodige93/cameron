@@ -238,6 +238,28 @@ ul {
     color: var(--primary-color);
 }
 
+/* Styles spécifiques pour la page Réalisations */
+.header.realizations-page .nav-list a {
+    color: #1a1a1a !important;
+}
+
+.header.realizations-page .nav-list a:hover,
+.header.realizations-page .nav-list a.active {
+    color: #1a1a1a !important;
+}
+
+.header.realizations-page .nav-more > span {
+    color: #1a1a1a !important;
+}
+
+.header.realizations-page {
+    background-color: white !important;
+}
+
+.header.realizations-page .menu-toggle span {
+    background-color: #1a1a1a !important;
+}
+
 .nav-more {
     position: relative;
 }

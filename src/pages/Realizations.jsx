@@ -253,15 +253,15 @@ const Realizations = () => {
     : realizations.filter(r => r.category === activeFilter)
 
   return (
-    <>
-      <section className="page-header">
+    <div style={{ background: 'white', minHeight: '100vh' }}>
+      <section className="page-header" style={{ background: 'white', color: '#1a1a1a' }}>
         <div className="container">
-          <h1>Nos réalisations</h1>
-          <p>Découvrez quelques-unes de nos réalisations de couverture</p>
+          <h1 style={{ color: '#1a1a1a' }}>Nos réalisations</h1>
+          <p style={{ color: '#424242' }}>Découvrez quelques-unes de nos réalisations de couverture</p>
         </div>
       </section>
 
-      <section className="filters-section section">
+      <section className="filters-section section" style={{ background: 'white' }}>
         <div className="container">
           <div className="filters">
             {filters.map(filter => (
@@ -277,7 +277,7 @@ const Realizations = () => {
         </div>
       </section>
 
-      <section className="realizations-gallery section">
+      <section className="realizations-gallery section" style={{ background: 'white' }}>
         <div className="container">
           <div className="realizations-grid">
             {filteredRealizations.map((realization, index) => (
@@ -290,7 +290,7 @@ const Realizations = () => {
         </div>
       </section>
 
-      <section className="stats-section section bg-light">
+      <section className="stats-section section" style={{ background: 'white' }}>
         <div className="container">
           <div className="stats-grid">
             <div className="stat-item">
@@ -317,7 +317,7 @@ const Realizations = () => {
         title="Votre projet de toiture nous intéresse"
         subtitle="Contactez-nous pour discuter de votre projet et obtenir un devis gratuit"
       />
-    </>
+    </div>
   )
 }
 

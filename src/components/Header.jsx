@@ -40,9 +40,11 @@ const Header = () => {
     }
   }
 
+  const isRealizationsPage = location.pathname === '/realisations'
+
   return (
     <>
-      <header className={`header ${isScrolled ? 'scrolled' : ''}`} id="header">
+      <header className={`header ${isScrolled || isRealizationsPage ? 'scrolled' : ''} ${isRealizationsPage ? 'realizations-page' : ''}`} id="header">
         <div className="container">
           <div className="header-content">
             <nav className={`nav ${isMenuOpen ? 'active' : ''}`} id="nav">
@@ -61,7 +63,6 @@ const Header = () => {
                     <li>
                       <Link 
                         to="/realisations"
-                        onClick={(e) => handleNavClick(e, '/realisations')}
                       >
                         Réalisations
                       </Link>
