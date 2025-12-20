@@ -216,8 +216,8 @@ const Home = () => {
               <p>L'expérience et l'expertise sont les fondements de la réussite professionnelle.</p>
             </div>
             <div className="feature-simple">
-              <h3>Qualité et efficacité</h3>
-              <p>"La qualité et l'efficacité sont deux éléments indispensables pour garantir la satisfaction du client."</p>
+              <h3>Assurance</h3>
+              <p>GAN ASSURANCE</p>
             </div>
             <div className="feature-simple">
               <h3>Service personnalisé</h3>
