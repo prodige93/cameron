@@ -269,7 +269,9 @@ ul {
 
 .btn-primary {
     background-color: var(--primary-color);
-    color: white;
+    color: #ffffff;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .btn-primary:hover {
@@ -307,6 +309,9 @@ ul {
 
 .btn-urgent {
     background-color: var(--danger-color);
+    color: #ffffff;
+    font-weight: 700;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     animation: pulse 2s infinite;
 }
 
