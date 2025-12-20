@@ -44,37 +44,31 @@ const RealizationImageCard = ({ imageUrl, title, subtitle, fallbackGradient }) =
 const Home = () => {
   const services = [
     {
-      icon: '🏗️',
       title: 'Charpente',
       description: 'Charpente traditionnelle et industrielle. Réalisation sur mesure pour projets neufs et rénovation, avec respect des normes en vigueur.',
       link: '/services#charpente'
     },
     {
-      icon: '🔨',
       title: 'Couverture',
       description: 'Pose et rénovation de toitures en tuiles, ardoises, zinc et autres matériaux. Expertise pour tous types de projets.',
       link: '/services#couverture'
     },
     {
-      icon: '🪟',
       title: 'Fenêtres de toit',
       description: 'Pose, remplacement et création de fenêtres de toit (Velux). Apport de lumière naturelle et amélioration du confort.',
       link: '/services#fenetres'
     },
     {
-      icon: '🔧',
-      title: 'Rénovation & Réparation',
-      description: 'Rénovation complète et réparation de toiture. Diagnostic précis et solutions durables pour votre patrimoine.',
-      link: '/services#renovation'
+      title: 'Zinguerie',
+      description: 'Ex gouttière, noue, chêneaux. Fabrication et pose de tous éléments de zinguerie sur mesure pour une protection optimale de votre toiture.',
+      link: '/services#zinguerie'
     },
     {
-      icon: '🛡️',
       title: 'Étanchéité & Isolation',
       description: 'Étanchéité, isolation et finitions. Amélioration des performances énergétiques et protection optimale de votre toiture.',
       link: '/services#etancheite'
     },
     {
-      icon: '🧹',
       title: 'Entretien & Démoussage',
       description: 'Entretien régulier et démoussage de toiture. Nettoyage professionnel avec traitement anti-mousse et anti-lichen.',
       link: '/services#entretien'
@@ -149,6 +143,7 @@ const Home = () => {
                   <li>Pose, remplacement et création de fenêtres de toit (Velux)</li>
                   <li>Étanchéité, isolation et finitions</li>
                   <li>Entretien et démoussage de toiture</li>
+                  <li>Zinguerie (gouttière, noue, chêneaux)</li>
                 </ul>
               </div>
               <p className="hero-note">
