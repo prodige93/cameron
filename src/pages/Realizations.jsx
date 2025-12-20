@@ -134,13 +134,13 @@ const Realizations = () => {
 
   const realizations = [
     {
-      id: 'realisation-toiture-2',
+      id: 'toiture-vegetale',
       category: 'renovation',
-      title: 'Réalisation toiture',
+      title: 'Toiture végétale',
       location: 'Sarthe',
-      description: 'Travaux de couverture et de toiture réalisés avec soin et professionnalisme.',
-      tags: ['Couverture', 'Toiture'],
-      gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+      description: 'Installation d\'une toiture végétale écologique et durable.',
+      tags: ['Toiture végétale', 'Écologique', 'Durable'],
+      image: '/images/realisation-toiture-vegetale.jpeg'
     },
     {
       id: 'renovation-complete-maison',
