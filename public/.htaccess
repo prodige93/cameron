@@ -44,3 +44,20 @@
     Deny from all
 </FilesMatch>
 
+# Réécriture d'URL pour React Router
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    
+    # Ne pas réécrire les fichiers existants
+    RewriteCond %{REQUEST_FILENAME} !-f
+    # Ne pas réécrire les répertoires existants
+    RewriteCond %{REQUEST_FILENAME} !-d
+    # Ne pas réécrire les fichiers statiques (assets, images, etc.)
+    RewriteCond %{REQUEST_URI} !^/assets/
+    RewriteCond %{REQUEST_URI} !^/images/
+    
+    # Rediriger toutes les autres requêtes vers index.html
+    RewriteRule ^ index.html [QSA,L]
+</IfModule>
+
