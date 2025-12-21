@@ -1,45 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import ServiceCard from '../components/ServiceCard'
 import TestimonialCard from '../components/TestimonialCard'
 import CTASection from '../components/CTASection'
+import OptimizedImage from '../components/OptimizedImage'
 
 const RealizationImageCard = ({ imageUrl, title, subtitle, fallbackGradient }) => {
-  const [imageLoaded, setImageLoaded] = useState(false)
-  const [imageError, setImageError] = useState(false)
-
-  useEffect(() => {
-    if (imageUrl) {
-      const img = new Image()
-      img.onload = () => setImageLoaded(true)
-      img.onerror = () => {
-        setImageError(true)
-        console.error('Erreur de chargement de l\'image:', imageUrl)
-      }
-      // Encoder l'URL correctement pour les espaces et caractères spéciaux
-      const encodedUrl = imageUrl.includes(' ') ? encodeURI(imageUrl) : imageUrl
-      img.src = encodedUrl
-    }
-  }, [imageUrl])
-
-  // Encoder l'URL pour l'utiliser dans le CSS
-  const getEncodedUrl = (url) => {
-    if (!url) return null
-    // Encoder chaque partie du chemin séparément
-    const parts = url.split('/')
-    return parts.map(part => part.includes(' ') ? encodeURIComponent(part) : part).join('/')
-  }
-
-  const encodedImageUrl = getEncodedUrl(imageUrl)
-  const backgroundStyle = imageError || !imageUrl
-    ? { background: fallbackGradient || 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }
-    : {
-        backgroundImage: `url("${encodedImageUrl}")`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundColor: '#e5e7eb'
-      }
-
   // Générer un alt text SEO-friendly
   const altText = title 
     ? `${title} - Réalisation couvreur Le Mans - JORY CHARPENTE COUVERTURE`
@@ -49,13 +15,13 @@ const RealizationImageCard = ({ imageUrl, title, subtitle, fallbackGradient }) =
 
   return (
     <div className="realization-card">
-      <div 
+      <OptimizedImage
+        src={imageUrl}
+        alt={altText}
         className="realization-image realization-image-with-bg"
-        style={backgroundStyle}
-        role="img"
-        aria-label={altText}
-      >
-      </div>
+        fallbackGradient={fallbackGradient || 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'}
+        style={{ minHeight: '250px' }}
+      />
     </div>
   )
 }

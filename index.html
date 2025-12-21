@@ -194,15 +194,23 @@
     }
     </script>
     
-    <!-- Google Analytics (à remplacer par votre ID de suivi) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <!-- Google Analytics (à remplacer par votre ID de suivi) - Chargé de manière asynchrone pour ne pas bloquer -->
     <script>
+      // Charger Google Analytics de manière non-bloquante
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-XXXXXXXXXX', {
         'anonymize_ip': true,
         'cookie_flags': 'SameSite=None;Secure'
+      });
+      
+      // Charger le script de manière asynchrone après le chargement de la page
+      window.addEventListener('load', function() {
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
+        document.head.appendChild(script);
       });
     </script>
     
@@ -212,16 +220,41 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <!-- Préchargement des ressources critiques -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://api.emailjs.com">
+    <!-- Fonts avec display=swap pour performance -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
     
     <!-- Sitemap -->
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 </head>
 <body>
     <div id="root"></div>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <!-- EmailJS chargé de manière asynchrone pour ne pas bloquer -->
+    <script>
+      // Charger EmailJS de manière non-bloquante
+      window.addEventListener('load', function() {
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
+        script.onload = function() {
+          // Initialiser EmailJS après chargement
+          if (typeof window.emailjs !== 'undefined') {
+            const publicKey = 'v2ntSO7w0YdzRAx9X';
+            try {
+              window.emailjs.init(publicKey);
+            } catch (error) {
+              console.error('Erreur lors de l\'initialisation d\'EmailJS:', error);
+            }
+          }
+        };
+        document.head.appendChild(script);
+      });
+    </script>
     <script type="module" src="/src/main.jsx"></script>
 </body>
 </html>

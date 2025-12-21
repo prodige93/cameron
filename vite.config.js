@@ -29,12 +29,19 @@ export default defineConfig({
     minify: 'esbuild',
     // Supprimer les console.log en production
     esbuild: {
-      drop: ['console', 'debugger']
+      drop: ['console', 'debugger'],
+      legalComments: 'none' // Supprimer les commentaires légaux pour réduire la taille
     },
     // Augmenter la taille limite des chunks
     chunkSizeWarningLimit: 1000,
     // Optimisation des assets
-    assetsInlineLimit: 4096 // Inline les petits assets (< 4KB)
+    assetsInlineLimit: 4096, // Inline les petits assets (< 4KB)
+    // Compression des assets
+    cssCodeSplit: true,
+    // Optimisation des chunks
+    target: 'es2015', // Support des navigateurs modernes pour réduire la taille
+    // Source maps uniquement en développement
+    sourcemap: false
   },
   // Optimisation des performances
   optimizeDeps: {

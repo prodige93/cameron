@@ -1,42 +1,22 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import CTASection from '../components/CTASection'
+import OptimizedImage from '../components/OptimizedImage'
 
 const RealizationImage = ({ image, gradient, title, location }) => {
-  const [imageError, setImageError] = useState(false)
-  const [imageLoaded, setImageLoaded] = useState(false)
-
-  useEffect(() => {
-    if (image) {
-      const img = new Image()
-      img.onload = () => setImageLoaded(true)
-      img.onerror = () => setImageError(true)
-      img.src = image
-    }
-  }, [image])
-  
-  const backgroundStyle = !image || imageError
-    ? { background: gradient || 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }
-    : { 
-        backgroundImage: `url(${image})`, 
-        backgroundSize: 'cover', 
-        backgroundPosition: 'center',
-        backgroundColor: '#e5e7eb'
-      }
-  
   // Générer un alt text SEO-friendly
   const altText = title 
     ? `${title} - Réalisation couvreur Le Mans ${location ? `(${location})` : ''} - JORY CHARPENTE COUVERTURE`
     : `Réalisation couverture Le Mans - Travaux de toiture Sarthe - JORY CHARPENTE COUVERTURE`
   
   return (
-    <div
-      className={`realization-image ${image && !imageError ? 'realization-image-with-bg' : ''}`}
-      style={backgroundStyle}
-      role="img"
-      aria-label={altText}
-    >
-    </div>
+    <OptimizedImage
+      src={image}
+      alt={altText}
+      className="realization-image realization-image-with-bg"
+      fallbackGradient={gradient || 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'}
+      style={{ minHeight: '250px' }}
+    />
   )
 }
 
