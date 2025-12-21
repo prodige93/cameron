@@ -92,18 +92,18 @@ const Contact = () => {
       const emailResult = await sendContactEmail(cleanedData)
       
       if (emailResult.success) {
-        setSubmitStatus({ type: 'success', message: 'Merci pour votre demande ! Nous vous recontacterons sous 24h.' })
+      setSubmitStatus({ type: 'success', message: 'Merci pour votre demande ! Nous vous recontacterons sous 24h.' })
         // Réinitialiser le formulaire après succès
-        setFormData({
-          name: '',
-          phone: '',
-          email: '',
-          address: '',
-          service: '',
-          urgency: 'normal',
-          message: '',
-          consent: false
-        })
+      setFormData({
+        name: '',
+        phone: '',
+        email: '',
+        address: '',
+        service: '',
+        urgency: 'normal',
+        message: '',
+        consent: false
+      })
       } else {
         setSubmitStatus({ 
           type: 'error', 

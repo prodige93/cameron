@@ -137,11 +137,11 @@ const Realizations = () => {
 
 
   return (
-    <div style={{ background: 'white', minHeight: '100vh' }}>
-      <section className="page-header" style={{ background: 'white', color: '#1a1a1a', paddingTop: '6rem' }}>
+    <>
+      <section className="page-header realizations-header">
         <div className="container">
-          <h1 style={{ color: '#1a1a1a' }}>Nos dernières réalisations</h1>
-          <p style={{ color: '#424242' }}>Découvrez quelques-unes de nos réalisations de couverture</p>
+          <h1>Nos dernières réalisations</h1>
+          <p>Découvrez quelques-unes de nos réalisations de couverture</p>
         </div>
       </section>
 
@@ -162,7 +162,7 @@ const Realizations = () => {
         <div className="container">
           <div className="stats-grid">
             <div className="stat-item">
-              <div className="stat-number">2000</div>
+              <div className="stat-number">+2000</div>
               <div className="stat-label">Chantiers réalisés</div>
             </div>
             <div className="stat-item">
@@ -185,7 +185,7 @@ const Realizations = () => {
         title="Votre projet de toiture nous intéresse"
         subtitle="Contactez-nous pour discuter de votre projet et obtenir un devis gratuit"
       />
-    </div>
+    </>
   )
 }
 

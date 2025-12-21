@@ -44,7 +44,7 @@ const Header = () => {
 
   return (
     <>
-      <header className={`header ${isScrolled || isRealizationsPage ? 'scrolled' : ''} ${isRealizationsPage ? 'realizations-page' : ''}`} id="header">
+      <header className={`header ${isScrolled ? 'scrolled' : ''} ${isRealizationsPage ? 'realizations-page' : ''}`} id="header">
         <div className="container">
           <div className="header-content">
             <Link to="/" className="header-logo">
@@ -103,9 +103,10 @@ const Header = () => {
             <button
               className={`menu-toggle ${isMenuOpen ? 'active' : ''}`}
               onClick={toggleMenu}
-              aria-label="Menu"
+              aria-label={isMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+              aria-expanded={isMenuOpen}
             >
-              <span>Menu</span>
+              <span></span>
             </button>
           </div>
         </div>
