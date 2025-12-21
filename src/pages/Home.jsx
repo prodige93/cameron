@@ -1,9 +1,70 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import ServiceCard from '../components/ServiceCard'
 import TestimonialCard from '../components/TestimonialCard'
 import CTASection from '../components/CTASection'
 import OptimizedImage from '../components/OptimizedImage'
+
+// Composant FAQ avec accordéon
+const FAQAccordion = () => {
+  const [openIndex, setOpenIndex] = useState(null)
+
+  const faqs = [
+    {
+      question: "Quand faire appel à un couvreur au Mans en urgence ?",
+      answer: "Appelez un couvreur urgence au Mans en cas de : fuite importante, tuiles ou ardoises tombées, dégâts après tempête, toiture partiellement arrachée, infiltration d'eau active. JORY CHARPENTE COUVERTURE propose une intervention couvreur Le Mans 24h/24 7j/7 pour les urgences. Appelez-nous immédiatement au 07 50 39 83 68 pour une intervention rapide et sécurisation de votre toiture."
+    },
+    {
+      question: "Quels sont les services d'un couvreur au Mans ?",
+      answer: "Un couvreur au Mans propose : réparation et rénovation de toiture, pose de toiture neuve (tuiles, ardoises, zinc), charpente traditionnelle et industrielle, zinguerie (gouttières, noues, faîtages), pose de fenêtres de toit (Velux), démoussage et traitement anti-mousse, étanchéité et isolation thermique, travaux d'urgence 24/7. JORY CHARPENTE COUVERTURE, votre couvreur professionnel au Mans, réalise tous ces services avec garantie décennale."
+    },
+    {
+      question: "Comment obtenir un devis couvreur Le Mans gratuit ?",
+      answer: "Pour obtenir un devis gratuit couvreur Le Mans, contactez JORY CHARPENTE COUVERTURE par téléphone au 07 50 39 83 68 ou via notre formulaire en ligne. Nous vous proposons un devis détaillé sous 24h, sans engagement, avec visite sur site gratuite pour évaluer précisément vos besoins. Notre couvreur au Mans vous conseille sur les meilleures solutions pour votre projet de toiture."
+    },
+    {
+      question: "Quelle est la zone d'intervention d'un couvreur au Mans ?",
+      answer: "JORY CHARPENTE COUVERTURE, votre couvreur au Mans, intervient dans tout Le Mans et ses environs : Changé, Allonnes, Coulaines, Arnage, Mulsanne, Yvré-l'Évêque, Sargé-lès-Le-Mans, Ruaudin, et dans toute la Sarthe (72). Basés à Changé (72560), nous sommes votre couvreur local Le Mans pour une intervention rapide et un suivi de proximité sur tous vos chantiers de toiture."
+    }
+  ]
+
+  const toggleFAQ = (index) => {
+    setOpenIndex(openIndex === index ? null : index)
+  }
+
+  return (
+    <div className="faq-list" itemScope itemType="https://schema.org/FAQPage">
+      {faqs.map((faq, index) => (
+        <div 
+          key={index} 
+          className={`faq-item ${openIndex === index ? 'open' : ''}`}
+          itemScope 
+          itemProp="mainEntity" 
+          itemType="https://schema.org/Question"
+        >
+          <h3 
+            className="faq-question" 
+            itemProp="name"
+            onClick={() => toggleFAQ(index)}
+          >
+            {faq.question}
+            <span className="faq-icon">{openIndex === index ? '−' : '+'}</span>
+          </h3>
+          {openIndex === index && (
+            <div 
+              className="faq-answer" 
+              itemScope 
+              itemProp="acceptedAnswer" 
+              itemType="https://schema.org/Answer"
+            >
+              <p itemProp="text">{faq.answer}</p>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  )
+}
 
 const RealizationImageCard = ({ imageUrl, title, subtitle, fallbackGradient }) => {
   // Générer un alt text SEO-friendly
@@ -184,6 +245,17 @@ const Home = () => {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* FAQ Section - Accordéon */}
+      <section className="faq-section section bg-light">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="section-title">Questions Fréquentes - Couvreur Le Mans</h2>
+            <p className="section-subtitle">Toutes les réponses à vos questions sur nos services de couvreur au Mans</p>
+          </div>
+          <FAQAccordion />
         </div>
       </section>
 
