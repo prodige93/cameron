@@ -120,7 +120,7 @@ const Home = () => {
                 Couvreur Le Mans 72 - JORY CHARPENTE COUVERTURE | Réparation Toiture Sarthe
               </h1>
               <p className="hero-subtitle">
-                <strong>Couvreur professionnel au Mans</strong> et dans toute la Sarthe (72). JORY CHARPENTE COUVERTURE est votre artisan couvreur spécialisé en charpente, couverture, zinguerie et pose de fenêtres de toit. Nous intervenons rapidement pour tous vos projets de réparation, rénovation et pose de toiture au Mans, Changé, Allonnes et dans toute la région.
+                <strong><span className="hero-highlight-text">Couvreur</span> professionnel au Mans</strong> et dans toute la Sarthe (72). JORY <span className="hero-highlight-text">CHARPENTE</span> COUVERTURE est votre artisan couvreur spécialisé en charpente, couverture, zinguerie et pose de fenêtres de toit. Nous intervenons rapidement pour tous vos projets de réparation, rénovation et pose de toiture au Mans, Changé, Allonnes et dans toute la région.
               </p>
               <p className="hero-location">
                 <strong>Couvreur Le Mans</strong> basé à Changé (72560) - Intervention rapide dans toute la Sarthe 72
