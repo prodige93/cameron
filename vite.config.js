@@ -25,13 +25,11 @@ export default defineConfig({
         assetFileNames: 'assets/[ext]/[name]-[hash].[ext]'
       }
     },
-    // Compression et optimisation
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true, // Supprimer les console.log en production
-        drop_debugger: true
-      }
+    // Compression et optimisation (esbuild est plus rapide et inclus avec Vite)
+    minify: 'esbuild',
+    // Supprimer les console.log en production
+    esbuild: {
+      drop: ['console', 'debugger']
     },
     // Augmenter la taille limite des chunks
     chunkSizeWarningLimit: 1000,
