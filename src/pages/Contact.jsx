@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import { validateEmail, validatePhone, validateName, validateText, checkRateLimit, cleanFormData } from '../utils/security'
+import React, { useState } from 'react'
+import { validateEmail, validatePhone, validateName, validateText, cleanFormData } from '../utils/security'
 import { sendContactEmail } from '../utils/emailService'
 
 const Contact = () => {
@@ -16,18 +16,6 @@ const Contact = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState(null)
-
-  // Rate limiting
-  useEffect(() => {
-    const rateLimit = checkRateLimit('contact_form', 5, 10000)
-    if (!rateLimit.allowed) {
-      const secondsLeft = Math.ceil((rateLimit.resetTime - Date.now()) / 1000)
-      setSubmitStatus({ 
-        type: 'error', 
-        message: `Trop de tentatives. Veuillez réessayer dans ${secondsLeft} seconde(s).` 
-      })
-    }
-  }, [])
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target
@@ -56,18 +44,6 @@ const Contact = () => {
     e.preventDefault()
     setIsSubmitting(true)
     setSubmitStatus(null)
-
-    // Rate limiting check
-    const rateLimit = checkRateLimit('contact_form', 5, 10000)
-    if (!rateLimit.allowed) {
-      const secondsLeft = Math.ceil((rateLimit.resetTime - Date.now()) / 1000)
-      setSubmitStatus({ 
-        type: 'error', 
-        message: `Trop de tentatives. Veuillez réessayer dans ${secondsLeft} seconde(s).` 
-      })
-      setIsSubmitting(false)
-      return
-    }
 
     // Nettoyer les données
     const cleanedData = cleanFormData(formData)
