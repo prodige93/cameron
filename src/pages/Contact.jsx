@@ -122,8 +122,8 @@ const Contact = () => {
     <>
       <section className="page-header">
         <div className="container">
-          <h1>Contactez-nous</h1>
-          <p>Demandez votre devis gratuit et sans engagement</p>
+          <h1>Contact Couvreur Le Mans - Devis Gratuit 24/7</h1>
+          <p>Contactez votre couvreur au Mans. Demandez votre devis gratuit et sans engagement pour tous vos travaux de toiture</p>
         </div>
       </section>
 

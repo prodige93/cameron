@@ -184,8 +184,8 @@ const Services = () => {
     <>
       <section className="page-header">
         <div className="container">
-          <h1>Nos services de couverture</h1>
-          <p>Des solutions complètes pour tous vos besoins en toiture</p>
+          <h1>Services Couvreur Le Mans - Charpente, Couverture, Zinguerie</h1>
+          <p>Des solutions complètes de couvreur au Mans et dans toute la Sarthe pour tous vos besoins en toiture</p>
         </div>
       </section>
 

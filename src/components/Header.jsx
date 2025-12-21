@@ -48,7 +48,7 @@ const Header = () => {
         <div className="container">
           <div className="header-content">
             <Link to="/" className="header-logo">
-              <img src="/images/LOGO.png" alt="JORY CHARPENTE COUVERTURE" className="logo-image" />
+              <img src="/images/LOGO.png" alt="JORY CHARPENTE COUVERTURE - Couvreur Le Mans 72" className="logo-image" />
             </Link>
             <nav className={`nav ${isMenuOpen ? 'active' : ''}`} id="nav">
               <ul className="nav-list">

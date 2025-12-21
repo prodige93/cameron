@@ -1,0 +1,21 @@
+# robots.txt pour JORY CHARPENTE COUVERTURE
+# Couvreur Le Mans 72 - Réparation Toiture Sarthe
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.jory-charpente-couverture.fr/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Bloquer les fichiers inutiles
+Disallow: /node_modules/
+Disallow: /*.json$
+Disallow: /dist/
+
+# Autoriser les ressources importantes
+Allow: /images/
+Allow: /assets/
+

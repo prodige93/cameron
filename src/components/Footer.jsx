@@ -34,7 +34,7 @@ const Footer = () => {
           <div className="footer-column">
             <h4>Contact</h4>
             <div className="footer-logo-wrapper">
-              <img src="/images/LOGO.png" alt="JORY CHARPENTE COUVERTURE" className="footer-logo" />
+              <img src="/images/LOGO.png" alt="JORY CHARPENTE COUVERTURE - Couvreur professionnel Le Mans Sarthe" className="footer-logo" />
             </div>
             <ul>
               <li>LE TILLEUL 72560 Changé, Sarthe</li>
