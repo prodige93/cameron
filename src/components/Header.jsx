@@ -40,11 +40,9 @@ const Header = () => {
     }
   }
 
-  const isRealizationsPage = location.pathname === '/realisations'
-
   return (
     <>
-      <header className={`header ${isScrolled ? 'scrolled' : ''} ${isRealizationsPage ? 'realizations-page' : ''}`} id="header">
+      <header className={`header ${isScrolled ? 'scrolled' : ''}`} id="header">
         <div className="container">
           <div className="header-content">
             <Link to="/" className="header-logo">

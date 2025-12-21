@@ -261,52 +261,7 @@ ul {
 
 .header.scrolled .nav-list a:hover,
 .header.scrolled .nav-list a.active {
-    color: var(--primary-color);
-}
-
-/* Styles spécifiques pour la page Réalisations */
-/* Header transparent sur la page réalisations au chargement */
-.header.realizations-page {
-    background-color: transparent !important;
-}
-
-.header.realizations-page .nav-list a {
-    color: white !important;
-}
-
-.header.realizations-page .nav-list a:hover,
-.header.realizations-page .nav-list a.active {
-    color: var(--primary-light) !important;
-}
-
-.header.realizations-page .nav-more > span {
-    color: white !important;
-}
-
-.header.realizations-page .menu-toggle span {
-    background-color: white !important;
-}
-
-/* Header blanc au scroll sur la page réalisations */
-.header.realizations-page.scrolled {
-    background-color: rgba(255, 255, 255, 0.95) !important;
-}
-
-.header.realizations-page.scrolled .nav-list a {
-    color: #1a1a1a !important;
-}
-
-.header.realizations-page.scrolled .nav-list a:hover,
-.header.realizations-page.scrolled .nav-list a.active {
-    color: var(--primary-color) !important;
-}
-
-.header.realizations-page.scrolled .nav-more > span {
-    color: #1a1a1a !important;
-}
-
-.header.realizations-page.scrolled .menu-toggle span {
-    background-color: #1a1a1a !important;
+    color: #ff6b35;
 }
 
 .nav-more {
@@ -353,17 +308,27 @@ ul {
     list-style: none;
 }
 
-.nav-dropdown a {
-    display: block;
-    padding: var(--spacing-xs) var(--spacing-sm);
-    border-radius: var(--radius-sm);
-    color: var(--text-dark);
-    transition: var(--transition);
+.nav-dropdown a,
+.nav-dropdown a:link,
+.nav-dropdown a:visited {
+    display: block !important;
+    padding: var(--spacing-xs) var(--spacing-sm) !important;
+    border-radius: var(--radius-sm) !important;
+    color: var(--text-dark) !important;
+    transition: var(--transition) !important;
+    font-family: var(--font-family) !important;
+    font-weight: 500 !important;
+    font-size: 1rem !important;
+    text-decoration: none !important;
+    background-color: transparent !important;
 }
 
-.nav-dropdown a:hover {
-    background-color: rgba(25, 118, 210, 0.1);
-    color: var(--primary-color);
+.nav-dropdown a:hover,
+.nav-dropdown a:active,
+.nav-dropdown a:focus {
+    background-color: rgba(255, 107, 53, 0.1) !important;
+    color: #ff6b35 !important;
+    border-color: transparent !important;
 }
 
 .menu-toggle span {
@@ -500,13 +465,15 @@ ul {
     
     .nav-list a:hover,
     .nav-list a.active {
-        color: var(--primary-color);
+        color: #ff6b35;
         background-color: var(--bg-light);
     }
     
     .nav-more {
         width: 100%;
         border-bottom: 1px solid var(--border-color);
+        display: block !important;
+        position: relative;
     }
     
     .nav-more:last-child {
@@ -514,15 +481,17 @@ ul {
     }
     
     .nav-more > span {
-        display: block;
+        display: block !important;
         padding: var(--spacing-md) var(--spacing-sm);
-        color: var(--text-dark);
+        color: var(--text-dark) !important;
         font-weight: 600;
         font-size: 1rem;
         width: 100%;
         cursor: default;
         position: relative;
         user-select: none;
+        visibility: visible !important;
+        opacity: 1 !important;
     }
     
     .nav-dropdown {
@@ -533,6 +502,7 @@ ul {
         box-shadow: none !important;
         padding: 0 !important;
         margin: 0 !important;
+        margin-top: 0 !important;
         background-color: rgba(0, 0, 0, 0.02) !important;
         border-radius: 0 !important;
         width: 100% !important;
@@ -540,12 +510,16 @@ ul {
         border-top: none !important;
         left: auto !important;
         top: auto !important;
+        display: block !important;
+        z-index: auto !important;
     }
     
     .nav-dropdown li {
         border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-        margin: 0;
+        margin: 0 !important;
         list-style: none;
+        display: block !important;
+        width: 100%;
     }
     
     .nav-dropdown li:last-child {
@@ -556,23 +530,32 @@ ul {
         border-bottom: none !important;
     }
     
-    .nav-dropdown a {
+    .nav-dropdown a,
+    .nav-dropdown a:link,
+    .nav-dropdown a:visited {
         display: block !important;
         padding: var(--spacing-sm) var(--spacing-lg) !important;
         color: var(--text-light) !important;
-        font-weight: 400 !important;
+        font-weight: 500 !important;
+        font-family: var(--font-family) !important;
+        font-size: 1rem !important;
         border-radius: 0 !important;
-        transition: var(--transition);
+        transition: var(--transition) !important;
         border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
         text-decoration: none !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        line-height: 1.5 !important;
+        background-color: transparent !important;
     }
     
     .nav-dropdown a:hover,
     .nav-dropdown a:active,
     .nav-dropdown a:focus {
-        color: var(--primary-color) !important;
-        background-color: rgba(25, 118, 210, 0.08) !important;
+        color: #ff6b35 !important;
+        background-color: rgba(255, 107, 53, 0.1) !important;
         padding-left: calc(var(--spacing-lg) + 4px) !important;
+        border-color: transparent !important;
     }
     
     .menu-toggle {
@@ -633,17 +616,6 @@ ul {
         background-color: var(--text-dark);
     }
     
-    .header.realizations-page .menu-toggle span,
-    .header.realizations-page .menu-toggle span::before,
-    .header.realizations-page .menu-toggle span::after {
-        background-color: white;
-    }
-    
-    .header.realizations-page.scrolled .menu-toggle span,
-    .header.realizations-page.scrolled .menu-toggle span::before,
-    .header.realizations-page.scrolled .menu-toggle span::after {
-        background-color: var(--text-dark);
-    }
     
     .menu-toggle.active span {
         background-color: transparent;
@@ -1101,10 +1073,11 @@ ul {
 
 .page-header {
     background-image: url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080&q=80');
-    background-size: cover;
-    background-position: center bottom;
+    background-size: contain;
+    background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-color: #1a1a1a;
     color: white;
     padding: var(--spacing-xl) 0;
     text-align: center;
@@ -1152,6 +1125,8 @@ ul {
         min-height: 180px;
         padding: var(--spacing-lg) 0;
         background-attachment: scroll;
+        background-size: contain;
+        background-position: center center;
     }
     
     .page-header h1 {
@@ -1168,6 +1143,8 @@ ul {
     .page-header {
         min-height: 150px;
         padding: var(--spacing-md) 0;
+        background-size: contain;
+        background-position: center center;
     }
     
     .page-header h1 {
