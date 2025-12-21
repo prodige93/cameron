@@ -38,8 +38,8 @@ const About = () => {
     <>
       <section className="page-header">
         <div className="container">
-          <h1>À propos de Toiture Pro</h1>
-          <p>25 ans d'expertise et de passion pour la couverture</p>
+          <h1>À Propos - Couvreur Le Mans Depuis Changé | JORY CHARPENTE COUVERTURE</h1>
+          <p>Découvrez JORY CHARPENTE COUVERTURE, votre couvreur expert au Mans et dans toute la Sarthe. Artisan qualifié en charpente, couverture et zinguerie depuis Changé.</p>
         </div>
       </section>
 
@@ -62,7 +62,12 @@ const About = () => {
               </p>
             </div>
             <div className="about-image">
-              <div className="about-image-placeholder" style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }}>
+              <div 
+                className="about-image-placeholder" 
+                style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }}
+                role="img"
+                aria-label="Équipe JORY CHARPENTE COUVERTURE - Artisans couvreurs qualifiés Le Mans Sarthe"
+              >
                 <span>Notre équipe</span>
               </div>
             </div>

@@ -24,10 +24,17 @@ const RealizationImage = ({ image, gradient, title, location }) => {
         backgroundColor: '#e5e7eb'
       }
   
+  // Générer un alt text SEO-friendly
+  const altText = title 
+    ? `${title} - Réalisation couvreur Le Mans ${location ? `(${location})` : ''} - JORY CHARPENTE COUVERTURE`
+    : `Réalisation couverture Le Mans - Travaux de toiture Sarthe - JORY CHARPENTE COUVERTURE`
+  
   return (
     <div
       className={`realization-image ${image && !imageError ? 'realization-image-with-bg' : ''}`}
       style={backgroundStyle}
+      role="img"
+      aria-label={altText}
     >
     </div>
   )
@@ -35,7 +42,8 @@ const RealizationImage = ({ image, gradient, title, location }) => {
 
 const RealizationCard = ({ realization }) => {
   return (
-    <div 
+    <Link 
+      to={`/realisations/${realization.id}`}
       className="realization-item" 
       data-category={realization.category}
     >
@@ -45,7 +53,7 @@ const RealizationCard = ({ realization }) => {
         title={realization.title}
         location={realization.location}
       />
-    </div>
+    </Link>
   )
 }
 
@@ -140,8 +148,8 @@ const Realizations = () => {
     <>
       <section className="page-header realizations-header">
         <div className="container">
-          <h1>Nos dernières réalisations</h1>
-          <p>Découvrez quelques-unes de nos réalisations de couverture</p>
+          <h1>Réalisations Couvreur Le Mans - Galerie Photos Toiture Sarthe</h1>
+          <p>Découvrez nos réalisations de couvreur au Mans : rénovation toiture, charpente, zinguerie, fenêtres de toit. Photos de nos travaux en Sarthe 72.</p>
         </div>
       </section>
 

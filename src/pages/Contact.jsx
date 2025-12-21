@@ -122,8 +122,8 @@ const Contact = () => {
     <>
       <section className="page-header">
         <div className="container">
-          <h1>Contact Couvreur Le Mans - Devis Gratuit 24/7</h1>
-          <p>Contactez votre couvreur au Mans. Demandez votre devis gratuit et sans engagement pour tous vos travaux de toiture</p>
+          <h1>Contact Couvreur Le Mans - Devis Gratuit 24/7 | JORY CHARPENTE</h1>
+          <p>Contactez votre couvreur au Mans. Devis gratuit sous 24h pour réparation toiture, charpente, zinguerie. Intervention urgente 24h/24 au 07 50 39 83 68.</p>
         </div>
       </section>
 

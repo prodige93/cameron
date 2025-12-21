@@ -40,11 +40,20 @@ const RealizationImageCard = ({ imageUrl, title, subtitle, fallbackGradient }) =
         backgroundColor: '#e5e7eb'
       }
 
+  // Générer un alt text SEO-friendly
+  const altText = title 
+    ? `${title} - Réalisation couvreur Le Mans - JORY CHARPENTE COUVERTURE`
+    : subtitle
+    ? `${subtitle} - Travaux de toiture Sarthe - JORY CHARPENTE COUVERTURE`
+    : 'Réalisation couverture Le Mans - Travaux de toiture Sarthe - JORY CHARPENTE COUVERTURE'
+
   return (
     <div className="realization-card">
       <div 
         className="realization-image realization-image-with-bg"
         style={backgroundStyle}
+        role="img"
+        aria-label={altText}
       >
       </div>
     </div>
@@ -213,18 +222,18 @@ const Home = () => {
           <div className="realizations-grid">
             <RealizationImageCard
               imageUrl="/images/realisation-toiture-vegetale.jpeg"
-              title=""
-              subtitle=""
+              title="Toiture végétale écologique"
+              subtitle="Installation toiture végétale Le Mans - Couvreur Sarthe"
             />
             <RealizationImageCard
               imageUrl="/images/realisation-toiture-bardage.jpg"
               title="Rénovation complète - Maison individuelle"
-              subtitle="Tuiles terre cuite, isolation renforcée"
+              subtitle="Tuiles terre cuite, isolation renforcée - Couvreur Le Mans"
             />
             <RealizationImageCard
               imageUrl="/images/realisation-toiture-construction.jpeg"
-              title=""
-              subtitle=""
+              title="Travaux de toiture en cours"
+              subtitle="Pose charpente et couverture - Artisan couvreur Sarthe"
             />
           </div>
           <div className="text-center" style={{ marginTop: '3rem' }}>

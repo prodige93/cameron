@@ -177,6 +177,37 @@
       "sameAs": []
     }
     </script>
+    
+    <!-- Données structurées BreadcrumbList pour la page d'accueil -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://www.jory-charpente-couverture.fr/"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Google Analytics (à remplacer par votre ID de suivi) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX', {
+        'anonymize_ip': true,
+        'cookie_flags': 'SameSite=None;Secure'
+      });
+    </script>
+    
+    <!-- Google Search Console Verification (à remplacer par votre meta tag) -->
+    <meta name="google-site-verification" content="VOTRE_CODE_VERIFICATION" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">

@@ -184,8 +184,8 @@ const Services = () => {
     <>
       <section className="page-header">
         <div className="container">
-          <h1>Services Couvreur Le Mans - Charpente, Couverture, Zinguerie</h1>
-          <p>Des solutions complètes de couvreur au Mans et dans toute la Sarthe pour tous vos besoins en toiture</p>
+          <h1>Services Couvreur Le Mans - Charpente, Couverture, Zinguerie, Fenêtres de Toit</h1>
+          <p>Services complets de couvreur au Mans et dans toute la Sarthe (72) : charpente, couverture, zinguerie, fenêtres de toit, démoussage, étanchéité. Devis gratuit, intervention rapide.</p>
         </div>
       </section>
 
@@ -286,12 +286,16 @@ const Services = () => {
                           backgroundPosition: 'center',
                           backgroundRepeat: 'no-repeat'
                         }}
+                        role="img"
+                        aria-label={`${service.title} - Service couvreur Le Mans - JORY CHARPENTE COUVERTURE`}
                       >
                       </div>
                     ) : service.gradient ? (
                       <div
                         className={`service-image-placeholder ${service.urgent ? 'urgent' : ''}`}
                         style={{ background: service.gradient }}
+                        role="img"
+                        aria-label={`${service.title} - Service couvreur Le Mans - JORY CHARPENTE COUVERTURE`}
                       >
                         <span>{service.title}</span>
                       </div>
