@@ -179,12 +179,12 @@ Ce message a été envoyé depuis le formulaire d'abonnement du site web.
  */
 const getServiceLabel = (serviceCode) => {
   const services = {
-    pose: 'Pose de toiture',
-    reparation: 'Réparation de toiture',
-    renovation: 'Rénovation complète',
-    demoussage: 'Démoussage et traitement',
-    etancheite: 'Étanchéité',
+    pose: 'Charpente',
+    fenetres: 'Fenêtres de toit',
     zinguerie: 'Zinguerie',
+    renovation: 'Couverture',
+    demoussage: 'Entretien & Démoussage',
+    etancheite: 'Étanchéité & Isolation',
     urgence: 'Travaux d\'urgence',
     autre: 'Autre'
   }

@@ -202,12 +202,12 @@ const Contact = () => {
                     required
                   >
                     <option value="">Sélectionnez un service</option>
-                    <option value="pose">Pose de toiture</option>
-                    <option value="reparation">Réparation de toiture</option>
-                    <option value="renovation">Rénovation complète</option>
-                    <option value="demoussage">Démoussage et traitement</option>
-                    <option value="etancheite">Étanchéité</option>
+                    <option value="pose">Charpente</option>
+                    <option value="fenetres">Fenêtres de toit</option>
                     <option value="zinguerie">Zinguerie</option>
+                    <option value="renovation">Couverture</option>
+                    <option value="demoussage">Entretien & Démoussage</option>
+                    <option value="etancheite">Étanchéité & Isolation</option>
                     <option value="urgence">Travaux d'urgence</option>
                     <option value="autre">Autre</option>
                   </select>
