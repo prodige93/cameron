@@ -95,10 +95,10 @@ const Home = () => {
                 Couvreur Le Mans 72 - JORY CHARPENTE COUVERTURE | Réparation Toiture Sarthe
               </h1>
               <p className="hero-subtitle">
-                <strong><span className="hero-highlight-text">Couvreur</span> professionnel au Mans</strong> et dans toute la Sarthe (72). JORY <span className="hero-highlight-text">CHARPENTE</span> COUVERTURE est votre artisan couvreur spécialisé en charpente, couverture, zinguerie et pose de fenêtres de toit. Nous intervenons rapidement pour tous vos projets de réparation, rénovation et pose de toiture au Mans, Changé, Allonnes et dans toute la région.
+                <strong><span className="hero-highlight-text">Couvreur</span> professionnel au Mans</strong> et dans toute la Sarthe (72). JORY <span className="hero-highlight-text">CHARPENTE</span> COUVERTURE est votre <strong>artisan couvreur au Mans</strong> spécialisé en charpente, couverture, zinguerie et pose de fenêtres de toit. Nous intervenons rapidement pour tous vos projets de réparation, rénovation et pose de toiture au Mans, Changé, Allonnes et dans toute la région. <strong>Votre couvreur au Mans</strong> de confiance pour tous vos travaux de toiture.
               </p>
               <p className="hero-location">
-                <strong>Couvreur Le Mans</strong> basé à Changé (72560) - Intervention rapide dans toute la Sarthe 72
+                <strong>Couvreur Le Mans</strong> basé à Changé (72560) - Intervention rapide dans toute la Sarthe 72. <strong>Devis gratuit couvreur Le Mans</strong> sous 24h.
               </p>
               <div className="hero-prestations">
                 <h3 className="prestations-title">Nos prestations :</h3>
@@ -155,6 +155,34 @@ const Home = () => {
             <Link to="/services" className="btn btn-outline">
               Voir tous nos services
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* SEO Content Section - Couvreur Le Mans */}
+      <section className="seo-content section">
+        <div className="container">
+          <div className="seo-content-wrapper">
+            <h2 className="section-title">Couvreur Le Mans : Votre Expert en Toiture et Charpente</h2>
+            <div className="seo-text-content">
+              <p>
+                <strong>Vous recherchez un couvreur au Mans ?</strong> JORY CHARPENTE COUVERTURE est votre artisan couvreur de confiance au Mans et dans toute la Sarthe. Spécialisé depuis de nombreuses années, nous intervenons rapidement pour tous vos besoins en couverture, charpente et zinguerie au Mans et ses environs.
+              </p>
+              <p>
+                En tant que <strong>couvreur professionnel au Mans</strong>, nous réalisons tous types de travaux de toiture : réparation de toiture urgente au Mans, rénovation complète de toiture, pose de charpente, zinguerie sur mesure, pose de fenêtres de toit (Velux), démoussage et traitement de toiture. Notre équipe de couvreurs qualifiés intervient rapidement dans tout Le Mans et la région sarthoise.
+              </p>
+              <h3>Pourquoi Choisir un Couvreur au Mans ?</h3>
+              <p>
+                Choisir un <strong>couvreur local au Mans</strong> présente de nombreux avantages : intervention rapide en cas d'urgence (fuite, dégâts de tempête), connaissance parfaite des spécificités climatiques de la région, proximité pour le suivi de chantier, et devis gratuit sans engagement. Notre entreprise de couvreur au Mans vous garantit un service de qualité avec des artisans expérimentés.
+              </p>
+              <h3>Nos Interventions de Couvreur au Mans</h3>
+              <p>
+                En tant que <strong>couvreur expert au Mans</strong>, nous intervenons pour tous vos projets : réparation de toiture au Mans suite à une fuite ou des intempéries, rénovation complète de toiture avec isolation renforcée, pose de toiture neuve (tuiles, ardoises, zinc), charpente traditionnelle ou industrielle, zinguerie complète (gouttières, noues, faîtages), pose de fenêtres de toit Velux, démoussage et traitement anti-mousse, étanchéité et isolation thermique.
+              </p>
+              <p>
+                <strong>Besoin d'un couvreur au Mans ?</strong> Contactez JORY CHARPENTE COUVERTURE pour un devis gratuit. Nous intervenons rapidement dans tout Le Mans, Changé, Allonnes, Coulaines, Arnage, Mulsanne et dans toute la Sarthe (72). Appelez-nous au <strong><a href="tel:+33750398368">07 50 39 83 68</a></strong> pour une intervention urgente ou une demande de devis.
+              </p>
+            </div>
           </div>
         </div>
       </section>

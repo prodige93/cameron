@@ -20,8 +20,8 @@ const Layout = ({ children }) => {
       case '/':
         return {
           title: 'Couvreur Le Mans 72 - JORY CHARPENTE COUVERTURE | Réparation Toiture Sarthe',
-          description: 'Couvreur professionnel au Mans (72). JORY CHARPENTE COUVERTURE : réparation toiture, charpente, zinguerie, fenêtres de toit. Intervention rapide 24/7, devis gratuit. Spécialiste couverture Sarthe depuis Changé.',
-          keywords: 'couvreur le mans, couvreur sarthe, charpentier couvreur le mans, réparation toiture le mans, toiture le mans, couvreur 72, zinguerie le mans, fenêtres de toit le mans, démoussage toiture le mans, charpente le mans, couvreur changé, couvreur allonnes, artisan couvreur le mans, réparation toiture urgente le mans, devis toiture le mans',
+          description: 'Couvreur Le Mans : JORY CHARPENTE COUVERTURE, votre artisan couvreur professionnel au Mans (72). Réparation toiture, charpente, zinguerie, fenêtres de toit. Intervention rapide 24/7, devis gratuit couvreur Le Mans. Spécialiste couverture Sarthe depuis Changé.',
+          keywords: 'couvreur le mans, couvreur au mans, couvreur sarthe, charpentier couvreur le mans, réparation toiture le mans, toiture le mans, couvreur 72, zinguerie le mans, fenêtres de toit le mans, démoussage toiture le mans, charpente le mans, couvreur changé, couvreur allonnes, artisan couvreur le mans, entreprise couvreur le mans, devis couvreur le mans, couvreur le mans urgence, couvreur professionnel le mans, réparation toiture urgente le mans, devis toiture le mans',
           canonicalUrl: currentUrl
         }
       case '/services':

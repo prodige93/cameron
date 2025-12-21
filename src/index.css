@@ -75,6 +75,73 @@ img {
 }
 
 /* ============================================
+   SEO CONTENT SECTION
+   ============================================ */
+
+.seo-content {
+    background-color: var(--bg-white);
+}
+
+.seo-content-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.seo-text-content {
+    text-align: left;
+    line-height: 1.8;
+    color: var(--text-light);
+}
+
+.seo-text-content h2 {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-lg);
+    color: var(--text-dark);
+    text-align: center;
+}
+
+.seo-text-content h3 {
+    font-size: 1.5rem;
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+    color: var(--text-dark);
+}
+
+.seo-text-content p {
+    margin-bottom: var(--spacing-md);
+    font-size: 1.05rem;
+}
+
+.seo-text-content strong {
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.seo-text-content a {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.seo-text-content a:hover {
+    color: var(--primary-dark);
+}
+
+@media (max-width: 768px) {
+    .seo-text-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .seo-text-content h3 {
+        font-size: 1.3rem;
+    }
+    
+    .seo-text-content p {
+        font-size: 1rem;
+    }
+}
+
+/* ============================================
    OPTIMIZED IMAGE COMPONENT
    ============================================ */
 
