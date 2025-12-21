@@ -12,7 +12,7 @@ const initEmailJS = () => {
       if (publicKey && publicKey !== 'YOUR_PUBLIC_KEY') {
         try {
           window.emailjs.init(publicKey)
-          console.log('EmailJS initialisé avec succès')
+          // EmailJS initialisé avec succès
         } catch (error) {
           console.error('Erreur lors de l\'initialisation d\'EmailJS:', error)
         }
@@ -30,7 +30,12 @@ setTimeout(initEmailJS, 100)
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter
+      future={{
+        v7_startTransition: true,
+        v7_relativeSplatPath: true
+      }}
+    >
       <App />
     </BrowserRouter>
   </React.StrictMode>,
