@@ -40,26 +40,37 @@ export const sendContactEmail = async (formData) => {
       })
     }
 
-    // Préparer le message complet avec toutes les informations formatées
+    // Préparer le message complet avec toutes les informations formatées de manière claire
     const fullMessage = `
-Nouvelle demande de contact
+NOUVELLE DEMANDE DE DEVIS GRATUIT
 
-Informations du client:
-- Nom et prénom: ${emailData.from_name}
-- Email: ${emailData.from_email}
-- Téléphone: ${emailData.phone}
-- Adresse: ${emailData.address}
+═══════════════════════════════════════════════════════════
+INFORMATIONS DU CLIENT
+═══════════════════════════════════════════════════════════
 
-Détails de la demande:
-- Type de travaux: ${emailData.service}
-- Urgence: ${emailData.urgency}
-- Date de la demande: ${emailData.date}
+Nom et prénom: ${emailData.from_name}
+Email: ${emailData.from_email}
+Numéro de téléphone: ${emailData.phone}
+Adresse: ${emailData.address || 'Non renseignée'}
 
-Message:
+═══════════════════════════════════════════════════════════
+DÉTAILS DE LA DEMANDE
+═══════════════════════════════════════════════════════════
+
+Type de travaux: ${emailData.service}
+Urgence: ${emailData.urgency}
+Date de la demande: ${emailData.date}
+
+═══════════════════════════════════════════════════════════
+DESCRIPTION DU PROJET / MESSAGE
+═══════════════════════════════════════════════════════════
+
 ${emailData.message}
 
----
-Ce message a été envoyé depuis le formulaire de contact du site web.
+═══════════════════════════════════════════════════════════
+
+Ce message a été envoyé automatiquement depuis le formulaire de contact du site web.
+Vous pouvez répondre directement à cet email pour contacter le client.
     `.trim()
 
     // Envoyer l'email via EmailJS avec toutes les informations
@@ -74,10 +85,11 @@ Ce message a été envoyé depuis le formulaire de contact du site web.
         address: emailData.address,
         service: emailData.service,
         urgency: emailData.urgency,
-        message: emailData.message, // Message original de l'utilisateur
-        full_message: fullMessage, // Message complet formaté (pour template alternatif)
+        message: emailData.message, // Message original de l'utilisateur (description du projet)
+        full_message: fullMessage, // Message complet formaté avec toutes les informations
         date: emailData.date,
-        reply_to: emailData.from_email
+        reply_to: emailData.from_email,
+        subject: `Nouvelle demande de devis - ${emailData.from_name} - ${emailData.service}`
       },
       EMAILJS_PUBLIC_KEY
     )

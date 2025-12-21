@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f5f5f5;">
+    <table role="presentation" style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;">
+        <tr>
+            <td style="padding: 20px;">
+                <table role="presentation" style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border-collapse: collapse; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                    
+                    <!-- Header -->
+                    <tr>
+                        <td style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 30px 20px; text-align: center; border-radius: 8px 8px 0 0;">
+                            <h1 style="margin: 0; color: #ffffff; font-size: 24px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
+                                NOUVELLE DEMANDE DE DEVIS GRATUIT
+                            </h1>
+                        </td>
+                    </tr>
+
+                    <!-- Informations du client -->
+                    <tr>
+                        <td style="padding: 30px 20px;">
+                            <h2 style="margin: 0 0 20px 0; color: #1976d2; font-size: 18px; font-weight: 600; border-bottom: 2px solid #1976d2; padding-bottom: 10px; text-transform: uppercase;">
+                                Informations du client
+                            </h2>
+                            <table role="presentation" style="width: 100%; border-collapse: collapse;">
+                                <tr>
+                                    <td style="padding: 8px 0; color: #424242; font-size: 14px; border-bottom: 1px solid #e0e0e0;">
+                                        <strong style="color: #1a1a1a; min-width: 150px; display: inline-block;">Nom et prénom:</strong>
+                                        <span style="color: #424242;">{{from_name}}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 8px 0; color: #424242; font-size: 14px; border-bottom: 1px solid #e0e0e0;">
+                                        <strong style="color: #1a1a1a; min-width: 150px; display: inline-block;">Email:</strong>
+                                        <a href="mailto:{{from_email}}" style="color: #1976d2; text-decoration: none;">{{from_email}}</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 8px 0; color: #424242; font-size: 14px; border-bottom: 1px solid #e0e0e0;">
+                                        <strong style="color: #1a1a1a; min-width: 150px; display: inline-block;">Numéro de téléphone:</strong>
+                                        <a href="tel:{{phone}}" style="color: #1976d2; text-decoration: none;">{{phone}}</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 8px 0; color: #424242; font-size: 14px;">
+                                        <strong style="color: #1a1a1a; min-width: 150px; display: inline-block;">Adresse:</strong>
+                                        <span style="color: #424242;">{{address}}</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Détails de la demande -->
+                    <tr>
+                        <td style="padding: 0 20px 30px 20px;">
+                            <h2 style="margin: 0 0 20px 0; color: #1976d2; font-size: 18px; font-weight: 600; border-bottom: 2px solid #1976d2; padding-bottom: 10px; text-transform: uppercase;">
+                                Détails de la demande
+                            </h2>
+                            <table role="presentation" style="width: 100%; border-collapse: collapse;">
+                                <tr>
+                                    <td style="padding: 8px 0; color: #424242; font-size: 14px; border-bottom: 1px solid #e0e0e0;">
+                                        <strong style="color: #1a1a1a; min-width: 150px; display: inline-block;">Type de travaux:</strong>
+                                        <span style="color: #424242; font-weight: 600;">{{service}}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 8px 0; color: #424242; font-size: 14px; border-bottom: 1px solid #e0e0e0;">
+                                        <strong style="color: #1a1a1a; min-width: 150px; display: inline-block;">Urgence:</strong>
+                                        <span style="color: #ff6f00; font-weight: 600;">{{urgency}}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 8px 0; color: #424242; font-size: 14px;">
+                                        <strong style="color: #1a1a1a; min-width: 150px; display: inline-block;">Date de la demande:</strong>
+                                        <span style="color: #424242;">{{date}}</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Description du projet -->
+                    <tr>
+                        <td style="padding: 0 20px 30px 20px;">
+                            <h2 style="margin: 0 0 20px 0; color: #1976d2; font-size: 18px; font-weight: 600; border-bottom: 2px solid #1976d2; padding-bottom: 10px; text-transform: uppercase;">
+                                Description du projet / Message
+                            </h2>
+                            <div style="background-color: #f5f5f5; padding: 20px; border-radius: 6px; border-left: 4px solid #1976d2;">
+                                <p style="margin: 0; color: #424242; font-size: 14px; line-height: 1.6; white-space: pre-wrap;">{{message}}</p>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Footer -->
+                    <tr>
+                        <td style="padding: 20px; background-color: #f5f5f5; border-radius: 0 0 8px 8px; text-align: center;">
+                            <p style="margin: 0; color: #757575; font-size: 12px; line-height: 1.5;">
+                                Ce message a été envoyé automatiquement depuis le formulaire de contact du site web.<br>
+                                Vous pouvez répondre directement à cet email pour contacter le client.
+                            </p>
+                        </td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+

@@ -28,29 +28,58 @@ Ce document explique comment configurer le système d'envoi d'emails pour recevo
 
 **Sujet:**
 ```
-Nouvelle demande de contact - {{from_name}}
+Nouvelle demande de devis - {{from_name}} - {{service}}
 ```
 
-**Contenu:**
+**Contenu (utilisez {{full_message}} pour avoir le format complet, ou créez votre propre format):**
 ```
-Nouvelle demande de contact
+{{full_message}}
+```
 
-Informations du client:
-- Nom et prénom: {{from_name}}
-- Email: {{from_email}}
-- Téléphone: {{phone}}
-- Adresse: {{address}}
+**OU créez votre propre format avec les variables individuelles:**
+```
+NOUVELLE DEMANDE DE DEVIS GRATUIT
 
-Détails de la demande:
-- Type de travaux: {{service}}
-- Urgence: {{urgency}}
+═══════════════════════════════════════════════════════════
+INFORMATIONS DU CLIENT
+═══════════════════════════════════════════════════════════
 
-Message:
+Nom et prénom: {{from_name}}
+Email: {{from_email}}
+Numéro de téléphone: {{phone}}
+Adresse: {{address}}
+
+═══════════════════════════════════════════════════════════
+DÉTAILS DE LA DEMANDE
+═══════════════════════════════════════════════════════════
+
+Type de travaux: {{service}}
+Urgence: {{urgency}}
+Date de la demande: {{date}}
+
+═══════════════════════════════════════════════════════════
+DESCRIPTION DU PROJET / MESSAGE
+═══════════════════════════════════════════════════════════
+
 {{message}}
 
----
-Ce message a été envoyé depuis le formulaire de contact du site web.
-Date: {{date}}
+═══════════════════════════════════════════════════════════
+
+Ce message a été envoyé automatiquement depuis le formulaire de contact du site web.
+Vous pouvez répondre directement à cet email pour contacter le client.
+```
+
+**Variables disponibles dans le template:**
+- `{{from_name}}` - Nom et prénom du client
+- `{{from_email}}` - Email du client
+- `{{phone}}` - Numéro de téléphone du client
+- `{{address}}` - Adresse du client
+- `{{service}}` - Type de travaux (déjà formaté en texte lisible)
+- `{{urgency}}` - Niveau d'urgence (déjà formaté)
+- `{{message}}` - Message/description du projet du client
+- `{{full_message}}` - Message complet formaté avec toutes les informations
+- `{{date}}` - Date et heure de la demande
+- `{{reply_to}}` - Email de réponse (email du client)
 ```
 
 4. Notez le **Template ID** (format: `template_xxxxx`)
