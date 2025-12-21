@@ -17,8 +17,12 @@ export const sendContactEmail = async (formData) => {
   try {
     // Vérifier si EmailJS est disponible
     if (typeof window.emailjs === 'undefined') {
-      // Charger EmailJS dynamiquement
-      await loadEmailJS()
+      throw new Error('EmailJS n\'est pas chargé. Veuillez recharger la page.')
+    }
+    
+    // S'assurer qu'EmailJS est initialisé
+    if (!window.emailjs.init) {
+      window.emailjs.init(EMAILJS_PUBLIC_KEY)
     }
 
     // Préparer les données pour l'email avec toutes les informations
@@ -118,7 +122,7 @@ export const sendNewsletterSubscription = async (email) => {
   try {
     // Vérifier si EmailJS est disponible
     if (typeof window.emailjs === 'undefined') {
-      await loadEmailJS()
+      throw new Error('EmailJS n\'est pas chargé. Veuillez recharger la page.')
     }
 
     const emailData = {
@@ -168,33 +172,6 @@ Ce message a été envoyé depuis le formulaire d'abonnement du site web.
       error: error.message || error.text || 'Erreur inconnue'
     }
   }
-}
-
-/**
- * Charge dynamiquement la bibliothèque EmailJS
- */
-const loadEmailJS = () => {
-  return new Promise((resolve, reject) => {
-    // Vérifier si EmailJS est déjà chargé
-    if (typeof window.emailjs !== 'undefined') {
-      resolve()
-      return
-    }
-
-    // Charger le script EmailJS
-    const script = document.createElement('script')
-    script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js'
-    script.async = true
-    script.onload = () => {
-      // Initialiser EmailJS avec la clé publique
-      window.emailjs.init(EMAILJS_PUBLIC_KEY)
-      resolve()
-    }
-    script.onerror = () => {
-      reject(new Error('Impossible de charger EmailJS'))
-    }
-    document.head.appendChild(script)
-  })
 }
 
 /**
