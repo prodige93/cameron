@@ -1153,24 +1153,21 @@ ul {
     }
 }
 
-/* Header spécifique pour la page réalisations - commence directement sous le header */
+/* Header spécifique pour la page réalisations - même taille que les autres pages */
 .page-header.realizations-header {
     padding-top: 100px;
     margin-top: 0;
-    min-height: 250px;
 }
 
 @media (max-width: 768px) {
     .page-header.realizations-header {
         padding-top: 80px;
-        min-height: 180px;
     }
 }
 
 @media (max-width: 480px) {
     .page-header.realizations-header {
         padding-top: 70px;
-        min-height: 150px;
     }
 }
 
