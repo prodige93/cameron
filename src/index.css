@@ -424,11 +424,12 @@ ul {
 }
 
 .logo-image {
-    height: 4rem;
+    height: 5rem;
     width: auto;
     object-fit: contain;
     display: block;
     pointer-events: none;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
 .header-content .nav {
@@ -629,7 +630,7 @@ ul {
     }
     
     .logo-image {
-        height: 2.5rem;
+        height: 4rem;
         width: auto;
     }
     
@@ -864,7 +865,7 @@ ul {
     }
     
     .logo-image {
-        height: 2rem;
+        height: 3rem;
     }
     
     .menu-toggle {
@@ -970,7 +971,7 @@ ul {
     color: white;
     overflow: hidden;
     padding: var(--spacing-2xl) 0;
-    padding-top: calc(var(--spacing-2xl) + 80px);
+    padding-top: calc(var(--spacing-2xl) + 120px);
 }
 
 .hero-background {
@@ -1312,6 +1313,7 @@ ul {
     background-color: #1a1a1a;
     color: white;
     padding: var(--spacing-xl) 0;
+    padding-top: calc(var(--spacing-xl) + 100px);
     text-align: center;
     position: relative;
     min-height: 200px;

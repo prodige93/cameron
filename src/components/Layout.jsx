@@ -47,8 +47,8 @@ const Layout = ({ children }) => {
         }
       case '/avis':
         return {
-          title: 'Avis Clients Couvreur Le Mans - Témoignages 5⭐ | JORY CHARPENTE',
-          description: 'Lisez les avis de nos clients couvreur au Mans. Témoignages 5 étoiles sur nos travaux de toiture, charpente et zinguerie en Sarthe.',
+          title: 'Avis Clients Couvreur Le Mans | JORY CHARPENTE',
+          description: 'Lisez les avis de nos clients couvreur au Mans. Témoignages sur nos travaux de toiture, charpente et zinguerie en Sarthe.',
           keywords: 'avis couvreur le mans, témoignages couvreur le mans, avis clients toiture le mans, avis jory charpente couverture',
           canonicalUrl: currentUrl
         }

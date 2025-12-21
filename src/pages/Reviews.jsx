@@ -454,8 +454,8 @@ const Reviews = () => {
     <>
       <section className="page-header">
         <div className="container">
-          <h1>Avis Clients Couvreur Le Mans - Témoignages 5⭐ | JORY CHARPENTE</h1>
-          <p>Lisez les avis de nos clients couvreur au Mans. Témoignages 5 étoiles sur nos travaux de toiture, charpente et zinguerie en Sarthe. 98% de clients satisfaits.</p>
+          <h1>Avis Clients Couvreur Le Mans | JORY CHARPENTE</h1>
+          <p>Lisez les avis de nos clients couvreur au Mans. Témoignages sur nos travaux de toiture, charpente et zinguerie en Sarthe. 98% de clients satisfaits.</p>
         </div>
       </section>
 
