@@ -13,7 +13,7 @@ const Layout = ({ children }) => {
 
   // SEO par page avec données structurées améliorées
   const getSEOProps = () => {
-    const baseUrl = 'https://www.jory-charpente-couverture.fr'
+    const baseUrl = 'https://jory-couverture.com'
     const currentUrl = `${baseUrl}${location.pathname}`
 
     switch (location.pathname) {
@@ -81,7 +81,7 @@ const Layout = ({ children }) => {
 
   // Ajouter les données structurées BreadcrumbList dynamiquement
   useEffect(() => {
-    const baseUrl = 'https://www.jory-charpente-couverture.fr'
+    const baseUrl = 'https://jory-couverture.com'
     const pathSegments = location.pathname.split('/').filter(Boolean)
     
     const breadcrumbItems = [

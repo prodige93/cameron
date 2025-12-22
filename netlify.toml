@@ -61,3 +61,22 @@
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
 
+# Headers SEO pour sitemap et robots.txt
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Content-Type = "application/xml; charset=utf-8"
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
+    Cache-Control = "public, max-age=3600"
+
+# Headers pour améliorer le référencement
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+

@@ -7,68 +7,68 @@
   
   <!-- Page d'accueil - Couvreur Le Mans -->
   <url>
-    <loc>https://www.jory-charpente-couverture.fr/</loc>
-    <lastmod>2025-01-21</lastmod>
+    <loc>https://jory-couverture.com/</loc>
+    <lastmod>2025-12-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <!-- Services - Couvreur Sarthe -->
   <url>
-    <loc>https://www.jory-charpente-couverture.fr/services</loc>
-    <lastmod>2025-01-21</lastmod>
+    <loc>https://jory-couverture.com/services</loc>
+    <lastmod>2025-12-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <!-- Réalisations -->
   <url>
-    <loc>https://www.jory-charpente-couverture.fr/realisations</loc>
-    <lastmod>2025-01-21</lastmod>
+    <loc>https://jory-couverture.com/realisations</loc>
+    <lastmod>2025-12-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <!-- Réalisations individuelles -->
   <url>
-    <loc>https://www.jory-charpente-couverture.fr/realisations/toiture-vegetale</loc>
-    <lastmod>2025-01-21</lastmod>
+    <loc>https://jory-couverture.com/realisations/toiture-vegetale</loc>
+    <lastmod>2025-12-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.jory-charpente-couverture.fr/realisations/renovation-complete-maison</loc>
-    <lastmod>2025-01-21</lastmod>
+    <loc>https://jory-couverture.com/realisations/renovation-complete-maison</loc>
+    <lastmod>2025-12-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.jory-charpente-couverture.fr/realisations/toiture-construction</loc>
-    <lastmod>2025-01-21</lastmod>
+    <loc>https://jory-couverture.com/realisations/toiture-construction</loc>
+    <lastmod>2025-12-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <!-- À propos -->
   <url>
-    <loc>https://www.jory-charpente-couverture.fr/a-propos</loc>
-    <lastmod>2025-01-21</lastmod>
+    <loc>https://jory-couverture.com/a-propos</loc>
+    <lastmod>2025-12-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <!-- Avis clients -->
   <url>
-    <loc>https://www.jory-charpente-couverture.fr/avis</loc>
-    <lastmod>2025-01-21</lastmod>
+    <loc>https://jory-couverture.com/avis</loc>
+    <lastmod>2025-12-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <!-- Contact -->
   <url>
-    <loc>https://www.jory-charpente-couverture.fr/contact</loc>
-    <lastmod>2025-01-21</lastmod>
+    <loc>https://jory-couverture.com/contact</loc>
+    <lastmod>2025-12-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>

@@ -41,7 +41,7 @@ const SEO = ({
     if (ogDescription) ogDescription.setAttribute('content', description)
 
     const ogImage = document.querySelector('meta[property="og:image"]')
-    if (ogImage) ogImage.setAttribute('content', `https://www.jory-charpente-couverture.fr${ogImage}`)
+    if (ogImage) ogImage.setAttribute('content', `https://jory-couverture.com${ogImage}`)
 
     const ogUrl = document.querySelector('meta[property="og:url"]')
     if (ogUrl && canonicalUrl) ogUrl.setAttribute('content', canonicalUrl)
