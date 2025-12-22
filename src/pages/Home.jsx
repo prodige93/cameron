@@ -159,6 +159,9 @@ const Home = () => {
                   className="hero-logo" 
                 />
               </div>
+              <div className="hero-services-frame">
+                <p className="hero-services-text">Charpente, Couverture, Zinguerie</p>
+              </div>
               <div className="hero-prestations">
                 <h3 className="prestations-title">Nos prestations :</h3>
                 <ul className="prestations-list">
