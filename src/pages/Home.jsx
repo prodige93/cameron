@@ -152,15 +152,13 @@ const Home = () => {
         <div className="container">
           <div className="hero-content-wrapper">
             <div className="hero-text">
-              <h1 className="hero-title">
-                Couvreur Le Mans 72 - JORY CHARPENTE COUVERTURE | Réparation Toiture Sarthe
-              </h1>
-              <p className="hero-subtitle">
-                <strong><span className="hero-highlight-text">Couvreur</span> professionnel au Mans</strong> et dans toute la Sarthe (72). JORY <span className="hero-highlight-text">CHARPENTE</span> COUVERTURE est votre <strong>artisan couvreur au Mans</strong> spécialisé en charpente, couverture, zinguerie et pose de fenêtres de toit. Nous intervenons rapidement pour tous vos projets de réparation, rénovation et pose de toiture au Mans, Changé, Allonnes et dans toute la région. <strong>Votre couvreur au Mans</strong> de confiance pour tous vos travaux de toiture.
-              </p>
-              <p className="hero-location">
-                <strong>Couvreur Le Mans</strong> basé à Changé (72560) - Intervention rapide dans toute la Sarthe 72. <strong>Devis gratuit couvreur Le Mans</strong> sous 24h.
-              </p>
+              <div className="hero-logo-container">
+                <img 
+                  src="/images/LOGO.png" 
+                  alt="JORY CHARPENTE COUVERTURE - Couvreur Le Mans 72" 
+                  className="hero-logo" 
+                />
+              </div>
               <div className="hero-prestations">
                 <h3 className="prestations-title">Nos prestations :</h3>
                 <ul className="prestations-list">
