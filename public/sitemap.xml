@@ -3,74 +3,131 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd
+        http://www.google.com/schemas/sitemap-image/1.1
+        http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd">
   
   <!-- Page d'accueil - Couvreur Le Mans -->
   <url>
     <loc>https://jory-couverture.com/</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2025-01-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://jory-couverture.com/images/LOGO.png</image:loc>
+      <image:title>JORY CHARPENTE COUVERTURE - Couvreur Le Mans</image:title>
+      <image:caption>Logo JORY CHARPENTE COUVERTURE - Couvreur professionnel au Mans et dans la Sarthe</image:caption>
+    </image:image>
   </url>
   
   <!-- Services - Couvreur Sarthe -->
   <url>
     <loc>https://jory-couverture.com/services</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2025-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://jory-couverture.com/images/realisation-charpente-construction.jpeg</image:loc>
+      <image:title>Services couvreur Le Mans - Charpente et couverture</image:title>
+      <image:caption>Services de charpente et couverture au Mans par JORY CHARPENTE COUVERTURE</image:caption>
+    </image:image>
   </url>
   
   <!-- Réalisations -->
   <url>
     <loc>https://jory-couverture.com/realisations</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2025-01-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://jory-couverture.com/images/realisation-toiture-vegetale.jpeg</image:loc>
+      <image:title>Réalisations couvreur Le Mans - Toiture végétale</image:title>
+      <image:caption>Réalisation de toiture végétale par JORY CHARPENTE COUVERTURE au Mans</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://jory-couverture.com/images/realisation-toiture-bardage.jpg</image:loc>
+      <image:title>Réalisations couvreur Le Mans - Rénovation complète</image:title>
+      <image:caption>Rénovation complète de toiture au Mans par JORY CHARPENTE COUVERTURE</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://jory-couverture.com/images/realisation-toiture-construction.jpeg</image:loc>
+      <image:title>Réalisations couvreur Le Mans - Construction toiture</image:title>
+      <image:caption>Travaux de construction de toiture au Mans par JORY CHARPENTE COUVERTURE</image:caption>
+    </image:image>
   </url>
   
   <!-- Réalisations individuelles -->
   <url>
     <loc>https://jory-couverture.com/realisations/toiture-vegetale</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2025-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://jory-couverture.com/images/realisation-toiture-vegetale.jpeg</image:loc>
+      <image:title>Toiture végétale - Réalisation couvreur Le Mans</image:title>
+      <image:caption>Installation de toiture végétale écologique au Mans par JORY CHARPENTE COUVERTURE</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://jory-couverture.com/realisations/renovation-complete-maison</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2025-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://jory-couverture.com/images/realisation-toiture-bardage.jpg</image:loc>
+      <image:title>Rénovation complète maison - Couvreur Le Mans</image:title>
+      <image:caption>Rénovation complète de toiture avec isolation au Mans par JORY CHARPENTE COUVERTURE</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://jory-couverture.com/realisations/toiture-construction</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2025-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://jory-couverture.com/images/realisation-toiture-construction.jpeg</image:loc>
+      <image:title>Travaux toiture en cours - Couvreur Le Mans</image:title>
+      <image:caption>Travaux de construction de toiture au Mans par JORY CHARPENTE COUVERTURE</image:caption>
+    </image:image>
   </url>
   
   <!-- À propos -->
   <url>
     <loc>https://jory-couverture.com/a-propos</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2025-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://jory-couverture.com/images/LOGO.png</image:loc>
+      <image:title>À propos - JORY CHARPENTE COUVERTURE</image:title>
+      <image:caption>JORY CHARPENTE COUVERTURE - Votre couvreur expert au Mans depuis Changé</image:caption>
+    </image:image>
   </url>
   
   <!-- Avis clients -->
   <url>
     <loc>https://jory-couverture.com/avis</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2025-01-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://jory-couverture.com/images/LOGO.png</image:loc>
+      <image:title>Avis clients couvreur Le Mans - JORY CHARPENTE COUVERTURE</image:title>
+      <image:caption>Avis et témoignages clients de JORY CHARPENTE COUVERTURE, couvreur au Mans</image:caption>
+    </image:image>
   </url>
   
   <!-- Contact -->
   <url>
     <loc>https://jory-couverture.com/contact</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2025-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://jory-couverture.com/images/LOGO.png</image:loc>
+      <image:title>Contact couvreur Le Mans - JORY CHARPENTE COUVERTURE</image:title>
+      <image:caption>Contactez JORY CHARPENTE COUVERTURE pour un devis gratuit de couvreur au Mans</image:caption>
+    </image:image>
   </url>
   
 </urlset>

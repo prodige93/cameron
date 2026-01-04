@@ -1,21 +1,53 @@
 # robots.txt pour JORY CHARPENTE COUVERTURE
 # Couvreur Le Mans 72 - Réparation Toiture Sarthe
+# Optimisé pour le référencement Google
 
+# Tous les robots
 User-agent: *
 Allow: /
+Allow: /images/
+Allow: /assets/
+Allow: /services
+Allow: /realisations
+Allow: /a-propos
+Allow: /avis
+Allow: /contact
 
-# Sitemap
-Sitemap: https://jory-couverture.com/sitemap.xml
+# Spécifique pour Googlebot (crawler principal de Google)
+User-agent: Googlebot
+Allow: /
+Allow: /images/
+Allow: /assets/
+Crawl-delay: 0
 
-# Crawl-delay
-Crawl-delay: 1
+# Spécifique pour Googlebot-Image (pour l'indexation des images)
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /assets/
+Crawl-delay: 0
 
-# Bloquer les fichiers inutiles
+# Spécifique pour Googlebot-Mobile
+User-agent: Googlebot-Mobile
+Allow: /
+Crawl-delay: 0
+
+# Bloquer les fichiers et dossiers inutiles
 Disallow: /node_modules/
 Disallow: /*.json$
 Disallow: /dist/
+Disallow: /src/
+Disallow: /.git/
+Disallow: /.vscode/
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /vite.config.js
+Disallow: /netlify.toml
+Disallow: /vercel.json
+Disallow: /render.yaml
 
-# Autoriser les ressources importantes
-Allow: /images/
-Allow: /assets/
+# Sitemap (à placer à la fin)
+Sitemap: https://jory-couverture.com/sitemap.xml
+
+# Informations supplémentaires
+# Host: https://jory-couverture.com (optionnel, certaines versions de robots.txt supportent cette directive)
 
