@@ -397,12 +397,26 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
     <link rel="dns-prefetch" href="https://api.emailjs.com">
-    <!-- Fonts avec display=swap pour performance -->
+    
+    <!-- Preload des ressources critiques pour améliorer les performances -->
+    <link rel="preload" href="/images/LOGO.png" as="image" type="image/png">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
+    
+    <!-- Fonts avec display=swap pour performance (fallback si preload ne fonctionne pas) -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
     
+    <!-- Prefetch des pages importantes pour améliorer la navigation -->
+    <link rel="prefetch" href="/services" as="document">
+    <link rel="prefetch" href="/contact" as="document">
+    <link rel="prefetch" href="/realisations" as="document">
+    
     <!-- Sitemap -->
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+    
+    <!-- Canonical URL pour la page d'accueil -->
+    <link rel="canonical" href="https://jory-couverture.com/">
 </head>
 <body>
     <div id="root"></div>

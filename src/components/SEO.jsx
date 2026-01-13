@@ -11,7 +11,19 @@ const SEO = ({
   useEffect(() => {
     const baseUrl = 'https://jory-couverture.com'
     const fullOgImage = ogImage.startsWith('http') ? ogImage : `${baseUrl}${ogImage}`
-    const fullCanonicalUrl = canonicalUrl || `${baseUrl}${window.location.pathname}`
+    
+    // Normaliser l'URL canonique : enlever trailing slash (sauf pour la racine), enlever paramètres de requête
+    let normalizedPath = window.location.pathname
+    // Enlever le trailing slash sauf pour la racine
+    if (normalizedPath !== '/' && normalizedPath.endsWith('/')) {
+      normalizedPath = normalizedPath.slice(0, -1)
+    }
+    // S'assurer que la racine est bien '/'
+    if (normalizedPath === '') {
+      normalizedPath = '/'
+    }
+    
+    const fullCanonicalUrl = canonicalUrl || `${baseUrl}${normalizedPath}`
 
     // Mettre à jour le title
     document.title = title

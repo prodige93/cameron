@@ -5,6 +5,39 @@
 [build.environment]
   NODE_VERSION = "18"
 
+# Redirections pour normaliser les URLs (enlever trailing slash sauf pour la racine)
+# Ces redirections doivent être AVANT la règle catch-all pour le SPA
+[[redirects]]
+  from = "/services/"
+  to = "/services"
+  status = 301
+
+[[redirects]]
+  from = "/realisations/"
+  to = "/realisations"
+  status = 301
+
+[[redirects]]
+  from = "/a-propos/"
+  to = "/a-propos"
+  status = 301
+
+[[redirects]]
+  from = "/avis/"
+  to = "/avis"
+  status = 301
+
+[[redirects]]
+  from = "/contact/"
+  to = "/contact"
+  status = 301
+
+# Redirections pour les réalisations individuelles avec trailing slash
+[[redirects]]
+  from = "/realisations/*/"
+  to = "/realisations/:splat"
+  status = 301
+
 # Redirections pour le routing SPA
 [[redirects]]
   from = "/*"
