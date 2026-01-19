@@ -13,6 +13,7 @@
   "scripts": {
     "dev": "vite --host 0.0.0.0 --port ${PORT:-3000}",
     "build": "vite build",
+    "generate-prerender": "node scripts/generate-prerender.js",
     "preview": "vite preview --host 0.0.0.0 --port ${PORT:-3000}",
     "start": "vite preview --host 0.0.0.0 --port ${PORT:-3000}",
     "render": "npm run build && npm start"
