@@ -7,6 +7,8 @@
 
 # Redirections pour normaliser les URLs (enlever trailing slash sauf pour la racine)
 # Ces redirections doivent être AVANT la règle catch-all pour le SPA
+
+# Redirections trailing slash (normalisation)
 [[redirects]]
   from = "/services/"
   to = "/services"
@@ -36,6 +38,77 @@
 [[redirects]]
   from = "/realisations/*/"
   to = "/realisations/:splat"
+  status = 301
+
+# Redirections pour les anciennes URLs (compatibilité)
+[[redirects]]
+  from = "/about"
+  to = "/a-propos"
+  status = 301
+
+[[redirects]]
+  from = "/about/"
+  to = "/a-propos"
+  status = 301
+
+[[redirects]]
+  from = "/about.html"
+  to = "/a-propos"
+  status = 301
+
+[[redirects]]
+  from = "/about.html/"
+  to = "/a-propos"
+  status = 301
+
+[[redirects]]
+  from = "/services.html"
+  to = "/services"
+  status = 301
+
+[[redirects]]
+  from = "/services.html/"
+  to = "/services"
+  status = 301
+
+[[redirects]]
+  from = "/contact.html"
+  to = "/contact"
+  status = 301
+
+[[redirects]]
+  from = "/contact.html/"
+  to = "/contact"
+  status = 301
+
+[[redirects]]
+  from = "/avis.html"
+  to = "/avis"
+  status = 301
+
+[[redirects]]
+  from = "/avis.html/"
+  to = "/avis"
+  status = 301
+
+[[redirects]]
+  from = "/a-propos.html"
+  to = "/a-propos"
+  status = 301
+
+[[redirects]]
+  from = "/a-propos.html/"
+  to = "/a-propos"
+  status = 301
+
+[[redirects]]
+  from = "/realisations.html"
+  to = "/realisations"
+  status = 301
+
+[[redirects]]
+  from = "/realisations.html/"
+  to = "/realisations"
   status = 301
 
 # Redirections pour le routing SPA

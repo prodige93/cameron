@@ -1,11 +1,30 @@
 # Redirections pour normaliser les URLs (enlever trailing slash sauf pour la racine)
 # Ces redirections doivent être AVANT la règle catch-all pour le SPA
+
+# Redirections trailing slash (normalisation)
 /services/    /services    301
 /realisations/    /realisations    301
 /a-propos/    /a-propos    301
 /avis/    /avis    301
 /contact/    /contact    301
+
+# Redirections réalisations individuelles avec trailing slash
 /realisations/*/    /realisations/:splat    301
+
+# Redirections pour les anciennes URLs (compatibilité)
+/about    /a-propos    301
+/about/    /a-propos    301
+/about.html    /a-propos    301
+/services.html    /services    301
+/services.html/    /services    301
+/contact.html    /contact    301
+/contact.html/    /contact    301
+/avis.html    /avis    301
+/avis.html/    /avis    301
+/a-propos.html    /a-propos    301
+/a-propos.html/    /a-propos    301
+/realisations.html    /realisations    301
+/realisations.html/    /realisations    301
 
 # Configuration pour Netlify - toutes les routes pointent vers index.html pour le routing SPA
 /*    /index.html   200

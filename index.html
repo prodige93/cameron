@@ -416,7 +416,55 @@
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">
     
     <!-- Canonical URL pour la page d'accueil -->
-    <link rel="canonical" href="https://jory-couverture.com/">
+    <link rel="canonical" href="https://jory-couverture.com/" id="initial-canonical">
+    
+    <!-- Script pour définir la balise canonique AVANT le chargement de React -->
+    <!-- Ce script s'exécute immédiatement pour que Google puisse voir la bonne URL canonique -->
+    <!-- Important : Google lit cette balise dans le HTML initial, donc elle doit être présente dès le chargement -->
+    <script>
+      (function() {
+        // S'exécuter immédiatement, avant le chargement de React
+        // Ce script est critique pour que Google puisse voir la bonne URL canonique lors du crawl initial
+        const baseUrl = 'https://jory-couverture.com';
+        
+        // Récupérer le chemin de l'URL actuelle (sans paramètres de requête, sans hash)
+        let pathname = window.location.pathname;
+        
+        // Normaliser le pathname : enlever trailing slash sauf pour la racine
+        // Exemples : /a-propos/ -> /a-propos, / -> / (inchangé)
+        if (pathname !== '/' && pathname.endsWith('/')) {
+          pathname = pathname.slice(0, -1);
+        }
+        // S'assurer que la racine est bien '/'
+        if (pathname === '') {
+          pathname = '/';
+        }
+        
+        // Construire l'URL canonique (sans paramètres de requête, sans hash)
+        // Les paramètres de requête et les hash sont automatiquement ignorés par pathname
+        const canonicalUrl = baseUrl + pathname;
+        
+        // Mettre à jour ou créer la balise canonique
+        // On utilise l'ID 'initial-canonical' pour pouvoir facilement la retrouver
+        let canonical = document.getElementById('initial-canonical') || document.querySelector('link[rel="canonical"]');
+        if (canonical) {
+          canonical.setAttribute('href', canonicalUrl);
+          // S'assurer que l'ID est présent pour que React puisse le mettre à jour plus tard
+          if (!canonical.id) {
+            canonical.id = 'initial-canonical';
+          }
+        } else {
+          canonical = document.createElement('link');
+          canonical.setAttribute('rel', 'canonical');
+          canonical.setAttribute('href', canonicalUrl);
+          canonical.id = 'initial-canonical';
+          document.head.appendChild(canonical);
+        }
+        
+        // Note : React Router mettra à jour cette balise canonique via le composant SEO
+        // lorsqu'il détectera un changement de route côté client
+      })();
+    </script>
 </head>
 <body>
     <div id="root"></div>
