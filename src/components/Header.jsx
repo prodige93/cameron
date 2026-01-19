@@ -71,14 +71,6 @@ const Header = () => {
                     </li>
                     <li>
                       <Link 
-                        to="/a-propos"
-                        onClick={(e) => handleNavClick(e, '/a-propos')}
-                      >
-                        À propos
-                      </Link>
-                    </li>
-                    <li>
-                      <Link 
                         to="/avis"
                         onClick={(e) => handleNavClick(e, '/avis')}
                       >

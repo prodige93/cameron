@@ -20,8 +20,13 @@
   status = 301
 
 [[redirects]]
+  from = "/a-propos"
+  to = "/"
+  status = 301
+
+[[redirects]]
   from = "/a-propos/"
-  to = "/a-propos"
+  to = "/"
   status = 301
 
 [[redirects]]
@@ -43,22 +48,22 @@
 # Redirections pour les anciennes URLs (compatibilité)
 [[redirects]]
   from = "/about"
-  to = "/a-propos"
+  to = "/"
   status = 301
 
 [[redirects]]
   from = "/about/"
-  to = "/a-propos"
+  to = "/"
   status = 301
 
 [[redirects]]
   from = "/about.html"
-  to = "/a-propos"
+  to = "/"
   status = 301
 
 [[redirects]]
   from = "/about.html/"
-  to = "/a-propos"
+  to = "/"
   status = 301
 
 [[redirects]]
@@ -93,12 +98,12 @@
 
 [[redirects]]
   from = "/a-propos.html"
-  to = "/a-propos"
+  to = "/"
   status = 301
 
 [[redirects]]
   from = "/a-propos.html/"
-  to = "/a-propos"
+  to = "/"
   status = 301
 
 [[redirects]]

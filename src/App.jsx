@@ -9,7 +9,6 @@ const Realizations = lazy(() => import('./pages/Realizations'))
 const RealizationDetail = lazy(() => import('./pages/RealizationDetail'))
 const Reviews = lazy(() => import('./pages/Reviews'))
 const Contact = lazy(() => import('./pages/Contact'))
-const About = lazy(() => import('./pages/About'))
 
 // Composant de chargement
 const LoadingFallback = () => (
@@ -49,18 +48,19 @@ function App() {
           {/* Routes principales */}
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/a-propos" element={<About />} />
           <Route path="/realisations" element={<Realizations />} />
           <Route path="/realisations/:id" element={<RealizationDetail />} />
           <Route path="/avis" element={<Reviews />} />
           <Route path="/contact" element={<Contact />} />
           
           {/* Redirections pour compatibilité (anciennes URLs) */}
-          <Route path="/about" element={<Navigate to="/a-propos" replace />} />
+          <Route path="/about" element={<Navigate to="/" replace />} />
+          <Route path="/about.html" element={<Navigate to="/" replace />} />
           <Route path="/services.html" element={<Navigate to="/services" replace />} />
           <Route path="/contact.html" element={<Navigate to="/contact" replace />} />
           <Route path="/avis.html" element={<Navigate to="/avis" replace />} />
-          <Route path="/a-propos.html" element={<Navigate to="/a-propos" replace />} />
+          <Route path="/a-propos" element={<Navigate to="/" replace />} />
+          <Route path="/a-propos.html" element={<Navigate to="/" replace />} />
           
           {/* Route 404 - doit être en dernier */}
           <Route path="*" element={<NotFound />} />

@@ -12,7 +12,6 @@ const routes = [
   '/',
   '/services',
   '/realisations',
-  '/a-propos',
   '/avis',
   '/contact'
 ];
@@ -45,12 +44,6 @@ function updateMetaForRoute(html, route) {
       description: 'Découvrez nos réalisations de couvreur au Mans : rénovation toiture, charpente, zinguerie. Photos avant/après de nos travaux en Sarthe 72.',
       canonical: 'https://jory-couverture.com/realisations',
       ogUrl: 'https://jory-couverture.com/realisations'
-    },
-    '/a-propos': {
-      title: 'À Propos - Couvreur Le Mans Depuis Changé | JORY CHARPENTE COUVERTURE',
-      description: 'Découvrez JORY CHARPENTE COUVERTURE, votre couvreur expert au Mans et dans toute la Sarthe. Artisan qualifié en charpente, couverture et zinguerie.',
-      canonical: 'https://jory-couverture.com/a-propos',
-      ogUrl: 'https://jory-couverture.com/a-propos'
     },
     '/avis': {
       title: 'Avis Clients Couvreur Le Mans | JORY CHARPENTE',

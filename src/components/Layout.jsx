@@ -60,13 +60,6 @@ const Layout = ({ children }) => {
           keywords: 'avis couvreur le mans, témoignages couvreur le mans, avis clients toiture le mans, avis jory charpente couverture',
           canonicalUrl: currentUrl
         }
-      case '/a-propos':
-        return {
-          title: 'À Propos - Couvreur Le Mans Depuis Changé | JORY CHARPENTE COUVERTURE',
-          description: 'Découvrez JORY CHARPENTE COUVERTURE, votre couvreur expert au Mans et dans toute la Sarthe. Artisan qualifié en charpente, couverture et zinguerie.',
-          keywords: 'à propos couvreur le mans, artisan couvreur sarthe, entreprise couverture le mans, histoire jory charpente couverture',
-          canonicalUrl: currentUrl
-        }
       default:
         // Gestion des pages de réalisations individuelles
         if (location.pathname.startsWith('/realisations/')) {
