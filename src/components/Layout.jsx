@@ -87,7 +87,7 @@ const Layout = ({ children }) => {
     }
   }
 
-  // Ajouter les données structurées BreadcrumbList et WebPage dynamiquement
+  // Ajouter les données structurées WebPage dynamiquement
   useEffect(() => {
     const baseUrl = 'https://jory-couverture.com'
     // Normaliser le pathname pour les données structurées aussi
@@ -99,36 +99,6 @@ const Layout = ({ children }) => {
       normalizedPath = '/'
     }
     const currentUrl = `${baseUrl}${normalizedPath}`
-    const pathSegments = normalizedPath.split('/').filter(Boolean)
-    
-    const breadcrumbItems = [
-      { name: 'Accueil', url: baseUrl }
-    ]
-    
-    const pathNames = {
-      'services': 'Services',
-      'realisations': 'Réalisations',
-      'a-propos': 'À propos',
-      'avis': 'Avis clients',
-      'contact': 'Contact'
-    }
-    
-    pathSegments.forEach((segment, index) => {
-      const name = pathNames[segment] || segment
-      const url = `${baseUrl}/${pathSegments.slice(0, index + 1).join('/')}`
-      breadcrumbItems.push({ name, url })
-    })
-    
-    const breadcrumbSchema = {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": breadcrumbItems.map((item, index) => ({
-        "@type": "ListItem",
-        "position": index + 1,
-        "name": item.name,
-        "item": item.url
-      }))
-    }
     
     // Données structurées WebPage pour chaque page
     const seoProps = getSEOProps()
@@ -151,29 +121,13 @@ const Layout = ({ children }) => {
         "url": "https://jory-couverture.com/images/LOGO.png"
       },
       "datePublished": "2024-01-01",
-      "dateModified": new Date().toISOString().split('T')[0],
-      "breadcrumb": {
-        "@id": `${currentUrl}#breadcrumb`
-      }
-    }
-    
-    // Supprimer les anciens scripts s'ils existent
-    const existingBreadcrumb = document.querySelector('script[data-breadcrumb]')
-    if (existingBreadcrumb) {
-      existingBreadcrumb.remove()
+      "dateModified": new Date().toISOString().split('T')[0]
     }
     
     const existingWebPage = document.querySelector('script[data-webpage]')
     if (existingWebPage) {
       existingWebPage.remove()
     }
-    
-    // Ajouter le breadcrumb
-    const breadcrumbScript = document.createElement('script')
-    breadcrumbScript.type = 'application/ld+json'
-    breadcrumbScript.setAttribute('data-breadcrumb', 'true')
-    breadcrumbScript.textContent = JSON.stringify(breadcrumbSchema)
-    document.head.appendChild(breadcrumbScript)
     
     // Ajouter la WebPage
     const webpageScript = document.createElement('script')
@@ -330,8 +284,6 @@ const Layout = ({ children }) => {
     
     // Cleanup function pour tous les scripts
     return () => {
-      const breadcrumb = document.querySelector('script[data-breadcrumb]')
-      if (breadcrumb) breadcrumb.remove()
       const webpage = document.querySelector('script[data-webpage]')
       if (webpage) webpage.remove()
       const imageGallery = document.querySelector('script[data-imagegallery]')
