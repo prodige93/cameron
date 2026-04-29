@@ -38,11 +38,11 @@ const Footer = () => {
             </div>
             <ul>
               <li>LE TILLEUL 72560 Changé, Sarthe</li>
-              <li><a href="tel:+33750398368">07 50 39 83 68</a></li>
-              <li><a href="mailto:JORY.BATIMENT@GMAIL.COM">JORY.BATIMENT@GMAIL.COM</a></li>
+              <li><a href="tel:+33629205036">06 29 20 50 36</a></li>
+              <li><a href="mailto:alexandre.jory@gmail.com">alexandre.jory@gmail.com</a></li>
               <li>Lun-Dim: 8h-20h (urgences)</li>
               <li>
-                <a href="https://wa.me/33750398368" target="_blank" rel="noopener noreferrer" className="whatsapp-link">
+                <a href="https://wa.me/33629205036" target="_blank" rel="noopener noreferrer" className="whatsapp-link">
                   💬 Contactez-nous sur WhatsApp
                 </a>
               </li>

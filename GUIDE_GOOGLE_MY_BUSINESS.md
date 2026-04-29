@@ -70,12 +70,12 @@ Sarthe, France
 
 ### 5. **TÉLÉPHONE** ✅
 ```
-07 50 39 83 68
+06 29 20 50 36
 ```
 
 **Format international :**
 ```
-+33 7 50 39 83 68
++33 6 29 20 50 36
 ```
 
 ---
@@ -91,7 +91,7 @@ https://jory-couverture.com
 
 ### 7. **EMAIL** ✅
 ```
-JORY.BATIMENT@GMAIL.COM
+alexandre.jory@gmail.com
 ```
 
 ---
@@ -217,7 +217,7 @@ Merci beaucoup !
 Ajoutez ces questions/réponses dans votre fiche :
 
 1. **Q : Êtes-vous disponible pour les urgences ?**
-   R : Oui, nous intervenons 24h/24 7j/7 pour les urgences (fuites, dégâts de tempête). Appelez-nous au 07 50 39 83 68.
+   R : Oui, nous intervenons 24h/24 7j/7 pour les urgences (fuites, dégâts de tempête). Appelez-nous au 06 29 20 50 36.
 
 2. **Q : Proposez-vous des devis gratuits ?**
    R : Oui, nous proposons des devis gratuits sous 24h pour tous vos projets de toiture au Mans et dans la Sarthe.
@@ -239,9 +239,9 @@ Avant de publier, vérifiez :
 - [ ] Catégories secondaires ajoutées (minimum 3)
 - [ ] Description complète avec mots-clés "couvreur Le Mans"
 - [ ] Adresse complète et correcte
-- [ ] Téléphone : 07 50 39 83 68
+- [ ] Téléphone : 06 29 20 50 36
 - [ ] Site web : https://jory-couverture.com
-- [ ] Email : JORY.BATIMENT@GMAIL.COM
+- [ ] Email : alexandre.jory@gmail.com
 - [ ] Horaires d'ouverture renseignés
 - [ ] Zones desservies ajoutées
 - [ ] Services/attributs renseignés

@@ -123,7 +123,7 @@ const Contact = () => {
       <section className="page-header">
         <div className="container">
           <h1>Contact Couvreur Le Mans - Devis Gratuit 24/7 | JORY CHARPENTE</h1>
-          <p>Contactez votre couvreur au Mans. Devis gratuit sous 24h pour réparation toiture, charpente, zinguerie. Intervention urgente 24h/24 au 07 50 39 83 68.</p>
+          <p>Contactez votre couvreur au Mans. Devis gratuit sous 24h pour réparation toiture, charpente, zinguerie. Intervention urgente 24h/24 au 06 29 20 50 36.</p>
         </div>
       </section>
 
@@ -279,9 +279,9 @@ const Contact = () => {
                   <div className="contact-icon"></div>
                   <div>
                     <h3>Téléphone</h3>
-                    <p><a href="tel:+33750398368">07 50 39 83 68</a></p>
+                    <p><a href="tel:+33629205036">06 29 20 50 36</a></p>
                     <h3 style={{ marginTop: '1rem' }}>Urgences 24h/24 7j/7</h3>
-                    <p><a href="tel:+33750398368">07 50 39 83 68</a></p>
+                    <p><a href="tel:+33629205036">06 29 20 50 36</a></p>
                   </div>
                 </div>
 
@@ -289,7 +289,7 @@ const Contact = () => {
                   <div className="contact-icon"></div>
                   <div>
                     <h3>Email</h3>
-                    <p><a href="mailto:JORY.BATIMENT@GMAIL.COM">JORY.BATIMENT@GMAIL.COM</a></p>
+                    <p><a href="mailto:alexandre.jory@gmail.com">alexandre.jory@gmail.com</a></p>
                   </div>
                 </div>
 
@@ -319,7 +319,7 @@ const Contact = () => {
               <div className="contact-cta">
                 <h3>Besoin d'une intervention urgente ?</h3>
                 <p style={{ color: 'white' }}>Appelez-nous directement pour une intervention rapide</p>
-                <a href="tel:+33750398368" className="btn btn-primary">Appeler maintenant</a>
+                <a href="tel:+33629205036" className="btn btn-primary">Appeler maintenant</a>
               </div>
             </div>
           </div>

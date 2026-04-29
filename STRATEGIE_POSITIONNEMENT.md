@@ -39,7 +39,7 @@
    - Catégorie principale : "Couvreur"
    - Catégories secondaires : "Entreprise de charpente", "Zinguier"
    - Adresse complète : LE TILLEUL, 72560 Changé
-   - Téléphone : 07 50 39 83 68
+   - Téléphone : 06 29 20 50 36
    - Site web : https://www.jory-charpente-couverture.fr
    - Horaires : Lun-Ven 8h-18h, Sam 9h-12h
 

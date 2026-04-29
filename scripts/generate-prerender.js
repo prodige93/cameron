@@ -53,7 +53,7 @@ function updateMetaForRoute(html, route) {
     },
     '/contact': {
       title: 'Contact Couvreur Le Mans - Devis Gratuit 24/7 | JORY CHARPENTE',
-      description: 'Contactez votre couvreur au Mans. Devis gratuit sous 24h pour réparation toiture, charpente, zinguerie. Intervention urgente 24h/24 au 07 50 39 83 68.',
+      description: 'Contactez votre couvreur au Mans. Devis gratuit sous 24h pour réparation toiture, charpente, zinguerie. Intervention urgente 24h/24 au 06 29 20 50 36.',
       canonical: 'https://jory-couverture.com/contact',
       ogUrl: 'https://jory-couverture.com/contact'
     }

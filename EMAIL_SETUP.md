@@ -98,7 +98,7 @@ Vous pouvez répondre directement à cet email pour contacter le client.
 VITE_EMAILJS_SERVICE_ID=service_xxxxx
 VITE_EMAILJS_TEMPLATE_ID=template_xxxxx
 VITE_EMAILJS_PUBLIC_KEY=xxxxxxxx
-VITE_RECIPIENT_EMAIL=JORY.BATIMENT@GMAIL.COM
+VITE_RECIPIENT_EMAIL=alexandre.jory@gmail.com
 ```
 
 ### 6. Redémarrer l'application

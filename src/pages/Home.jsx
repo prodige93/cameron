@@ -12,7 +12,7 @@ const FAQAccordion = () => {
   const faqs = [
     {
       question: "Quand faire appel à un couvreur au Mans en urgence ?",
-      answer: "Appelez un couvreur urgence au Mans en cas de : fuite importante, tuiles ou ardoises tombées, dégâts après tempête, toiture partiellement arrachée, infiltration d'eau active. JORY CHARPENTE COUVERTURE propose une intervention couvreur Le Mans 24h/24 7j/7 pour les urgences. Appelez-nous immédiatement au 07 50 39 83 68 pour une intervention rapide et sécurisation de votre toiture."
+      answer: "Appelez un couvreur urgence au Mans en cas de : fuite importante, tuiles ou ardoises tombées, dégâts après tempête, toiture partiellement arrachée, infiltration d'eau active. JORY CHARPENTE COUVERTURE propose une intervention couvreur Le Mans 24h/24 7j/7 pour les urgences. Appelez-nous immédiatement au 06 29 20 50 36 pour une intervention rapide et sécurisation de votre toiture."
     },
     {
       question: "Quels sont les services d'un couvreur au Mans ?",
@@ -20,7 +20,7 @@ const FAQAccordion = () => {
     },
     {
       question: "Comment obtenir un devis couvreur Le Mans gratuit ?",
-      answer: "Pour obtenir un devis gratuit couvreur Le Mans, contactez JORY CHARPENTE COUVERTURE par téléphone au 07 50 39 83 68 ou via notre formulaire en ligne. Nous vous proposons un devis détaillé sous 24h, sans engagement, avec visite sur site gratuite pour évaluer précisément vos besoins. Notre couvreur au Mans vous conseille sur les meilleures solutions pour votre projet de toiture."
+      answer: "Pour obtenir un devis gratuit couvreur Le Mans, contactez JORY CHARPENTE COUVERTURE par téléphone au 06 29 20 50 36 ou via notre formulaire en ligne. Nous vous proposons un devis détaillé sous 24h, sans engagement, avec visite sur site gratuite pour évaluer précisément vos besoins. Notre couvreur au Mans vous conseille sur les meilleures solutions pour votre projet de toiture."
     },
     {
       question: "Quelle est la zone d'intervention d'un couvreur au Mans ?",
@@ -184,7 +184,7 @@ const Home = () => {
               <div className="hero-callback-form">
                 <p className="service-24-7-text">Travaux d'urgence 24h/24 7j/7</p>
                 <p className="service-24-7-phone">
-                  <a href="tel:+33750398368">07 50 39 83 68</a>
+                  <a href="tel:+33629205036">06 29 20 50 36</a>
                 </p>
               </div>
               
@@ -242,7 +242,7 @@ const Home = () => {
                 En tant que <strong>couvreur expert au Mans</strong>, nous intervenons pour tous vos projets : réparation de toiture au Mans suite à une fuite ou des intempéries, rénovation complète de toiture avec isolation renforcée, pose de toiture neuve (tuiles, ardoises, zinc), charpente traditionnelle ou industrielle, zinguerie complète (gouttières, noues, faîtages), pose de fenêtres de toit Velux, démoussage et traitement anti-mousse, étanchéité et isolation thermique.
               </p>
               <p>
-                <strong>Besoin d'un couvreur au Mans ?</strong> Contactez JORY CHARPENTE COUVERTURE pour un devis gratuit. Nous intervenons rapidement dans tout Le Mans, Changé, Allonnes, Coulaines, Arnage, Mulsanne et dans toute la Sarthe (72). Appelez-nous au <strong><a href="tel:+33750398368">07 50 39 83 68</a></strong> pour une intervention urgente ou une demande de devis.
+                <strong>Besoin d'un couvreur au Mans ?</strong> Contactez JORY CHARPENTE COUVERTURE pour un devis gratuit. Nous intervenons rapidement dans tout Le Mans, Changé, Allonnes, Coulaines, Arnage, Mulsanne et dans toute la Sarthe (72). Appelez-nous au <strong><a href="tel:+33629205036">06 29 20 50 36</a></strong> pour une intervention urgente ou une demande de devis.
               </p>
             </div>
           </div>
