@@ -37,7 +37,7 @@ const Footer = () => {
               <img src="/images/LOGO.png" alt="JORY CHARPENTE COUVERTURE - Couvreur professionnel Le Mans Sarthe" className="footer-logo" />
             </div>
             <ul>
-              <li>LE TILLEUL 72560 Changé, Sarthe</li>
+              <li>12 rue de l'activité<br />72000 Le Mans, Sarthe</li>
               <li><a href="tel:+33629205036">06 29 20 50 36</a></li>
               <li><a href="mailto:alexandre.jory@gmail.com">alexandre.jory@gmail.com</a></li>
               <li>Lun-Dim: 8h-20h (urgences)</li>
