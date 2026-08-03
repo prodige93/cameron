@@ -271,7 +271,7 @@ const Contact = () => {
                   <div className="contact-icon"></div>
                   <div>
                     <h3>Adresse</h3>
-                    <p>LE TILLEUL<br />72560 Changé, Sarthe</p>
+                    <p>12 rue de l'activité<br />72000 Le Mans, Sarthe</p>
                   </div>
                 </div>
 
