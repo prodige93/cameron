@@ -28,6 +28,30 @@ const Contact = () => {
 
       <section className="contact-section section">
         <div className="container contact-page">
+          {/* Bouton de demande de devis */}
+          <div className="contact-page-quote">
+            <a href={QUOTE_MAILTO_URL} className="btn-quote-email">
+              <svg
+                className="btn-quote-email-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <path d="m22 7-10 6L2 7" />
+              </svg>
+              <span className="btn-quote-email-text">
+                <strong>Demande de Devis Gratuit et Rapide</strong>
+                <small>Envoi par email · Réponse sous 24h</small>
+              </span>
+            </a>
+          </div>
+
           {/* Informations de contact */}
           <div className="contact-page-cards">
             <div className="contact-page-card">
@@ -66,29 +90,6 @@ const Contact = () => {
             </ul>
           </div>
 
-          {/* Bouton de demande de devis */}
-          <div className="contact-page-quote">
-            <a href={QUOTE_MAILTO_URL} className="btn-quote-email">
-              <svg
-                className="btn-quote-email-icon"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <rect x="2" y="4" width="20" height="16" rx="2" />
-                <path d="m22 7-10 6L2 7" />
-              </svg>
-              <span className="btn-quote-email-text">
-                <strong>Demande de Devis Gratuit et Rapide</strong>
-                <small>Envoi par email · Réponse sous 24h</small>
-              </span>
-            </a>
-          </div>
         </div>
       </section>
     </>

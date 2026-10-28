@@ -3016,7 +3016,6 @@ ul {
 .contact-page-quote {
     display: flex;
     justify-content: center;
-    padding-top: 0.5rem;
 }
 
 .contact-page-quote .btn-quote-email {
